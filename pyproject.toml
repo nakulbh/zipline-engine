@@ -1,0 +1,25 @@
+[project]
+name = "zipline-engine"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "alphalens-reloaded>=0.4.6",
+    "ipykernel>=6.29.5",
+    "matplotlib>=3.10.3",
+    "nse-trading-calendar>=0.1.2",
+    "nse-workday>=0.0.7",
+    "nselib>=1.9",
+    "nsepy>=0.8",
+    "numpy>=2.2.6",
+    "pandas>=2.3.0",
+    "pandas-market-calendars>=5.1.1",
+    "pyfolio-reloaded>=0.9.9",
+    "python-dotenv>=1.1.1",
+    "pyyaml>=6.0.2",
+    "scipy>=1.15.3",
+    "trading-calendars>=2.1.1",
+    "yfinance>=0.2.64",
+    "zipline-reloaded>=3.1",
+]
