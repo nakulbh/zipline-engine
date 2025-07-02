@@ -15,7 +15,6 @@ wheels/
 .coverage
 .coverage.*
 
-data/
 
 .zipline/data
 
