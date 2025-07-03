@@ -39,16 +39,16 @@ class ORBStrategy:
         """Initialize the ORB strategy"""
         print("Initializing ORB Strategy for NSE minute data...")
 
-        # Define our trading universe
+        # Define our trading universe based on available data for the backtest period
         context.universe = [
-            symbol('BAJFINANCE'),  # sid: 0
-            symbol('BANKNIFTY'),   # sid: 1
-            symbol('HDFCBANK'),    # sid: 3
-            symbol('AARTIIND'),    # sid: 6
-            symbol('SBIN')         # sid: 7
+            symbol('BAJFINANCE'),
+            symbol('BANKNIFTY'),
+            symbol('HDFCBANK'),
+            symbol('HINDALCO'), # Replaced RELIANCE
+            symbol('SBIN')
         ]
 
-        # Primary trading symbol
+        # Primary trading symbol - BAJFINANCE has data for the full period
         context.primary_symbol = symbol('BAJFINANCE')
 
         # Initialize strategy variables

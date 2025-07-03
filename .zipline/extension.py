@@ -234,8 +234,8 @@ def local_csv_minute_bundle(
     
     # Write asset metadata
     exchanges = pd.DataFrame([
-        ['NSE', 'National Stock Exchange of India', 'IN'],
-        ['NSE_INDEX', 'NSE Indices', 'IN']
+        ['NSE', 'XBOM', 'IN'],
+        ['NSE_INDEX', 'XBOM', 'IN']
     ], columns=['exchange', 'canonical_name', 'country_code'])
     
     asset_db_writer.write(equities=asset_metadata, exchanges=exchanges)
