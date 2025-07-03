@@ -37,16 +37,17 @@ class MomentumStrategy:
         
         # Define our universe of stocks (using symbols we know exist in our bundle)
         context.universe = [
-            symbol('AAPL'), symbol('MSFT'), symbol('GOOGL'), symbol('AMZN'),
-            symbol('TSLA'), symbol('META'), symbol('NVDA'), symbol('NFLX'),
-            symbol('V'), symbol('MA'), symbol('JPM'), symbol('BAC'),
-            symbol('JNJ'), symbol('PFE'), symbol('KO'), symbol('PEP'),
-            symbol('WMT'), symbol('HD'), symbol('DIS'), symbol('XOM')
+            symbol('RELIANCE.NS'), symbol('TCS.NS'), symbol('INFY.NS'), symbol('HDFCBANK.NS'),
+            symbol('ICICIBANK.NS'), symbol('KOTAKBANK.NS'), symbol('HINDUNILVR.NS'),
+            symbol('LT.NS'), symbol('BAJFINANCE.NS'), symbol('ITC.NS'),
+            symbol('BHARTIARTL.NS'), symbol('SBIN.NS'), symbol('ASIANPAINT.NS'),
+            symbol('MARUTI.NS'), symbol('ULTRACEMCO.NS'), symbol('SUNPHARMA.NS'),
+            symbol('WIPRO.NS'), symbol('TECHM.NS'), symbol('ADANIENT.NS'), symbol('TITAN.NS')
         ]
-        
-        # Add SPY as benchmark symbol
-        context.spy = symbol('SPY')
-        
+
+        # Use NIFTY 50 Index as benchmark
+        context.benchmark = symbol('^NSEI')
+
         # Initialize tracking variables
         context.long_positions = []
         context.short_positions = []
@@ -60,14 +61,14 @@ class MomentumStrategy:
         )
         
         print(f"Strategy initialized with {len(context.universe)} stocks")
-        print("SPY included as benchmark symbol")
+        print("NIFTY50 included as benchmark symbol")
         
     def before_trading_start(self, context, data):
         """Called before trading starts each day"""
-        # Record SPY price for benchmark calculations
-        if data.can_trade(context.spy):
-            spy_price = data.current(context.spy, 'close')
-            record(spy_price=spy_price)
+        # Record benchmark price for benchmark calculations
+        if data.can_trade(context.benchmark):
+            benchmark_price = data.current(context.benchmark, 'close')
+            record(benchmark_price=benchmark_price)
         pass
         
     def rebalance(self, context, data):
@@ -188,7 +189,7 @@ def run_momentum_strategy():
     print("MOMENTUM STRATEGY BACKTEST WITH PYFOLIO ANALYSIS")
     print("=" * 60)
     print(f"Period: {config.start_date} to {config.end_date}")
-    print(f"Initial Capital: ${config.capital_base:,.2f}")
+    print(f"Initial Capital: ₹{config.capital_base:,.2f}")
     print(f"Commission: {config.commission_cost:.1%}")
     print("=" * 60)
     
@@ -198,19 +199,19 @@ def run_momentum_strategy():
         backtest_results = engine.run_backtest(strategy)
         results = backtest_results['results']
         
-        # Extract SPY benchmark data from the recorded results
-        print("\n🔍 Extracting benchmark data (SPY) from backtest results...")
+        # Extract benchmark data from the recorded results
+        print("\n🔍 Extracting benchmark data (NIFTY50) from backtest results...")
         benchmark_returns = None
         
-        if 'spy_price' in results.columns:
-            spy_prices = results['spy_price'].dropna()
-            if len(spy_prices) > 1:
-                benchmark_returns = spy_prices.pct_change().dropna()
-                print(f"✅ Successfully extracted {len(benchmark_returns)} SPY benchmark returns from bundle data")
+        if 'benchmark_price' in results.columns:
+            benchmark_prices = results['benchmark_price'].dropna()
+            if len(benchmark_prices) > 1:
+                benchmark_returns = benchmark_prices.pct_change().dropna()
+                print(f"✅ Successfully extracted {len(benchmark_returns)} NIFTY50 benchmark returns from bundle data")
             else:
-                print("⚠️ Warning: Insufficient SPY data in backtest results")
+                print("⚠️ Warning: Insufficient benchmark data in backtest results")
         else:
-            print("⚠️ Warning: SPY data not found in backtest results, proceeding without benchmark")
+            print("⚠️ Warning: Benchmark data not found in backtest results, proceeding without benchmark")
         
         # Use engine's built-in performance analysis
         print("\n📊 Analyzing performance with engine's pyfolio integration...")
@@ -227,8 +228,8 @@ def run_momentum_strategy():
         
         # Print detailed performance metrics
         if benchmark_returns is not None:
-            print(f"\nAlpha (vs SPY)          : {performance.get('alpha', 'N/A'):.4f}")
-            print(f"Beta (vs SPY)           : {performance.get('beta', 'N/A'):.4f}")
+            print(f"\nAlpha (vs NIFTY50)      : {performance.get('alpha', 'N/A'):.4f}")
+            print(f"Beta (vs NIFTY50)       : {performance.get('beta', 'N/A'):.4f}")
         
         print("\n" + "=" * 60)
         print("📊 DETAILED PYFOLIO METRICS")
@@ -275,7 +276,7 @@ def run_momentum_strategy():
                 if benchmark_returns is not None:
                     cum_benchmark = (1 + benchmark_returns).cumprod()
                     axes[0,0].plot(cum_benchmark.index, cum_benchmark.values, 
-                                  label='SPY Benchmark', alpha=0.7)
+                                  label='NIFTY50 Benchmark', alpha=0.7)
                     axes[0,0].legend()
                 axes[0,0].set_title('Cumulative Returns')
                 axes[0,0].set_ylabel('Cumulative Returns')
@@ -320,10 +321,10 @@ def run_momentum_strategy():
         end_value = portfolio_values.iloc[-1]
         total_return = (end_value / start_value) - 1
         
-        print(f"Starting Portfolio Value: ${start_value:,.2f}")
-        print(f"Ending Portfolio Value  : ${end_value:,.2f}")
+        print(f"Starting Portfolio Value: ₹{start_value:,.2f}")
+        print(f"Ending Portfolio Value  : ₹{end_value:,.2f}")
         print(f"Total Return           : {total_return:.2%}")
-        print(f"Total P&L              : ${end_value - start_value:,.2f}")
+        print(f"Total P&L              : ₹{end_value - start_value:,.2f}")
         
         # Monthly summary
         monthly_values = portfolio_values.resample('M').last()

@@ -24,6 +24,7 @@ from zipline.pipeline.factors import (
     SimpleMovingAverage, RSI, Returns, AverageDollarVolume
 )
 from zipline.utils.events import date_rules, time_rules
+from zipline.utils.calendar_utils import get_calendar 
 from .base_strategy import BaseStrategy, TradingConfig
 
 # Suppress warnings
@@ -59,6 +60,8 @@ class TradingEngine:
         logger.info("Starting backtest...")
         
         try:
+
+            calendar = get_calendar("XBOM")
             # Run zipline backtest
             results = run_algorithm(
                 start=pd.Timestamp(self.config.start_date),
@@ -67,8 +70,9 @@ class TradingEngine:
                 before_trading_start=strategy.before_trading_start,
                 capital_base=self.config.capital_base,
                 data_frequency=self.config.data_frequency,
-                bundle='us-equities-bundle',  # Use our custom bundle
+                bundle='nse-local-minute-bundle',  # Use our custom NSE bundle
                 benchmark_returns=None,  # Will be set automatically
+                trading_calendar=calendar
             )
             
             self.results = results

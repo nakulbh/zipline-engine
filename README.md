@@ -2,4 +2,5 @@
 for ingesting :- zipline ingest -b bundle_name
 
 ## Environment Setup
-loading env :- export $(cat .env | xargs)
+loading env :- export $(grep -v '^#' .env | xargs)
+

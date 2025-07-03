@@ -1,5 +1,5 @@
-from . import nse_intraday_bundle
+from . import local_csv_minute_bundle
 
 __all__ = [
-    'nse_intraday_bundle',
+    'local_csv_minute_bundle',
 ]

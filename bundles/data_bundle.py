@@ -11,13 +11,18 @@ def create_data_bundle():
 
     # Define symbols for your universe
     symbols = [
-        'AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA', 'META', 'NVDA', 'NFLX',
-        'PYPL', 'ADBE', 'CRM', 'INTC', 'AMD', 'ORCL', 'IBM', 'CSCO',
-        'V', 'MA', 'JPM', 'BAC', 'WFC', 'GS', 'MS', 'C', 'BRK-B',
-        'JNJ', 'PFE', 'UNH', 'ABBV', 'TMO', 'DHR', 'BMY', 'AMGN',
-        'KO', 'PEP', 'WMT', 'HD', 'MCD', 'SBUX', 'NKE', 'DIS',
-        'XOM', 'CVX', 'COP', 'SLB', 'HAL', 'OXY', 'DVN', 'SPY'
-    ]
+    'RELIANCE.NS', 'HDFCBANK.NS', 'INFY.NS', 'ICICIBANK.NS', 'TCS.NS',
+    'LT.NS', 'ITC.NS', 'SBIN.NS', 'KOTAKBANK.NS', 'AXISBANK.NS',
+    'BHARTIARTL.NS', 'HINDUNILVR.NS', 'BAJFINANCE.NS', 'ASIANPAINT.NS',
+    'WIPRO.NS', 'HCLTECH.NS', 'MARUTI.NS', 'SUNPHARMA.NS', 'ULTRACEMCO.NS',
+    'TECHM.NS', 'NTPC.NS', 'TITAN.NS', 'POWERGRID.NS', 'ONGC.NS',
+    'GRASIM.NS', 'BAJAJFINSV.NS', 'NESTLEIND.NS', 'TATAMOTORS.NS',
+    'HINDALCO.NS', 'DRREDDY.NS', 'JSWSTEEL.NS', 'CIPLA.NS', 'ADANIENT.NS',
+    'DIVISLAB.NS', 'COALINDIA.NS', 'BRITANNIA.NS', 'BPCL.NS', 'EICHERMOT.NS',
+    'HEROMOTOCO.NS', 'TATASTEEL.NS', 'SBILIFE.NS', 'BAJAJ-AUTO.NS',
+    'UPL.NS', 'SHREECEM.NS', 'INDUSINDBK.NS', 'APOLLOHOSP.NS',
+    'HDFCLIFE.NS', 'ICICIPRULI.NS', 'M&M.NS', 'SBICARD.NS'
+]
 
     start_date = '2018-01-01'
     end_date = '2024-01-01'
@@ -151,27 +156,33 @@ if __name__ == "__main__":
     # Example usage:
     
     # Option 1: Use single symbol download
-    # create_data_bundle()
+    create_data_bundle()
 
     # Option 2: Use batch download
-    symbols = [
-        'AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA', 'META', 'NVDA', 'NFLX',
-        'PYPL', 'ADBE', 'CRM', 'INTC', 'AMD', 'ORCL', 'IBM', 'CSCO',
-        'V', 'MA', 'JPM', 'BAC', 'WFC', 'GS', 'MS', 'C', 'BRK-B',
-        'JNJ', 'PFE', 'UNH', 'ABBV', 'TMO', 'DHR', 'BMY', 'AMGN',
-        'KO', 'PEP', 'WMT', 'HD', 'MCD', 'SBUX', 'NKE', 'DIS',
-        'XOM', 'CVX', 'COP', 'SLB', 'HAL', 'OXY', 'DVN', 'SPY'
-    ]
+#     symbols = [
+#     'RELIANCE.NS', 'HDFCBANK.NS', 'INFY.NS', 'ICICIBANK.NS', 'TCS.NS',
+#     'LT.NS', 'ITC.NS', 'SBIN.NS', 'KOTAKBANK.NS', 'AXISBANK.NS',
+#     'BHARTIARTL.NS', 'HINDUNILVR.NS', 'BAJFINANCE.NS', 'ASIANPAINT.NS',
+#     'WIPRO.NS', 'HCLTECH.NS', 'MARUTI.NS', 'SUNPHARMA.NS', 'ULTRACEMCO.NS',
+#     'TECHM.NS', 'NTPC.NS', 'TITAN.NS', 'POWERGRID.NS', 'ONGC.NS',
+#     'GRASIM.NS', 'BAJAJFINSV.NS', 'NESTLEIND.NS', 'TATAMOTORS.NS',
+#     'HINDALCO.NS', 'DRREDDY.NS', 'JSWSTEEL.NS', 'CIPLA.NS', 'ADANIENT.NS',
+#     'DIVISLAB.NS', 'COALINDIA.NS', 'BRITANNIA.NS', 'BPCL.NS', 'EICHERMOT.NS',
+#     'HEROMOTOCO.NS', 'TATASTEEL.NS', 'SBILIFE.NS', 'BAJAJ-AUTO.NS',
+#     'UPL.NS', 'SHREECEM.NS', 'INDUSINDBK.NS', 'APOLLOHOSP.NS',
+#     'HDFCLIFE.NS', 'ICICIPRULI.NS', 'M&M.NS', 'SBICARD.NS'
+# ]
 
-    successful, failed = bulk_download_symbols(symbols, '2018-01-01', '2024-01-01')
 
-    print(f"\nResults:")
-    print(f"✅ Successful: {len(successful)}")
-    print(f"❌ Failed: {len(failed)}")
+    # successful, failed = bulk_download_symbols(symbols, '2018-01-01', '2024-01-01')
 
-    if failed:
-        print(f"Failed symbols: {failed}")
+    # print(f"\nResults:")
+    # print(f"✅ Successful: {len(successful)}")
+    # print(f"❌ Failed: {len(failed)}")
 
-    if successful:
-        pd.DataFrame({'symbol': successful}).to_csv('./data/symbols.csv', index=False)
-        print(f"Symbols file saved with {len(successful)} symbols")
+    # if failed:
+    #     print(f"Failed symbols: {failed}")
+
+    # if successful:
+    #     pd.DataFrame({'symbol': successful}).to_csv('./data/symbols.csv', index=False)
+    #     print(f"Symbols file saved with {len(successful)} symbols")
