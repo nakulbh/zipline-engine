@@ -206,7 +206,7 @@ class BaseStrategy(ABC):
             gross_leverage=context.account.leverage,
             net_leverage=context.account.net_leverage,
             cash=context.portfolio.cash,
-            portfolio_value=context.portfolio.total_value,
+            portfolio_value=context.portfolio.portfolio_value,
         )
 
 
