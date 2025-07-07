@@ -12,6 +12,12 @@ This strategy uses Bollinger Bands to identify breakout opportunities. The strat
 Author: NSE Backtesting Engine
 """
 
+import sys
+import os
+
+# Add parent directory to Python path for imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from engine.enhanced_base_strategy import BaseStrategy
 from zipline.api import symbol, record
 import pandas as pd
@@ -29,13 +35,14 @@ class BollingerBandsStrategy(BaseStrategy):
     - breakout_threshold: Minimum percentage breakout required (default: 0.5%)
     """
     
-    def __init__(self, bb_period=20, bb_std=2.0, volume_confirmation=True, breakout_threshold=0.005):
+    def __init__(self, bb_period=20, bb_std=2.0, volume_confirmation=True, breakout_threshold=0.005, benchmark_symbol='NIFTY50'):
         super().__init__()
         self.bb_period = bb_period
         self.bb_std = bb_std
         self.volume_confirmation = volume_confirmation
         self.breakout_threshold = breakout_threshold
-        
+        self.benchmark_symbol = benchmark_symbol  # Add benchmark symbol
+
         # Enhanced risk parameters for breakout trading
         self.risk_params.update({
             'max_position_size': 0.12,    # 12% per position

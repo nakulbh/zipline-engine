@@ -14,11 +14,16 @@ The strategy:
 Author: NSE Backtesting Engine
 """
 
+import sys
+import os
+
+# Add parent directory to Python path for imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from engine.enhanced_base_strategy import BaseStrategy
 from zipline.api import symbol, record
 import pandas as pd
 import numpy as np
-
 
 class MultiTimeframeMomentumStrategy(BaseStrategy):
     """

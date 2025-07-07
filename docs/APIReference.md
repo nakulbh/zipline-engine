@@ -308,6 +308,44 @@ os.makedirs(results_dir, exist_ok=True)
 runner.analyze(results_dir)
 ```
 
+#### `create_enhanced_pyfolio_analysis(self, results_dir, live_start_date=None, save_plots=True, save_csv=True)`
+
+**Description**: Create enhanced Pyfolio analysis with comprehensive CSV export and plot saving.
+
+**Parameters**:
+- `results_dir` (str): Directory to save analysis results
+- `live_start_date` (str|datetime, optional): Date when live trading started for out-of-sample analysis
+- `save_plots` (bool): Whether to save plots as PNG files (default: True)
+- `save_csv` (bool): Whether to save comprehensive CSV data (default: True)
+
+**Returns**: None
+
+**Creates**:
+- Enhanced Pyfolio tear sheet (PNG)
+- Performance statistics (CSV)
+- Returns series (CSV)
+- Risk metrics (CSV)
+- Rolling performance metrics (CSV)
+- Monthly/annual returns (CSV)
+- Drawdown analysis (CSV)
+- Round trips analysis (CSV, if transactions available)
+- Underwater drawdown data (CSV)
+- Rolling Sharpe ratio (CSV)
+
+**Example**:
+```python
+# Basic enhanced analysis
+runner.create_enhanced_pyfolio_analysis('results')
+
+# With out-of-sample analysis
+runner.create_enhanced_pyfolio_analysis(
+    results_dir='results',
+    live_start_date='2020-01-01',  # Out-of-sample period
+    save_plots=True,
+    save_csv=True
+)
+```
+
 ### Internal Methods
 
 #### `_setup_algorithm(self, strategy)`

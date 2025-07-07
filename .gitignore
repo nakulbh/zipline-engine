@@ -15,8 +15,5 @@ wheels/
 .coverage
 .coverage.*
 
-
-
-
 # Virtual environments
 .venv

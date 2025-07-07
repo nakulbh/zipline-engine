@@ -13,6 +13,12 @@ The strategy:
 Author: NSE Backtesting Engine
 """
 
+import sys
+import os
+
+# Add parent directory to Python path for imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from engine.enhanced_base_strategy import BaseStrategy
 from zipline.api import symbol, record
 import pandas as pd
@@ -59,20 +65,14 @@ class VolumePriceTrendStrategy(BaseStrategy):
         Select NSE stocks with good volume characteristics.
         Focus on liquid stocks where volume analysis is meaningful.
         """
-        # NSE stocks with good volume and liquidity
+        # Available NSE stocks in your bundle
         nse_symbols = [
-            'SBIN',      # State Bank of India
-            'RELIANCE',  # Reliance Industries
-            'TCS',       # Tata Consultancy Services
-            'INFY',      # Infosys
-            'HDFCBANK',  # HDFC Bank
-            'ICICIBANK', # ICICI Bank
-            'WIPRO',     # Wipro
-            'LT',        # Larsen & Toubro
-            'AXISBANK',  # Axis Bank
-            'MARUTI',    # Maruti Suzuki
-            'HINDUNILVR',# Hindustan Unilever
-            'BHARTIARTL' # Bharti Airtel
+            'SBIN',       # State Bank of India
+            'RELIANCE',   # Reliance Industries
+            'HDFCBANK',   # HDFC Bank
+            'BAJFINANCE', # Bajaj Finance
+            'HDFC',       # HDFC Ltd
+            'HINDALCO'    # Hindalco Industries
         ]
         
         # Convert to Zipline assets
@@ -217,7 +217,7 @@ class VolumePriceTrendStrategy(BaseStrategy):
                     continue
                 
                 current_price = price_history.iloc[-1]
-                current_volume = volume_history.iloc[-1]
+                # current_volume = volume_history.iloc[-1]  # Available if needed
                 
                 # Calculate volume-price indicators
                 vpt = self.calculate_vpt(price_history, volume_history)

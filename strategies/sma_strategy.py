@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Add parent directory to Python path for imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from engine.enhanced_base_strategy import BaseStrategy
 from zipline.api import symbol, record
 import numpy as np
@@ -23,7 +29,7 @@ class SmaCrossoverStrategy(BaseStrategy):
         super().__init__()
         self.short_window = short_window
         self.long_window = long_window
-        self.assets = assets if assets else ['AAPL', 'MSFT'] # Default assets
+        self.assets = assets if assets else ['SBIN', 'RELIANCE', 'HDFCBANK'] # Default NSE assets
 
     def initialize(self, context):
         """

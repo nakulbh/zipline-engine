@@ -77,6 +77,16 @@ class BaseStrategy(ABC):
         context.universe = self.select_universe(context)
         strategy_logger.info(f"   ✅ Universe size: {len(context.universe) if hasattr(context, 'universe') else 'Unknown'}")
 
+        # Set benchmark if specified
+        if hasattr(self, 'benchmark_symbol') and self.benchmark_symbol:
+            strategy_logger.info(f"📊 Setting benchmark: {self.benchmark_symbol}")
+            try:
+                from zipline.api import set_benchmark, symbol
+                set_benchmark(symbol(self.benchmark_symbol))
+                strategy_logger.info(f"   ✅ Benchmark set to {self.benchmark_symbol}")
+            except Exception as e:
+                strategy_logger.warning(f"   ⚠️  Failed to set benchmark {self.benchmark_symbol}: {e}")
+
         strategy_logger.info("✅ Strategy initialization completed!")
         strategy_logger.info("=" * 50)
         

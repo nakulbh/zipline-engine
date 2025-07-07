@@ -10,6 +10,7 @@ import logging
 import time
 from datetime import datetime
 import warnings
+import pickle
 
 # Configure logging
 logging.basicConfig(
@@ -231,30 +232,85 @@ class EnhancedZiplineRunner:
 
             logger.info("📊 Generating Pyfolio tear sheet...")
 
-            # Create simplified tear sheet (more robust)
+            # Create comprehensive Pyfolio analysis with enhanced saving
+            logger.info("📊 Creating comprehensive Pyfolio tear sheets...")
+
+            # 1. Returns tear sheet
+            logger.info("   📈 Generating returns tear sheet...")
             pf.create_returns_tear_sheet(
                 returns,
-                benchmark_rets=None,  # We'll add benchmark later if available
+                benchmark_rets=None,
                 live_start_date=None
             )
-            plt.savefig(os.path.join(results_dir, 'pyfolio_returns_tearsheet.png'), dpi=300, bbox_inches='tight')
+            plt.savefig(os.path.join(results_dir, 'pyfolio_returns_tearsheet.png'),
+                       dpi=300, bbox_inches='tight', facecolor='white')
             plt.close()
 
-            # If we have positions and transactions, create full tear sheet
+            # 2. Performance statistics tear sheet
+            logger.info("   📊 Generating performance statistics...")
+            try:
+                # Get performance stats and save to CSV
+                perf_stats = pf.timeseries.perf_stats(returns)
+                perf_stats.to_csv(os.path.join(results_dir, 'performance_statistics.csv'))
+                logger.info(f"   ✅ Performance statistics saved to CSV")
+            except Exception as stats_e:
+                logger.warning(f"   ⚠️  Could not save performance statistics: {stats_e}")
+
+            # 3. Full tear sheet with positions and transactions
             if positions is not None and transactions is not None:
                 try:
-                    logger.info("📊 Creating full tear sheet with positions and transactions...")
+                    logger.info("   📊 Creating full tear sheet with positions and transactions...")
+
+                    # Create full tear sheet with round trips
                     pf.create_full_tear_sheet(
                         returns,
                         positions=positions,
                         transactions=transactions,
-                        round_trips=True
+                        round_trips=True,
+                        live_start_date=None
                     )
-                    plt.savefig(os.path.join(results_dir, 'pyfolio_full_tearsheet.png'), dpi=300, bbox_inches='tight')
+                    plt.savefig(os.path.join(results_dir, 'pyfolio_full_tearsheet.png'),
+                               dpi=300, bbox_inches='tight', facecolor='white')
                     plt.close()
+
+                    # Save round trip analysis to CSV
+                    try:
+                        round_trips = pf.round_trips.extract_round_trips(transactions)
+                        if not round_trips.empty:
+                            round_trips.to_csv(os.path.join(results_dir, 'round_trips_analysis.csv'))
+                            logger.info("   ✅ Round trips analysis saved to CSV")
+                    except Exception as rt_e:
+                        logger.warning(f"   ⚠️  Could not save round trips analysis: {rt_e}")
+
                     logger.info("✅ Full Pyfolio tear sheet created successfully")
+
                 except Exception as full_e:
                     logger.warning(f"⚠️  Full tear sheet failed, but returns tear sheet succeeded: {full_e}")
+
+            # 4. Individual analysis components with CSV export
+            try:
+                logger.info("   📊 Creating individual analysis components...")
+
+                # Rolling performance metrics
+                rolling_stats = pf.timeseries.rolling_stats(returns, rolling_window=252)
+                rolling_stats.to_csv(os.path.join(results_dir, 'rolling_performance_stats.csv'))
+
+                # Drawdown analysis
+                drawdown_df = pf.timeseries.gen_drawdown_table(returns, top=10)
+                drawdown_df.to_csv(os.path.join(results_dir, 'top_drawdowns.csv'))
+
+                # Monthly returns
+                monthly_returns = pf.timeseries.aggregate_returns(returns, 'monthly')
+                monthly_returns.to_csv(os.path.join(results_dir, 'monthly_returns.csv'))
+
+                # Annual returns
+                annual_returns = pf.timeseries.aggregate_returns(returns, 'yearly')
+                annual_returns.to_csv(os.path.join(results_dir, 'annual_returns.csv'))
+
+                logger.info("   ✅ Individual analysis components saved to CSV")
+
+            except Exception as comp_e:
+                logger.warning(f"   ⚠️  Could not save individual components: {comp_e}")
 
             logger.info("✅ Pyfolio analysis completed successfully")
 
@@ -373,9 +429,14 @@ class EnhancedZiplineRunner:
             logger.warning(f"⚠️  Alphalens analysis failed: {str(e)}")
             logger.info("   🔍 This is often due to insufficient data or misaligned timestamps")
 
-        # Save results to CSV
+        # Save results to CSV with benchmark analysis
         logger.info("💾 Saving results to CSV files...")
         self.save_results_to_csv(results_dir)
+
+        # Calculate and save benchmark metrics
+        if self.benchmark_symbol:
+            logger.info("📊 Calculating benchmark metrics...")
+            self.save_benchmark_analysis_to_csv(results_dir)
 
         # Calculate and log analysis completion time
         analysis_end_time = time.time()
@@ -386,6 +447,190 @@ class EnhancedZiplineRunner:
         logger.info(f"⏱️  Analysis Duration: {analysis_duration:.2f} seconds")
         logger.info(f"📁 Results Location: {os.path.abspath(results_dir)}")
         logger.info("=" * 60)
+
+    def create_enhanced_pyfolio_analysis(self, results_dir='backtest_results', live_start_date=None,
+                                       save_plots=True, save_csv=True):
+        """
+        Create enhanced Pyfolio analysis similar to the example you provided.
+        This method provides comprehensive analysis with plot saving and CSV export.
+
+        Parameters:
+        -----------
+        results_dir : str
+            Directory to save results
+        live_start_date : str or datetime, optional
+            Date when live trading started (for out-of-sample analysis)
+        save_plots : bool
+            Whether to save plots as PNG files
+        save_csv : bool
+            Whether to save data as CSV files
+        """
+        if self.results is None:
+            logger.error("❌ No backtest results available. Run backtest first.")
+            return
+
+        logger.info("🚀 CREATING ENHANCED PYFOLIO ANALYSIS")
+        logger.info("=" * 50)
+
+        # Ensure results directory exists
+        os.makedirs(results_dir, exist_ok=True)
+
+        try:
+            # Extract data from results
+            returns = self.results['returns'].copy()
+            returns.index = pd.to_datetime(returns.index)
+
+            # Extract positions and transactions
+            positions = None
+            transactions = None
+
+            try:
+                if hasattr(self.results, 'positions') and len(self.results.positions) > 0:
+                    positions_data = []
+                    for pos in self.results.positions:
+                        if hasattr(pos, 'to_dict'):
+                            positions_data.append(pos.to_dict())
+
+                    if positions_data:
+                        positions = pd.DataFrame(positions_data)
+                        positions.index = pd.to_datetime(positions.index)
+
+                if hasattr(self.results, 'transactions') and len(self.results.transactions) > 0:
+                    transactions_data = []
+                    for txn in self.results.transactions:
+                        if hasattr(txn, 'to_dict'):
+                            transactions_data.append(txn.to_dict())
+
+                    if transactions_data:
+                        transactions = pd.DataFrame(transactions_data)
+                        transactions.index = pd.to_datetime(transactions.index)
+
+            except Exception as e:
+                logger.warning(f"⚠️  Could not extract positions/transactions: {e}")
+
+            # Convert live_start_date if provided
+            if live_start_date:
+                if isinstance(live_start_date, str):
+                    live_start_date = pd.to_datetime(live_start_date)
+
+            logger.info("📊 Creating comprehensive Pyfolio tear sheet...")
+
+            # Create the full tear sheet (similar to your example)
+            if positions is not None and transactions is not None:
+                pf.create_full_tear_sheet(
+                    returns,
+                    positions=positions,
+                    transactions=transactions,
+                    live_start_date=live_start_date,
+                    round_trips=True,
+                    hide_positions=False,
+                    cone_std=(1.0, 1.5, 2.0),
+                    bootstrap=False  # Disable bootstrap to avoid benchmark requirement
+                )
+            else:
+                # Create returns-only tear sheet if positions/transactions not available
+                pf.create_returns_tear_sheet(
+                    returns,
+                    live_start_date=live_start_date,
+                    cone_std=(1.0, 1.5, 2.0),
+                    bootstrap=False  # Disable bootstrap to avoid benchmark requirement
+                )
+
+            if save_plots:
+                # Save the comprehensive plot
+                plt.savefig(os.path.join(results_dir, 'enhanced_pyfolio_analysis.png'),
+                           dpi=300, bbox_inches='tight', facecolor='white')
+                plt.close()
+                logger.info("✅ Enhanced Pyfolio plots saved")
+
+            if save_csv:
+                # Save comprehensive CSV data
+                self._save_enhanced_csv_data(results_dir, returns, positions, transactions)
+
+            logger.info("✅ Enhanced Pyfolio analysis completed successfully")
+
+        except Exception as e:
+            logger.error(f"❌ Enhanced Pyfolio analysis failed: {e}")
+            raise
+
+    def _save_enhanced_csv_data(self, results_dir, returns, positions=None, transactions=None):
+        """Save comprehensive CSV data similar to the Pyfolio example"""
+        logger.info("💾 Saving enhanced CSV data...")
+
+        try:
+            # 1. Basic returns and performance metrics
+            returns.to_csv(os.path.join(results_dir, 'returns_series.csv'), header=['returns'])
+
+            # 2. Performance statistics
+            perf_stats = pf.timeseries.perf_stats(returns)
+            perf_stats.to_csv(os.path.join(results_dir, 'performance_statistics.csv'), header=['value'])
+
+            # 3. Rolling performance metrics (252-day rolling window)
+            rolling_stats = pf.timeseries.rolling_stats(returns, rolling_window=252)
+            rolling_stats.to_csv(os.path.join(results_dir, 'rolling_performance_metrics.csv'))
+
+            # 4. Drawdown analysis
+            drawdown_table = pf.timeseries.gen_drawdown_table(returns, top=10)
+            drawdown_table.to_csv(os.path.join(results_dir, 'top_10_drawdowns.csv'))
+
+            # 5. Monthly and annual returns
+            monthly_returns = pf.timeseries.aggregate_returns(returns, 'monthly')
+            monthly_returns.to_csv(os.path.join(results_dir, 'monthly_returns.csv'), header=['monthly_return'])
+
+            annual_returns = pf.timeseries.aggregate_returns(returns, 'yearly')
+            annual_returns.to_csv(os.path.join(results_dir, 'annual_returns.csv'), header=['annual_return'])
+
+            # 6. Risk metrics
+            risk_metrics = {
+                'sharpe_ratio': pf.timeseries.sharpe_ratio(returns),
+                'calmar_ratio': pf.timeseries.calmar_ratio(returns),
+                'sortino_ratio': pf.timeseries.sortino_ratio(returns),
+                'max_drawdown': pf.timeseries.max_drawdown(returns),
+                'annual_volatility': pf.timeseries.annual_volatility(returns),
+                'stability': pf.timeseries.stability_of_timeseries(returns),
+                'tail_ratio': pf.timeseries.tail_ratio(returns)
+            }
+            risk_df = pd.DataFrame.from_dict(risk_metrics, orient='index', columns=['value'])
+            risk_df.to_csv(os.path.join(results_dir, 'risk_metrics.csv'))
+
+            # 7. Positions data (if available)
+            if positions is not None:
+                positions.to_csv(os.path.join(results_dir, 'positions_data.csv'))
+                logger.info("   ✅ Positions data saved")
+
+            # 8. Transactions data (if available)
+            if transactions is not None:
+                transactions.to_csv(os.path.join(results_dir, 'transactions_data.csv'))
+
+                # Round trips analysis
+                try:
+                    round_trips = pf.round_trips.extract_round_trips(transactions)
+                    if not round_trips.empty:
+                        round_trips.to_csv(os.path.join(results_dir, 'round_trips_analysis.csv'))
+
+                        # Round trip statistics
+                        rt_stats = pf.round_trips.gen_round_trip_stats(round_trips)
+                        rt_stats.to_csv(os.path.join(results_dir, 'round_trip_statistics.csv'))
+
+                        logger.info("   ✅ Round trips analysis saved")
+                except Exception as rt_e:
+                    logger.warning(f"   ⚠️  Round trips analysis failed: {rt_e}")
+
+                logger.info("   ✅ Transactions data saved")
+
+            # 9. Underwater plot data (drawdown over time)
+            underwater = pf.timeseries.underwater(returns)
+            underwater.to_csv(os.path.join(results_dir, 'underwater_drawdown.csv'), header=['drawdown'])
+
+            # 10. Rolling Sharpe ratio
+            rolling_sharpe = pf.timeseries.rolling_sharpe(returns, rolling_window=252)
+            rolling_sharpe.to_csv(os.path.join(results_dir, 'rolling_sharpe_ratio.csv'), header=['rolling_sharpe'])
+
+            logger.info("✅ Enhanced CSV data saved successfully")
+            logger.info(f"   📁 Location: {os.path.abspath(results_dir)}")
+
+        except Exception as e:
+            logger.error(f"❌ Failed to save enhanced CSV data: {e}")
 
     def _create_basic_analysis(self, results_dir):
         """Create basic performance analysis when pyfolio fails"""
@@ -402,6 +647,7 @@ class EnhancedZiplineRunner:
             # Create basic plots
             logger.info("📊 Generating performance charts...")
             fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+            fig.suptitle('Portfolio Performance Analysis', fontsize=16, fontweight='bold')
 
             # Portfolio value over time
             axes[0, 0].plot(portfolio_value.index, portfolio_value.values, linewidth=2, color='blue')
@@ -508,13 +754,37 @@ class EnhancedZiplineRunner:
         saved_files = []
 
         try:
-            # Basic results - always available
+            # Basic results - always available (including benchmark data if present)
             logger.info("📊 Saving basic results (portfolio value & returns)...")
-            basic_results = self.results[['portfolio_value', 'returns']].copy()
+
+            # Start with core columns
+            basic_columns = ['portfolio_value', 'returns']
+
+            # Add benchmark columns if they exist
+            benchmark_columns = [col for col in self.results.columns if 'benchmark' in col.lower()]
+            if benchmark_columns:
+                basic_columns.extend(benchmark_columns)
+                logger.info(f"   📊 Including benchmark columns: {benchmark_columns}")
+
+            basic_results = self.results[basic_columns].copy()
+
+            # Add calculated benchmark metrics if benchmark data exists
+            if benchmark_columns and self.benchmark_symbol:
+                benchmark_return_col = None
+                for col in benchmark_columns:
+                    if 'return' in col.lower():
+                        benchmark_return_col = col
+                        break
+
+                if benchmark_return_col:
+                    # Add excess returns column
+                    basic_results['excess_returns'] = basic_results['returns'] - basic_results[benchmark_return_col]
+                    logger.info("   📊 Added excess returns column")
+
             basic_path = os.path.join(results_dir, 'basic_results.csv')
             basic_results.to_csv(basic_path)
             saved_files.append('basic_results.csv')
-            logger.info(f"   ✅ Basic results: {len(basic_results)} rows saved")
+            logger.info(f"   ✅ Basic results: {len(basic_results)} rows, {len(basic_results.columns)} columns saved")
 
             # Save recorded variables if they exist
             try:
@@ -599,13 +869,482 @@ class EnhancedZiplineRunner:
                 if line.strip():
                     logger.error(f"   {line}")
 
+    def save_results_to_pickle(self, filename=None, results_dir='backtest_results'):
+        """
+        Save backtest results to a pickle file for later analysis.
+
+        Parameters:
+        -----------
+        filename : str, optional
+            Name of the pickle file. If None, generates a timestamp-based name.
+        results_dir : str
+            Directory to save the pickle file
+
+        Returns:
+        --------
+        str: Path to the saved pickle file
+        """
+        logger.info("💾 SAVING BACKTEST RESULTS TO PICKLE FILE")
+        logger.info("-" * 40)
+
+        if self.results is None:
+            logger.error("❌ No backtest results available. Run backtest first.")
+            return None
+
+        # Create results directory if it doesn't exist
+        os.makedirs(results_dir, exist_ok=True)
+
+        # Generate filename if not provided
+        if filename is None:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            strategy_name = getattr(self.strategy, '__class__', type(self.strategy)).__name__
+            filename = f"{strategy_name}_{timestamp}.pickle"
+
+        # Ensure .pickle extension
+        if not filename.endswith('.pickle') and not filename.endswith('.pkl'):
+            filename += '.pickle'
+
+        filepath = os.path.join(results_dir, filename)
+
+        try:
+            # Save the results DataFrame to pickle
+            self.results.to_pickle(filepath)
+
+            logger.info(f"✅ Results saved to pickle file: {filepath}")
+            logger.info(f"📊 Data shape: {self.results.shape}")
+            logger.info(f"📅 Date range: {self.results.index[0]} to {self.results.index[-1]}")
+            logger.info(f"💾 File size: {os.path.getsize(filepath) / 1024:.2f} KB")
+
+            return filepath
+
+        except Exception as e:
+            logger.error(f"❌ Failed to save results to pickle: {str(e)}")
+            return None
+
+    def load_results_from_pickle(self, filepath):
+        """
+        Load backtest results from a pickle file.
+
+        Parameters:
+        -----------
+        filepath : str
+            Path to the pickle file
+
+        Returns:
+        --------
+        pd.DataFrame: Loaded backtest results
+        """
+        logger.info(f"📂 LOADING BACKTEST RESULTS FROM PICKLE")
+        logger.info(f"📁 File: {filepath}")
+
+        try:
+            if not os.path.exists(filepath):
+                logger.error(f"❌ Pickle file not found: {filepath}")
+                return None
+
+            # Load the results
+            results = pd.read_pickle(filepath)
+
+            logger.info(f"✅ Results loaded successfully")
+            logger.info(f"📊 Data shape: {results.shape}")
+            logger.info(f"📅 Date range: {results.index[0]} to {results.index[-1]}")
+
+            # Set the loaded results as current results
+            self.results = results
+
+            return results
+
+        except Exception as e:
+            logger.error(f"❌ Failed to load results from pickle: {str(e)}")
+            return None
+
+    def create_pyfolio_analysis_from_pickle(self, pickle_filepath, results_dir='pyfolio_analysis',
+                                          live_start_date=None, save_plots=True, save_csv=True):
+        """
+        Create comprehensive Pyfolio analysis from a pickle file.
+        This method replicates the example you provided.
+
+        Parameters:
+        -----------
+        pickle_filepath : str
+            Path to the pickle file containing backtest results
+        results_dir : str
+            Directory to save analysis results
+        live_start_date : str or datetime, optional
+            Date when live trading started (for out-of-sample analysis)
+        save_plots : bool
+            Whether to save plots as PNG files
+        save_csv : bool
+            Whether to save data as CSV files
+        """
+        logger.info("🚀 CREATING PYFOLIO ANALYSIS FROM PICKLE FILE")
+        logger.info("=" * 50)
+        logger.info(f"📁 Pickle file: {pickle_filepath}")
+        logger.info(f"📊 Results directory: {results_dir}")
+
+        # Load results from pickle
+        perf = self.load_results_from_pickle(pickle_filepath)
+        if perf is None:
+            logger.error("❌ Failed to load pickle file. Cannot proceed with analysis.")
+            return
+
+        # Create results directory
+        os.makedirs(results_dir, exist_ok=True)
+
+        try:
+            logger.info("🔍 Extracting returns, positions, and transactions from Zipline results...")
+
+            # Extract data using pyfolio utility function
+            returns, positions, transactions = pf.utils.extract_rets_pos_txn_from_zipline(perf)
+
+            logger.info(f"📈 Returns data: {len(returns)} periods")
+            logger.info(f"📊 Positions data: {len(positions) if positions is not None else 0} records")
+            logger.info(f"💱 Transactions data: {len(transactions) if transactions is not None else 0} records")
+
+            # Convert live_start_date if provided
+            live_start_date_parsed = None
+            if live_start_date:
+                live_start_date_parsed = pd.Timestamp(live_start_date)
+                logger.info(f"📅 Live start date for out-of-sample analysis: {live_start_date_parsed}")
+
+            # 1. Create Full Tear Sheet
+            logger.info("📊 Creating full tear sheet...")
+            try:
+                fig = pf.create_full_tear_sheet(
+                    returns,
+                    positions=positions,
+                    transactions=transactions,
+                    live_start_date=live_start_date_parsed,
+                    return_fig=True
+                )
+
+                if save_plots and fig:
+                    full_tearsheet_path = os.path.join(results_dir, 'full_tear_sheet.png')
+                    fig.savefig(full_tearsheet_path, dpi=300, bbox_inches='tight')
+                    logger.info(f"   ✅ Full tear sheet saved: {full_tearsheet_path}")
+
+            except Exception as e:
+                logger.warning(f"   ⚠️  Full tear sheet creation failed: {str(e)}")
+
+            # 2. Create Round Trip Tear Sheet (Individual trades analysis)
+            logger.info("🔄 Creating round trip tear sheet...")
+            try:
+                if transactions is not None and len(transactions) > 0:
+                    fig = pf.create_round_trip_tear_sheet(
+                        returns,
+                        positions=positions,
+                        transactions=transactions,
+                        return_fig=True
+                    )
+
+                    if save_plots and fig:
+                        round_trip_path = os.path.join(results_dir, 'round_trip_tear_sheet.png')
+                        fig.savefig(round_trip_path, dpi=300, bbox_inches='tight')
+                        logger.info(f"   ✅ Round trip tear sheet saved: {round_trip_path}")
+                else:
+                    logger.warning("   ⚠️  No transactions available for round trip analysis")
+
+            except Exception as e:
+                logger.warning(f"   ⚠️  Round trip tear sheet creation failed: {str(e)}")
+
+            # 3. Save data to CSV files if requested
+            if save_csv:
+                logger.info("💾 Saving analysis data to CSV files...")
+
+                try:
+                    # Save returns
+                    returns_path = os.path.join(results_dir, 'returns.csv')
+                    returns.to_csv(returns_path)
+                    logger.info(f"   ✅ Returns saved: {returns_path}")
+
+                    # Save positions if available
+                    if positions is not None and len(positions) > 0:
+                        positions_path = os.path.join(results_dir, 'positions.csv')
+                        positions.to_csv(positions_path)
+                        logger.info(f"   ✅ Positions saved: {positions_path}")
+
+                    # Save transactions if available
+                    if transactions is not None and len(transactions) > 0:
+                        transactions_path = os.path.join(results_dir, 'transactions.csv')
+                        transactions.to_csv(transactions_path)
+                        logger.info(f"   ✅ Transactions saved: {transactions_path}")
+
+                except Exception as e:
+                    logger.warning(f"   ⚠️  CSV saving failed: {str(e)}")
+
+            logger.info("✅ PYFOLIO ANALYSIS COMPLETED SUCCESSFULLY!")
+            logger.info(f"📁 All results saved to: {os.path.abspath(results_dir)}")
+
+        except Exception as e:
+            logger.error(f"❌ Pyfolio analysis failed: {str(e)}")
+            logger.error("🔍 This might be due to insufficient data or incompatible data format")
+            import traceback
+            logger.error("📋 Stack Trace:")
+            for line in traceback.format_exc().split('\n'):
+                if line.strip():
+                    logger.error(f"   {line}")
+
+    def save_benchmark_analysis_to_csv(self, results_dir):
+        """
+        Extract and save comprehensive benchmark analysis metrics to CSV.
+
+        This method extracts the key benchmark metrics you requested:
+        - Alpha: Strategy's excess return vs benchmark, adjusted for risk
+        - Beta: Strategy's sensitivity to benchmark movements
+        - Benchmark returns: The benchmark's own returns
+        - Excess return: Strategy return - benchmark return
+        - Benchmark volatility: Standard deviation of benchmark returns
+        """
+        logger.info("📊 EXTRACTING BENCHMARK METRICS")
+        logger.info("-" * 35)
+
+        try:
+            # Check if we have benchmark data in results
+            benchmark_columns = [col for col in self.results.columns if 'benchmark' in col.lower()]
+
+            if not benchmark_columns:
+                logger.warning("⚠️  No benchmark data found in results")
+                logger.info("💡 Ensure benchmark is set before running backtest")
+                return
+
+            # Extract key data
+            strategy_returns = self.results['returns']
+            portfolio_value = self.results['portfolio_value']
+
+            # Find benchmark return column (Zipline typically names it 'benchmark_period_return')
+            benchmark_return_col = None
+            for col in self.results.columns:
+                if 'benchmark' in col.lower() and 'return' in col.lower():
+                    benchmark_return_col = col
+                    break
+
+            if benchmark_return_col is None:
+                logger.warning("⚠️  Benchmark return column not found")
+                logger.info(f"📊 Available columns: {list(self.results.columns)}")
+                return
+
+            benchmark_returns = self.results[benchmark_return_col]
+
+            logger.info(f"✅ Found benchmark data in column: {benchmark_return_col}")
+            logger.info(f"📊 Strategy returns: {len(strategy_returns)} periods")
+            logger.info(f"📊 Benchmark returns: {len(benchmark_returns)} periods")
+
+            # Calculate benchmark metrics
+            benchmark_metrics = self._calculate_benchmark_metrics(
+                strategy_returns, benchmark_returns, portfolio_value
+            )
+
+            # Save comprehensive benchmark analysis
+            self._save_benchmark_metrics_to_csv(benchmark_metrics, results_dir)
+
+            # Save time series data
+            self._save_benchmark_timeseries_to_csv(
+                strategy_returns, benchmark_returns, results_dir
+            )
+
+            logger.info("✅ Benchmark analysis completed successfully")
+
+        except Exception as e:
+            logger.error(f"❌ Benchmark analysis failed: {str(e)}")
+            import traceback
+            logger.error("📋 Stack Trace:")
+            for line in traceback.format_exc().split('\n'):
+                if line.strip():
+                    logger.error(f"   {line}")
+
+    def _calculate_benchmark_metrics(self, strategy_returns, benchmark_returns, portfolio_value):
+        """
+        Calculate comprehensive benchmark metrics
+        """
+        import numpy as np
+        from scipy import stats
+
+        logger.info("🔢 Calculating benchmark metrics...")
+
+        # Align data (remove any NaN values)
+        aligned_data = pd.DataFrame({
+            'strategy': strategy_returns,
+            'benchmark': benchmark_returns
+        }).dropna()
+
+        strategy_aligned = aligned_data['strategy']
+        benchmark_aligned = aligned_data['benchmark']
+
+        if len(strategy_aligned) < 10:
+            logger.warning("⚠️  Insufficient data for reliable benchmark analysis")
+            return {}
+
+        # 1. Excess Returns (Strategy - Benchmark)
+        excess_returns = strategy_aligned - benchmark_aligned
+
+        # 2. Beta (sensitivity to benchmark movements)
+        if benchmark_aligned.std() > 0:
+            beta = np.cov(strategy_aligned, benchmark_aligned)[0, 1] / np.var(benchmark_aligned)
+        else:
+            beta = 0.0
+
+        # 3. Alpha (risk-adjusted excess return)
+        # Alpha = Strategy Return - (Risk-free rate + Beta * (Benchmark Return - Risk-free rate))
+        # Assuming risk-free rate = 0 for simplicity
+        mean_strategy_return = strategy_aligned.mean()
+        mean_benchmark_return = benchmark_aligned.mean()
+        alpha = mean_strategy_return - (beta * mean_benchmark_return)
+
+        # 4. Benchmark Volatility
+        benchmark_volatility = benchmark_aligned.std()
+
+        # 5. Strategy Volatility
+        strategy_volatility = strategy_aligned.std()
+
+        # 6. Correlation
+        correlation = strategy_aligned.corr(benchmark_aligned)
+
+        # 7. Information Ratio (excess return / tracking error)
+        tracking_error = excess_returns.std()
+        information_ratio = excess_returns.mean() / tracking_error if tracking_error > 0 else 0
+
+        # 8. Sharpe Ratios (assuming risk-free rate = 0)
+        strategy_sharpe = mean_strategy_return / strategy_volatility if strategy_volatility > 0 else 0
+        benchmark_sharpe = mean_benchmark_return / benchmark_volatility if benchmark_volatility > 0 else 0
+
+        # 9. Annualized metrics (assuming daily data, 252 trading days)
+        annualization_factor = np.sqrt(252)
+        annual_alpha = alpha * 252
+        annual_strategy_return = mean_strategy_return * 252
+        annual_benchmark_return = mean_benchmark_return * 252
+        annual_excess_return = excess_returns.mean() * 252
+        annual_strategy_vol = strategy_volatility * annualization_factor
+        annual_benchmark_vol = benchmark_volatility * annualization_factor
+        annual_tracking_error = tracking_error * annualization_factor
+
+        # 10. Downside metrics
+        downside_strategy = strategy_aligned[strategy_aligned < 0]
+        downside_benchmark = benchmark_aligned[benchmark_aligned < 0]
+        downside_deviation_strategy = downside_strategy.std() if len(downside_strategy) > 0 else 0
+        downside_deviation_benchmark = downside_benchmark.std() if len(downside_benchmark) > 0 else 0
+
+        # 11. Maximum Drawdown comparison
+        strategy_cumulative = (1 + strategy_aligned).cumprod()
+        benchmark_cumulative = (1 + benchmark_aligned).cumprod()
+
+        strategy_drawdown = (strategy_cumulative / strategy_cumulative.expanding().max() - 1).min()
+        benchmark_drawdown = (benchmark_cumulative / benchmark_cumulative.expanding().max() - 1).min()
+
+        # 12. Win rates
+        strategy_win_rate = (strategy_aligned > 0).mean()
+        benchmark_win_rate = (benchmark_aligned > 0).mean()
+        excess_win_rate = (excess_returns > 0).mean()
+
+        metrics = {
+            # Core benchmark metrics (as requested)
+            'Alpha (Daily)': alpha,
+            'Alpha (Annualized)': annual_alpha,
+            'Beta': beta,
+            'Benchmark Returns (Mean Daily)': mean_benchmark_return,
+            'Benchmark Returns (Annualized)': annual_benchmark_return,
+            'Excess Return (Mean Daily)': excess_returns.mean(),
+            'Excess Return (Annualized)': annual_excess_return,
+            'Benchmark Volatility (Daily)': benchmark_volatility,
+            'Benchmark Volatility (Annualized)': annual_benchmark_vol,
+
+            # Additional useful metrics
+            'Strategy Returns (Mean Daily)': mean_strategy_return,
+            'Strategy Returns (Annualized)': annual_strategy_return,
+            'Strategy Volatility (Daily)': strategy_volatility,
+            'Strategy Volatility (Annualized)': annual_strategy_vol,
+            'Correlation': correlation,
+            'Information Ratio': information_ratio,
+            'Tracking Error (Daily)': tracking_error,
+            'Tracking Error (Annualized)': annual_tracking_error,
+            'Strategy Sharpe Ratio': strategy_sharpe,
+            'Benchmark Sharpe Ratio': benchmark_sharpe,
+            'Strategy Max Drawdown': strategy_drawdown,
+            'Benchmark Max Drawdown': benchmark_drawdown,
+            'Strategy Win Rate': strategy_win_rate,
+            'Benchmark Win Rate': benchmark_win_rate,
+            'Excess Return Win Rate': excess_win_rate,
+            'Downside Deviation Strategy': downside_deviation_strategy,
+            'Downside Deviation Benchmark': downside_deviation_benchmark,
+            'Observations': len(strategy_aligned),
+            'Benchmark Symbol': self.benchmark_symbol
+        }
+
+        # Log key metrics
+        logger.info(f"   📊 Alpha (Annualized): {annual_alpha:.4f} ({annual_alpha*100:.2f}%)")
+        logger.info(f"   📊 Beta: {beta:.4f}")
+        logger.info(f"   📊 Information Ratio: {information_ratio:.4f}")
+        logger.info(f"   📊 Correlation: {correlation:.4f}")
+        logger.info(f"   📊 Tracking Error: {annual_tracking_error:.4f} ({annual_tracking_error*100:.2f}%)")
+
+        return metrics
+
+    def _save_benchmark_metrics_to_csv(self, metrics, results_dir):
+        """
+        Save benchmark metrics to CSV file
+        """
+        logger.info("💾 Saving benchmark metrics to CSV...")
+
+        try:
+            # Convert metrics to DataFrame
+            metrics_df = pd.DataFrame.from_dict(metrics, orient='index', columns=['Value'])
+            metrics_df.index.name = 'Metric'
+
+            # Save to CSV
+            metrics_path = os.path.join(results_dir, 'benchmark_metrics.csv')
+            metrics_df.to_csv(metrics_path)
+
+            logger.info(f"   ✅ Benchmark metrics saved: {metrics_path}")
+            logger.info(f"   📊 Metrics saved: {len(metrics)} metrics")
+
+        except Exception as e:
+            logger.error(f"   ❌ Failed to save benchmark metrics: {str(e)}")
+
+    def _save_benchmark_timeseries_to_csv(self, strategy_returns, benchmark_returns, results_dir):
+        """
+        Save time series comparison data to CSV
+        """
+        logger.info("💾 Saving benchmark time series data...")
+
+        try:
+            # Create comprehensive time series DataFrame
+            timeseries_data = pd.DataFrame({
+                'Date': strategy_returns.index,
+                'Strategy_Returns': strategy_returns.values,
+                'Benchmark_Returns': benchmark_returns.values,
+                'Excess_Returns': (strategy_returns - benchmark_returns).values,
+                'Strategy_Cumulative': (1 + strategy_returns).cumprod().values,
+                'Benchmark_Cumulative': (1 + benchmark_returns).cumprod().values
+            })
+
+            # Calculate rolling metrics (30-day window)
+            window = min(30, len(strategy_returns) // 4)  # Adaptive window size
+            if window >= 5:
+                timeseries_data['Strategy_Rolling_Vol'] = strategy_returns.rolling(window).std()
+                timeseries_data['Benchmark_Rolling_Vol'] = benchmark_returns.rolling(window).std()
+                timeseries_data['Rolling_Beta'] = strategy_returns.rolling(window).cov(benchmark_returns) / benchmark_returns.rolling(window).var()
+                timeseries_data['Rolling_Correlation'] = strategy_returns.rolling(window).corr(benchmark_returns)
+
+            # Set date as index
+            timeseries_data.set_index('Date', inplace=True)
+
+            # Save to CSV
+            timeseries_path = os.path.join(results_dir, 'benchmark_timeseries.csv')
+            timeseries_data.to_csv(timeseries_path)
+
+            logger.info(f"   ✅ Time series data saved: {timeseries_path}")
+            logger.info(f"   📊 Data points: {len(timeseries_data)} periods")
+            logger.info(f"   📊 Columns: {list(timeseries_data.columns)}")
+
+        except Exception as e:
+            logger.error(f"   ❌ Failed to save time series data: {str(e)}")
+
 if __name__ == '__main__':
     # This is an example of how to use the runner
     # You would import your strategy and run it here
-    
+
     # from my_strategy import MyStrategy
     # strategy = MyStrategy()
-    
+
     # runner = EnhancedZiplineRunner(strategy)
     # runner.run()
     # runner.analyze()

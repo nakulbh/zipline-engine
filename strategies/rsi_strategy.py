@@ -13,6 +13,12 @@ for mean reversion trading. The strategy:
 Author: NSE Backtesting Engine
 """
 
+import sys
+import os
+
+# Add parent directory to Python path for imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from engine.enhanced_base_strategy import BaseStrategy
 from zipline.api import symbol, record
 import pandas as pd
@@ -54,18 +60,14 @@ class RSIMeanReversionStrategy(BaseStrategy):
         Select NSE stocks for RSI mean reversion trading.
         Focus on liquid, large-cap stocks that tend to mean revert.
         """
-        # NSE large-cap stocks suitable for mean reversion
+        # Available NSE stocks in your bundle suitable for mean reversion
         nse_symbols = [
-            'SBIN',      # State Bank of India
-            'RELIANCE',  # Reliance Industries
-            'TCS',       # Tata Consultancy Services
-            'INFY',      # Infosys
-            'HDFCBANK',  # HDFC Bank
-            'ICICIBANK', # ICICI Bank
-            'ITC',       # ITC Limited
-            'HINDUNILVR',# Hindustan Unilever
-            'BHARTIARTL',# Bharti Airtel
-            'KOTAKBANK'  # Kotak Mahindra Bank
+            'SBIN',       # State Bank of India
+            'RELIANCE',   # Reliance Industries
+            'HDFCBANK',   # HDFC Bank
+            'BAJFINANCE', # Bajaj Finance
+            'HDFC',       # HDFC Ltd
+            'HINDALCO'    # Hindalco Industries
         ]
         
         # Convert to Zipline assets
