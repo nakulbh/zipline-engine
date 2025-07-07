@@ -1,0 +1,14 @@
+BACKTEST PERFORMANCE SUMMARY
+========================================
+
+Total Return: 0.52%
+Annualized Volatility: 4.01%
+Sharpe Ratio: 0.08
+Max Drawdown: -6.27%
+Win Rate: 49.9%
+Average Win: 0.0018
+Average Loss: -0.0018
+Profit Factor: 1.01
+Start Value: $100,140.60
+End Value: $100,657.19
+Total Trading Days: 740

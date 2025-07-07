@@ -1,0 +1,741 @@
+,order_str,order_id
+0,"[{'id': 'f64ab95eee804339a54c10e1aa89f414', 'dt': Timestamp('2018-01-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-01-01 04:15:00+0000', tz='UTC'), 'amount': -32, 'filled': -32, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",0
+1,[],1
+2,[],2
+3,[],3
+4,[],4
+5,[],5
+6,[],6
+7,[],7
+8,"[{'id': 'b2d02fe9511c42b3af2c75d078ea1b89', 'dt': Timestamp('2018-01-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-01-11 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",8
+9,[],9
+10,[],10
+11,[],11
+12,[],12
+13,"[{'id': 'c41096680677423aacf8f0c8e65e00fe', 'dt': Timestamp('2018-01-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-01-18 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",13
+14,[],14
+15,[],15
+16,[],16
+17,[],17
+18,"[{'id': '8c3c889ef03e4f9a958f0109df46c05f', 'dt': Timestamp('2018-01-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-01-25 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",18
+19,[],19
+20,[],20
+21,[],21
+22,[],22
+23,"[{'id': 'dc68f8d02d89414395775f0650525b12', 'dt': Timestamp('2018-02-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-02 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",23
+24,"[{'id': '8131d0a4e13e416f872449dd37bc43c2', 'dt': Timestamp('2018-02-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-05 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",24
+25,"[{'id': '73a9ad107bb44d02a114825c66183425', 'dt': Timestamp('2018-02-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-06 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",25
+26,[],26
+27,[],27
+28,"[{'id': '059ef5bd64d14ab2981a4fc312b243b5', 'dt': Timestamp('2018-02-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",28
+29,[],29
+30,"[{'id': 'a614f9195b1643b081b2b2d58d13d90a', 'dt': Timestamp('2018-02-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-14 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",30
+31,"[{'id': '76740f598f3c45eda33692f2c5794b48', 'dt': Timestamp('2018-02-15 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-15 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",31
+32,[],32
+33,"[{'id': '584281e3e654470c9417134499d740ab', 'dt': Timestamp('2018-02-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-19 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",33
+34,[],34
+35,[],35
+36,[],36
+37,[],37
+38,[],38
+39,[],39
+40,"[{'id': '72f960a9dfc64532b765816c4a5e438a', 'dt': Timestamp('2018-02-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-02-28 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",40
+41,[],41
+42,"[{'id': 'cbc5481d49814454ad47a40d1c7f1a64', 'dt': Timestamp('2018-03-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-05 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",42
+43,[],43
+44,"[{'id': '63e1ba7d6c9f49b48531e8afb7a9bcb4', 'dt': Timestamp('2018-03-07 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-07 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",44
+45,"[{'id': 'c0fa3eba4fa7498b91688050f5da83ce', 'dt': Timestamp('2018-03-08 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-08 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",45
+46,[],46
+47,[],47
+48,"[{'id': '7f85e45ebb68462989cef4c48cf84435', 'dt': Timestamp('2018-03-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-13 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",48
+49,[],49
+50,[],50
+51,[],51
+52,[],52
+53,"[{'id': '031ff54c86e54346bd316f0ef126e206', 'dt': Timestamp('2018-03-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-20 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",53
+54,[],54
+55,[],55
+56,"[{'id': 'a221d170ec044c868c846b6ce07bd7fd', 'dt': Timestamp('2018-03-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-23 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",56
+57,[],57
+58,"[{'id': 'fa3e0248714548908de95483eff08b5b', 'dt': Timestamp('2018-03-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-03-27 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",58
+59,[],59
+60,[],60
+61,[],61
+62,[],62
+63,[],63
+64,"[{'id': '34ac413c336646edb9918bc5c083beb3', 'dt': Timestamp('2018-04-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-06 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",64
+65,"[{'id': 'f43ca3cdfdf349b5b8bfce26d821cb99', 'dt': Timestamp('2018-04-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",65
+66,[],66
+67,[],67
+68,[],68
+69,[],69
+70,"[{'id': 'dcde85630e1b416eba0086c390159763', 'dt': Timestamp('2018-04-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-16 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",70
+71,[],71
+72,"[{'id': '0446870ae5994a6abc2d2deb0eb63254', 'dt': Timestamp('2018-04-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-18 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",72
+73,[],73
+74,"[{'id': '7cd3b81079dd40bd8628b0797f34a951', 'dt': Timestamp('2018-04-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-20 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",74
+75,[],75
+76,[],76
+77,[],77
+78,"[{'id': '058e947ba00c4338a1737f0bae31bd0c', 'dt': Timestamp('2018-04-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-26 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",78
+79,[],79
+80,"[{'id': '8e3a621de2814c718bcf954ce17ba411', 'dt': Timestamp('2018-04-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-04-30 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",80
+81,[],81
+82,[],82
+83,[],83
+84,[],84
+85,[],85
+86,[],86
+87,"[{'id': '7b59edccc0bf489bba3068ffd4d5d1b1', 'dt': Timestamp('2018-05-10 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-05-10 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",87
+88,[],88
+89,[],89
+90,"[{'id': '750f183ec14a49a397dc1b40845571eb', 'dt': Timestamp('2018-05-15 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-05-15 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",90
+91,"[{'id': '5635d21a31eb4fcd904cab4b53a28b52', 'dt': Timestamp('2018-05-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-05-16 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",91
+92,[],92
+93,[],93
+94,[],94
+95,[],95
+96,"[{'id': 'caa3aa1dc09a42838b0b1f2234261685', 'dt': Timestamp('2018-05-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-05-23 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",96
+97,[],97
+98,[],98
+99,"[{'id': '3cc6153c98d44a659df1dc4457d12dfe', 'dt': Timestamp('2018-05-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-05-28 04:15:00+0000', tz='UTC'), 'amount': 76, 'filled': 76, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",99
+100,[],100
+101,"[{'id': '093a98c69abc42eb8b3f5c24f8475af4', 'dt': Timestamp('2018-05-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-05-30 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",101
+102,[],102
+103,[],103
+104,[],104
+105,[],105
+106,[],106
+107,[],107
+108,[],108
+109,"[{'id': '4536f29650fd4de19d0416bf0c266b80', 'dt': Timestamp('2018-06-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-06-11 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",109
+110,[],110
+111,"[{'id': '444d1df501a7471f8a611905bf559f22', 'dt': Timestamp('2018-06-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-06-13 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",111
+112,[],112
+113,[],113
+114,[],114
+115,[],115
+116,"[{'id': '967643baeb024e1b978ae0daec1c69b4', 'dt': Timestamp('2018-06-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-06-20 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",116
+117,[],117
+118,[],118
+119,[],119
+120,[],120
+121,"[{'id': 'cddf685aacd645a7b322e2039ab60036', 'dt': Timestamp('2018-06-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-06-27 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",121
+122,"[{'id': '33c255236b784f928341b52e86f05fbe', 'dt': Timestamp('2018-06-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-06-28 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",122
+123,[],123
+124,[],124
+125,[],125
+126,[],126
+127,[],127
+128,[],128
+129,[],129
+130,[],130
+131,[],131
+132,[],132
+133,[],133
+134,[],134
+135,"[{'id': '901161186722432c9cb14a94fc20006d', 'dt': Timestamp('2018-07-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-07-17 04:15:00+0000', tz='UTC'), 'amount': -78, 'filled': -78, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",135
+136,[],136
+137,[],137
+138,[],138
+139,[],139
+140,"[{'id': '4aed5b0879b44001b2a042d9ba2baeff', 'dt': Timestamp('2018-07-24 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-07-24 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",140
+141,[],141
+142,"[{'id': 'bfcc0f6e15584790b6b1a14982369a29', 'dt': Timestamp('2018-07-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-07-26 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",142
+143,"[{'id': '21c0e08fb558431cac1d98d2174e80e6', 'dt': Timestamp('2018-07-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-07-27 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",143
+144,"[{'id': '0d35d77698524dc4add948f6a5c70851', 'dt': Timestamp('2018-07-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-07-30 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",144
+145,[],145
+146,[],146
+147,"[{'id': 'ec69b3586c5944e6a8ae9d21c4fbabbc', 'dt': Timestamp('2018-08-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-08-02 04:15:00+0000', tz='UTC'), 'amount': 67, 'filled': 67, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",147
+148,[],148
+149,[],149
+150,[],150
+151,[],151
+152,"[{'id': '8672aa8fe2054d18aa748fc6c56a7671', 'dt': Timestamp('2018-08-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-08-09 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",152
+153,[],153
+154,"[{'id': 'dad5ff7aced941838686b1ace898bd23', 'dt': Timestamp('2018-08-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-08-13 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",154
+155,[],155
+156,[],156
+157,[],157
+158,[],158
+159,[],159
+160,[],160
+161,[],161
+162,[],162
+163,[],163
+164,[],164
+165,[],165
+166,[],166
+167,[],167
+168,[],168
+169,[],169
+170,[],170
+171,[],171
+172,[],172
+173,"[{'id': 'f782440bb8244cc5a633c13c7eab0e03', 'dt': Timestamp('2018-09-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-09-11 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",173
+174,[],174
+175,[],175
+176,[],176
+177,"[{'id': '5e750df49a4140158deec0a47d47d7c1', 'dt': Timestamp('2018-09-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-09-18 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",177
+178,"[{'id': '551b5ad32d2c46539bd94c78c43ffcbe', 'dt': Timestamp('2018-09-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-09-19 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",178
+179,[],179
+180,[],180
+181,"[{'id': 'd6a87b5aa5554b88848e768b4d97108d', 'dt': Timestamp('2018-09-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-09-25 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",181
+182,[],182
+183,"[{'id': 'fb346a8a17b44f78bf920a65d7f6d5ff', 'dt': Timestamp('2018-09-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-09-27 04:15:00+0000', tz='UTC'), 'amount': -73, 'filled': -73, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",183
+184,"[{'id': '0754fd61643b4f80912698dc29d57826', 'dt': Timestamp('2018-09-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-09-28 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",184
+185,[],185
+186,[],186
+187,[],187
+188,[],188
+189,[],189
+190,[],190
+191,[],191
+192,[],192
+193,[],193
+194,[],194
+195,[],195
+196,"[{'id': 'fcb94c63b621449aa597209f54aa6e2f', 'dt': Timestamp('2018-10-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-10-17 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",196
+197,"[{'id': 'ee39f666bf8a4defa6766675d362e991', 'dt': Timestamp('2018-10-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-10-19 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",197
+198,[],198
+199,"[{'id': '1e158b2de4c943eebe7e47439f8fb35f', 'dt': Timestamp('2018-10-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-10-23 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",199
+200,[],200
+201,[],201
+202,"[{'id': '27bdca29fd0a479fa6f7a757179bc886', 'dt': Timestamp('2018-10-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-10-26 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",202
+203,[],203
+204,"[{'id': 'a0d4d21dfa51443096702608981fd2d6', 'dt': Timestamp('2018-10-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-10-30 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",204
+205,[],205
+206,"[{'id': 'e1fabc4395f34fc4ab278fe9faf644c8', 'dt': Timestamp('2018-11-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-11-01 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",206
+207,"[{'id': '3a12b2c6852749daae36f183b6ac7a65', 'dt': Timestamp('2018-11-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-11-02 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",207
+208,[],208
+209,[],209
+210,[],210
+211,[],211
+212,"[{'id': '6de17ebc9d0a44899e6f5756caa15f59', 'dt': Timestamp('2018-11-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-11-13 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",212
+213,[],213
+214,[],214
+215,[],215
+216,"[{'id': '75088c75ef0e4d1a919ea7c0f4ec7517', 'dt': Timestamp('2018-11-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-11-19 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",216
+217,"[{'id': '97dcf17735f8451aadd25d983cd903b3', 'dt': Timestamp('2018-11-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-11-20 04:15:00+0000', tz='UTC'), 'amount': 68, 'filled': 68, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",217
+218,[],218
+219,[],219
+220,[],220
+221,[],221
+222,[],222
+223,[],223
+224,[],224
+225,[],225
+226,[],226
+227,[],227
+228,[],228
+229,"[{'id': 'bdd1d3107af0456e9f2de140fc8f4913', 'dt': Timestamp('2018-12-07 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-12-07 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",229
+230,[],230
+231,[],231
+232,[],232
+233,"[{'id': 'b0ae878167464e74953cf343acc3372a', 'dt': Timestamp('2018-12-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-12-13 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",233
+234,[],234
+235,[],235
+236,[],236
+237,"[{'id': '79cd599ba3ac4fe1a0dc055cca19e0ac', 'dt': Timestamp('2018-12-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2018-12-19 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",237
+238,[],238
+239,[],239
+240,[],240
+241,[],241
+242,[],242
+243,[],243
+244,[],244
+245,[],245
+246,[],246
+247,[],247
+248,[],248
+249,[],249
+250,[],250
+251,[],251
+252,[],252
+253,[],253
+254,[],254
+255,[],255
+256,[],256
+257,[],257
+258,[],258
+259,[],259
+260,[],260
+261,[],261
+262,[],262
+263,[],263
+264,"[{'id': '7c6bc2c781ee4e3ab97f7ae6da515148', 'dt': Timestamp('2019-01-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-01-28 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",264
+265,[],265
+266,[],266
+267,[],267
+268,[],268
+269,[],269
+270,[],270
+271,[],271
+272,[],272
+273,"[{'id': 'f85dc740a5cc4ecb92478dbd10d7c481', 'dt': Timestamp('2019-02-08 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-02-08 04:15:00+0000', tz='UTC'), 'amount': -68, 'filled': -68, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",273
+274,[],274
+275,[],275
+276,"[{'id': '381e598577344f1dad1563084c6e4f7b', 'dt': Timestamp('2019-02-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-02-13 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",276
+277,"[{'id': 'd2483fe836c84a44b4964cda89085698', 'dt': Timestamp('2019-02-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-02-14 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",277
+278,[],278
+279,"[{'id': 'cbd98a389efe4cf5a968d099af166d67', 'dt': Timestamp('2019-02-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-02-18 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",279
+280,[],280
+281,[],281
+282,[],282
+283,[],283
+284,[],284
+285,[],285
+286,[],286
+287,[],287
+288,"[{'id': 'e98370ed2930434b87e8b000bb02ac82', 'dt': Timestamp('2019-03-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-01 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",288
+289,[],289
+290,"[{'id': 'c18d2dfc687440d1973eb9fc932fbfd4', 'dt': Timestamp('2019-03-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-06 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",290
+291,[],291
+292,[],292
+293,"[{'id': 'fda9d5e38b0a46ab8206238c0d248a8d', 'dt': Timestamp('2019-03-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-11 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",293
+294,[],294
+295,[],295
+296,"[{'id': '8224360fb5924f6f966eec462e3a82f5', 'dt': Timestamp('2019-03-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-14 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",296
+297,[],297
+298,[],298
+299,"[{'id': '51a3d69dd66d4f998a9e9a92d70c5786', 'dt': Timestamp('2019-03-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-19 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",299
+300,[],300
+301,[],301
+302,[],302
+303,"[{'id': 'e81ef5d3c21c4d1a9109b31997c1d025', 'dt': Timestamp('2019-03-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-26 04:15:00+0000', tz='UTC'), 'amount': 64, 'filled': 64, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",303
+304,[],304
+305,[],305
+306,"[{'id': 'feacd8c149c64285862772d47b529007', 'dt': Timestamp('2019-03-29 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-03-29 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",306
+307,[],307
+308,"[{'id': '6b4675e7f6144ef295d2128af7a23ead', 'dt': Timestamp('2019-04-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-04-02 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",308
+309,[],309
+310,[],310
+311,[],311
+312,[],312
+313,"[{'id': '6ca7422973754c0caca53a0454ddd77f', 'dt': Timestamp('2019-04-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-04-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",313
+314,[],314
+315,[],315
+316,[],316
+317,[],317
+318,[],318
+319,[],319
+320,[],320
+321,[],321
+322,[],322
+323,[],323
+324,[],324
+325,[],325
+326,[],326
+327,[],327
+328,[],328
+329,[],329
+330,[],330
+331,"[{'id': '8171b8f6fa45498ebbad1adf51e75299', 'dt': Timestamp('2019-05-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-05-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",331
+332,[],332
+333,[],333
+334,[],334
+335,"[{'id': '4a8cf41e73cb4842838c877d7bf6a624', 'dt': Timestamp('2019-05-15 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-05-15 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",335
+336,[],336
+337,[],337
+338,"[{'id': 'dd31d1a92dab4953b1eb51cb92a431ed', 'dt': Timestamp('2019-05-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-05-20 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",338
+339,"[{'id': '0b61538d77884134977e95b520153fe0', 'dt': Timestamp('2019-05-21 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-05-21 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",339
+340,[],340
+341,"[{'id': '4da514f6828a4e5dbb7932e5dfa66c42', 'dt': Timestamp('2019-05-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-05-23 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",341
+342,[],342
+343,[],343
+344,[],344
+345,[],345
+346,[],346
+347,[],347
+348,[],348
+349,[],349
+350,[],350
+351,[],351
+352,[],352
+353,[],353
+354,[],354
+355,[],355
+356,[],356
+357,[],357
+358,"[{'id': 'a6011ebdc02b4a31b3e084245155ebf8', 'dt': Timestamp('2019-06-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-06-18 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",358
+359,[],359
+360,[],360
+361,[],361
+362,[],362
+363,"[{'id': '6ba0e8052ad340748e3dfb7cc85b0951', 'dt': Timestamp('2019-06-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-06-25 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",363
+364,[],364
+365,[],365
+366,[],366
+367,[],367
+368,[],368
+369,[],369
+370,"[{'id': 'd32744efb6304cef9c480f5e52c0ecc1', 'dt': Timestamp('2019-07-04 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-07-04 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",370
+371,[],371
+372,[],372
+373,[],373
+374,[],374
+375,[],375
+376,[],376
+377,[],377
+378,[],378
+379,[],379
+380,[],380
+381,[],381
+382,[],382
+383,"[{'id': '81c69d9f278f451984c0e0b02ef716c1', 'dt': Timestamp('2019-07-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-07-23 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",383
+384,[],384
+385,[],385
+386,[],386
+387,[],387
+388,[],388
+389,"[{'id': '6b3e512b3afc4d018580888e536dd873', 'dt': Timestamp('2019-07-31 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-07-31 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",389
+390,[],390
+391,"[{'id': '358eba48c8b84a11a5db116cd47e01e2', 'dt': Timestamp('2019-08-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-02 04:15:00+0000', tz='UTC'), 'amount': -59, 'filled': -59, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",391
+392,"[{'id': 'cfee0d1f74b84af79fbcabaf05935055', 'dt': Timestamp('2019-08-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-05 04:15:00+0000', tz='UTC'), 'amount': -3, 'filled': -3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",392
+393,[],393
+394,[],394
+395,[],395
+396,[],396
+397,[],397
+398,"[{'id': '1b6f4b14b5c247ee8b94771263d2f2a7', 'dt': Timestamp('2019-08-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-14 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",398
+399,[],399
+400,[],400
+401,[],401
+402,[],402
+403,"[{'id': '115482db7f75490fb52c351c48628e81', 'dt': Timestamp('2019-08-22 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-22 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",403
+404,"[{'id': 'f7585ac6d86d4398b81f2febd4216bce', 'dt': Timestamp('2019-08-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-23 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",404
+405,"[{'id': 'd78916c53bba4b209440809403af262a', 'dt': Timestamp('2019-08-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-26 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",405
+406,"[{'id': 'fce1cd6ced8447f9b95e735629bb4796', 'dt': Timestamp('2019-08-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-08-27 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",406
+407,[],407
+408,[],408
+409,[],409
+410,"[{'id': '063f56ebde624b47b4532ba963df442f', 'dt': Timestamp('2019-09-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-03 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",410
+411,[],411
+412,[],412
+413,[],413
+414,[],414
+415,"[{'id': 'd5a4e63eda4d42348a947d6b3b5232f9', 'dt': Timestamp('2019-09-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-11 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",415
+416,[],416
+417,[],417
+418,"[{'id': '9f3a95cb830b4143b7aaf256b15c3a7b', 'dt': Timestamp('2019-09-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-16 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",418
+419,[],419
+420,"[{'id': 'd6cc482464074845adea89e7406a1c36', 'dt': Timestamp('2019-09-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-18 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",420
+421,[],421
+422,"[{'id': 'b46f3fde4bea4e7d999ab25e4c185d07', 'dt': Timestamp('2019-09-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-20 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",422
+423,"[{'id': '09a557a3966b43cc81e52e297c060e64', 'dt': Timestamp('2019-09-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-23 04:15:00+0000', tz='UTC'), 'amount': 4, 'filled': 4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",423
+424,[],424
+425,"[{'id': '39bc9c9e1e514463aea70c0decb467b8', 'dt': Timestamp('2019-09-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-25 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",425
+426,"[{'id': '8bd9bac3f3e54d6492ac8e50813b8448', 'dt': Timestamp('2019-09-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-09-26 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",426
+427,[],427
+428,[],428
+429,"[{'id': 'ffcc7017ddeb4273bf79a0d9ff3dea87', 'dt': Timestamp('2019-10-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-01 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",429
+430,"[{'id': '5e89f9934c284e01b4751c47d8802e6a', 'dt': Timestamp('2019-10-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-03 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",430
+431,[],431
+432,"[{'id': '80068f835c6944ccb9eebbb9dec29c17', 'dt': Timestamp('2019-10-07 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-07 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",432
+433,"[{'id': 'd642465044db4a49a3b7a68212171883', 'dt': Timestamp('2019-10-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-09 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",433
+434,"[{'id': '3f7adc1b7e5142ef8b4411c59160d149', 'dt': Timestamp('2019-10-10 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-10 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",434
+435,[],435
+436,[],436
+437,[],437
+438,"[{'id': '7361c0226e184821a786f4eafc546b3b', 'dt': Timestamp('2019-10-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-16 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",438
+439,[],439
+440,"[{'id': 'e1a18f2f653b4d6b8b22e51341a6ad2e', 'dt': Timestamp('2019-10-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-18 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",440
+441,[],441
+442,[],442
+443,"[{'id': '277295e8b23e4d438b7ee14e0e89ab0d', 'dt': Timestamp('2019-10-24 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-24 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",443
+444,[],444
+445,[],445
+446,"[{'id': '062e430cc02d4ddd88eed71900a2c8e8', 'dt': Timestamp('2019-10-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-30 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",446
+447,"[{'id': '9a6294470ec2478287874b3470985cbd', 'dt': Timestamp('2019-10-31 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-10-31 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",447
+448,"[{'id': 'fb2d62ecd4d7457c82d2e939daa1cdb9', 'dt': Timestamp('2019-11-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-01 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",448
+449,"[{'id': '97d7cb3905aa49fb9d93d68136e230d9', 'dt': Timestamp('2019-11-04 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-04 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",449
+450,[],450
+451,[],451
+452,"[{'id': '34dd71a25c0a43cd8931a9c9b1a6524e', 'dt': Timestamp('2019-11-07 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-07 04:15:00+0000', tz='UTC'), 'amount': 61, 'filled': 61, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",452
+453,[],453
+454,[],454
+455,[],455
+456,"[{'id': '9bd8850456ac4592b9e034ccba83d8e4', 'dt': Timestamp('2019-11-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-14 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",456
+457,"[{'id': 'cda833d1ac3443129b3640bb31659180', 'dt': Timestamp('2019-11-15 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-15 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",457
+458,"[{'id': '6e11ad9582ef41e485963b806dfb4063', 'dt': Timestamp('2019-11-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-18 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",458
+459,[],459
+460,[],460
+461,[],461
+462,[],462
+463,[],463
+464,"[{'id': 'b958d9b270e64448ba9ef250f51f5260', 'dt': Timestamp('2019-11-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-11-26 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",464
+465,[],465
+466,[],466
+467,[],467
+468,[],468
+469,[],469
+470,[],470
+471,[],471
+472,[],472
+473,"[{'id': '21d304700eeb46e283347e41937492bd', 'dt': Timestamp('2019-12-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-12-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",473
+474,[],474
+475,[],475
+476,[],476
+477,[],477
+478,[],478
+479,[],479
+480,[],480
+481,[],481
+482,[],482
+483,"[{'id': 'f5ad9b761ee442829d3d41ac10c5b7c9', 'dt': Timestamp('2019-12-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2019-12-23 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",483
+484,[],484
+485,[],485
+486,[],486
+487,[],487
+488,[],488
+489,[],489
+490,[],490
+491,[],491
+492,"[{'id': 'c7b30e1b161348c1b7c2152b79598737', 'dt': Timestamp('2020-01-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-01-06 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",492
+493,[],493
+494,[],494
+495,[],495
+496,[],496
+497,[],497
+498,[],498
+499,[],499
+500,[],500
+501,[],501
+502,[],502
+503,"[{'id': '921d51ad1adf4115bd8e73bd425cd601', 'dt': Timestamp('2020-01-21 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-01-21 04:15:00+0000', tz='UTC'), 'amount': -60, 'filled': -60, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",503
+504,[],504
+505,[],505
+506,[],506
+507,[],507
+508,[],508
+509,[],509
+510,[],510
+511,"[{'id': '5f5ec7d2d8b442fab3d49f4c62e38ce8', 'dt': Timestamp('2020-01-31 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-01-31 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",511
+512,"[{'id': 'abfd60145bb64471a6df32e7fc1f42a2', 'dt': Timestamp('2020-02-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-02-03 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",512
+513,[],513
+514,[],514
+515,"[{'id': '12548738c0f949f0b1d57b48735105be', 'dt': Timestamp('2020-02-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-02-06 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",515
+516,[],516
+517,[],517
+518,"[{'id': '775551016d5f43cc86eed31562173473', 'dt': Timestamp('2020-02-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-02-11 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",518
+519,[],519
+520,[],520
+521,[],521
+522,[],522
+523,[],523
+524,[],524
+525,[],525
+526,[],526
+527,[],527
+528,[],528
+529,[],529
+530,"[{'id': 'a9850cff16b14b2d8c9503c5322eb768', 'dt': Timestamp('2020-02-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-02-28 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",530
+531,[],531
+532,"[{'id': 'b2d049a95d86417eb29b7b82c4f816e8', 'dt': Timestamp('2020-03-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-03 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",532
+533,[],533
+534,[],534
+535,"[{'id': '74beefd4787b40e1a25f099968ffe020', 'dt': Timestamp('2020-03-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-06 04:15:00+0000', tz='UTC'), 'amount': -3, 'filled': -3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",535
+536,"[{'id': '8fd55e8afaab43b5aa62d20b33841347', 'dt': Timestamp('2020-03-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-09 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",536
+537,[],537
+538,"[{'id': '51af70676aed418db8e3076293ad528b', 'dt': Timestamp('2020-03-12 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-12 04:15:00+0000', tz='UTC'), 'amount': -5, 'filled': -5, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",538
+539,"[{'id': '60ba6e1275984d51bef2872cbc0c74fe', 'dt': Timestamp('2020-03-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-13 04:15:00+0000', tz='UTC'), 'amount': -11, 'filled': -11, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",539
+540,"[{'id': 'c5510f449a554af4989fe9397c645c94', 'dt': Timestamp('2020-03-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-16 04:15:00+0000', tz='UTC'), 'amount': 10, 'filled': 10, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",540
+541,[],541
+542,"[{'id': '0af7c1f7459a4707a8b72b5f6d7a37b1', 'dt': Timestamp('2020-03-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-18 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",542
+543,"[{'id': 'e2726080b1404f7299c6c2307c76db7c', 'dt': Timestamp('2020-03-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-19 04:15:00+0000', tz='UTC'), 'amount': -3, 'filled': -3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",543
+544,[],544
+545,"[{'id': '15558c698487463786c0c9e78b162435', 'dt': Timestamp('2020-03-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-23 04:15:00+0000', tz='UTC'), 'amount': -4, 'filled': -4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",545
+546,"[{'id': 'a284a8072e054a1d9e77cd7e864f34f0', 'dt': Timestamp('2020-03-24 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-24 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",546
+547,"[{'id': '1abc9eb225c94a2a94e766cc9aec1e4a', 'dt': Timestamp('2020-03-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-25 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",547
+548,"[{'id': 'aa4fe0d8e9c842d4b0e35e695ba1af78', 'dt': Timestamp('2020-03-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-26 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",548
+549,"[{'id': '80dc1c7a2cb048d08a4e591071f582d7', 'dt': Timestamp('2020-03-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-27 04:15:00+0000', tz='UTC'), 'amount': 6, 'filled': 6, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",549
+550,"[{'id': '4a5e533b53e3436f9c815f2ed686a3a5', 'dt': Timestamp('2020-03-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-30 04:15:00+0000', tz='UTC'), 'amount': -4, 'filled': -4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",550
+551,"[{'id': '59a5db8f92ae45bebd5e05fdbc50aaf7', 'dt': Timestamp('2020-03-31 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-03-31 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",551
+552,[],552
+553,"[{'id': '484a34c02f3b46e5a2f983e26065d9ec', 'dt': Timestamp('2020-04-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-03 04:15:00+0000', tz='UTC'), 'amount': -3, 'filled': -3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",553
+554,[],554
+555,"[{'id': '5d33069467934ce89fe5e22ace5d0dc7', 'dt': Timestamp('2020-04-08 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-08 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",555
+556,"[{'id': '2d6d58f5a8d247cb9e4f0ff0f03cf953', 'dt': Timestamp('2020-04-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",556
+557,[],557
+558,[],558
+559,"[{'id': 'e75c312594064925ac4ab000f4d8ae8b', 'dt': Timestamp('2020-04-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-16 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",559
+560,"[{'id': '4cc2d26e247141b4a6a5b84fbf7a404e', 'dt': Timestamp('2020-04-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-17 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",560
+561,[],561
+562,"[{'id': '9b8562c128c74ebd833017712a9947df', 'dt': Timestamp('2020-04-21 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-21 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",562
+563,"[{'id': '21a55806199b444f99167e2b05a34208', 'dt': Timestamp('2020-04-22 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-22 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",563
+564,"[{'id': 'efbb24ea59294d3f97ecc900c17ca2be', 'dt': Timestamp('2020-04-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-23 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",564
+565,"[{'id': '696c4ed1e4794ce98cf23f4780e04601', 'dt': Timestamp('2020-04-24 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-24 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",565
+566,[],566
+567,[],567
+568,[],568
+569,"[{'id': 'ef6036fcd24e49dea0ddd46c020e9910', 'dt': Timestamp('2020-04-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-04-30 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",569
+570,"[{'id': 'c41e04dcef53443bb85283d4c476a3f3', 'dt': Timestamp('2020-05-04 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-04 04:15:00+0000', tz='UTC'), 'amount': -3, 'filled': -3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",570
+571,"[{'id': '5e279ce47bc04c8489b772af869ea8f3', 'dt': Timestamp('2020-05-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-05 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",571
+572,"[{'id': 'f92edc39a8014539892e797438b79f81', 'dt': Timestamp('2020-05-06 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-06 04:15:00+0000', tz='UTC'), 'amount': -4, 'filled': -4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",572
+573,[],573
+574,"[{'id': '49b675d197bd443eb52cc257ea0c8e1a', 'dt': Timestamp('2020-05-08 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-08 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",574
+575,"[{'id': 'a518926af8f44fd5b7b7428cd66a8456', 'dt': Timestamp('2020-05-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-11 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",575
+576,"[{'id': '23078e7840364f26927b60407d444dcb', 'dt': Timestamp('2020-05-12 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-12 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",576
+577,"[{'id': 'da5fa20eb62b4ebfb4a2dba7167255bc', 'dt': Timestamp('2020-05-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-13 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",577
+578,[],578
+579,[],579
+580,"[{'id': '367bc5636bd645c0b3c5aabe80bb0c38', 'dt': Timestamp('2020-05-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-18 04:15:00+0000', tz='UTC'), 'amount': -4, 'filled': -4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",580
+581,"[{'id': 'ce60345dfe4946c889467f32dc0e0858', 'dt': Timestamp('2020-05-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-19 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",581
+582,"[{'id': 'bdc4f3c820d5453d86b872c9a2c56dfc', 'dt': Timestamp('2020-05-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-20 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",582
+583,[],583
+584,[],584
+585,[],585
+586,"[{'id': '9839115ec9a04aae9b984346a1c06a0e', 'dt': Timestamp('2020-05-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-27 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",586
+587,"[{'id': 'd4891f7919094b16b9ba8db390f0ff16', 'dt': Timestamp('2020-05-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-28 04:15:00+0000', tz='UTC'), 'amount': 4, 'filled': 4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",587
+588,"[{'id': '0d76e0a813564882911d925712ad13bd', 'dt': Timestamp('2020-05-29 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-05-29 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",588
+589,"[{'id': 'bb32bbd8896a49cab179417fcc8954c5', 'dt': Timestamp('2020-06-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-01 04:15:00+0000', tz='UTC'), 'amount': 4, 'filled': 4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",589
+590,"[{'id': '70f6e24270394068aeb7f17489332fe7', 'dt': Timestamp('2020-06-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-02 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",590
+591,"[{'id': 'a4e8878149da4917bfcce4369d7372fe', 'dt': Timestamp('2020-06-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-03 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",591
+592,[],592
+593,"[{'id': '3e11235223644968a6edadb28067c954', 'dt': Timestamp('2020-06-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-05 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",593
+594,"[{'id': '12a004a7118d45f3ac112e38d193f64e', 'dt': Timestamp('2020-06-08 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-08 04:15:00+0000', tz='UTC'), 'amount': 4, 'filled': 4, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",594
+595,"[{'id': '0b6aaad1281a49169bd09b03f5cd2955', 'dt': Timestamp('2020-06-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-09 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",595
+596,[],596
+597,"[{'id': 'd4f937355da84751bd09e1008240df1b', 'dt': Timestamp('2020-06-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-11 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",597
+598,"[{'id': '1d856a94dfd54c98a53d71c1d33d3fae', 'dt': Timestamp('2020-06-12 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-12 04:15:00+0000', tz='UTC'), 'amount': -5, 'filled': -5, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",598
+599,[],599
+600,"[{'id': '768a22447f1549bcb96e80eeb9c14c78', 'dt': Timestamp('2020-06-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-16 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",600
+601,"[{'id': '8a55783a58714d9581d66ad3406e6419', 'dt': Timestamp('2020-06-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-17 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",601
+602,[],602
+603,"[{'id': '8eb89abae1ab482ea2861b281ca152bc', 'dt': Timestamp('2020-06-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-19 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",603
+604,"[{'id': '2e7f0b7a33924180b074527d0fc09710', 'dt': Timestamp('2020-06-22 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-22 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",604
+605,"[{'id': '783040acd0f546aa83325039c58e5040', 'dt': Timestamp('2020-06-23 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-23 04:15:00+0000', tz='UTC'), 'amount': 106, 'filled': 106, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",605
+606,[],606
+607,"[{'id': 'd4a904c8561d45b0b4ce6e5673553d2c', 'dt': Timestamp('2020-06-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-25 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",607
+608,[],608
+609,"[{'id': '759d97bfa33d4bb09d2805bc360626ed', 'dt': Timestamp('2020-06-29 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-06-29 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",609
+610,[],610
+611,[],611
+612,"[{'id': '64a9541716a54b769526ccfeedffecaa', 'dt': Timestamp('2020-07-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-02 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",612
+613,[],613
+614,[],614
+615,[],615
+616,"[{'id': '6333dbebc6624a19a9203d1a2d8e7a10', 'dt': Timestamp('2020-07-08 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-08 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",616
+617,"[{'id': 'dc3c23b570d741948f3044048451b37c', 'dt': Timestamp('2020-07-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-09 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",617
+618,"[{'id': '07fd2f26c7014c8682549051e42fc6ef', 'dt': Timestamp('2020-07-10 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-10 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",618
+619,"[{'id': 'ab714a6003104a1a971d4d0e4fcef6ed', 'dt': Timestamp('2020-07-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-13 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",619
+620,"[{'id': 'a1047106af5142aebf4d965be8cc6a58', 'dt': Timestamp('2020-07-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-14 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",620
+621,"[{'id': 'edb8612c54b5413fa186ce5a1697e605', 'dt': Timestamp('2020-07-15 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-15 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",621
+622,"[{'id': 'b30ce66245c14fadb203620677c4cff7', 'dt': Timestamp('2020-07-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-16 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",622
+623,[],623
+624,"[{'id': 'ba70871064ee4601a93e026bc834b825', 'dt': Timestamp('2020-07-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-20 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",624
+625,"[{'id': 'd65663cfd70a4e3393a1902067b3726e', 'dt': Timestamp('2020-07-21 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-21 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",625
+626,[],626
+627,[],627
+628,[],628
+629,"[{'id': '6c2e19ff45864fdf95b3e637ecc130c4', 'dt': Timestamp('2020-07-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-07-27 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",629
+630,[],630
+631,[],631
+632,[],632
+633,[],633
+634,[],634
+635,[],635
+636,"[{'id': '05cd27c6afda486389ebab2fa14b2976', 'dt': Timestamp('2020-08-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-05 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",636
+637,[],637
+638,[],638
+639,[],639
+640,[],640
+641,"[{'id': '20ae09c6e9294c378881df93b7549e34', 'dt': Timestamp('2020-08-12 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-12 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",641
+642,[],642
+643,[],643
+644,"[{'id': '1b1af6c5baa44a71b0c2b42beba0737e', 'dt': Timestamp('2020-08-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-17 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",644
+645,"[{'id': '4da276f9349143f7bef96980bd19590b', 'dt': Timestamp('2020-08-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-18 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",645
+646,"[{'id': 'efcd23b6031f41409e782a7f0207fc06', 'dt': Timestamp('2020-08-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-19 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",646
+647,[],647
+648,[],648
+649,[],649
+650,"[{'id': '34c4b076b8944f0993094eed5dfd96c4', 'dt': Timestamp('2020-08-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-25 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",650
+651,"[{'id': 'de63a248d38e4355b648a8b440749f5d', 'dt': Timestamp('2020-08-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-26 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",651
+652,"[{'id': 'bad0a2cc23704d4a972f6a7cec19f069', 'dt': Timestamp('2020-08-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-27 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",652
+653,"[{'id': '08c04d2893f6438589afa7e414b62ea2', 'dt': Timestamp('2020-08-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-28 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",653
+654,"[{'id': '2bd5fd8ed38c4264afe20d690c5dae11', 'dt': Timestamp('2020-08-31 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-08-31 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",654
+655,"[{'id': 'bdbaaca1e15e42ff97c1ca2b6aaabea9', 'dt': Timestamp('2020-09-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-01 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",655
+656,"[{'id': 'd712c2434ec744d8bbd5a37e88e43243', 'dt': Timestamp('2020-09-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-02 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",656
+657,[],657
+658,"[{'id': '58a6963a9ad34c6395ac5cb824ab5792', 'dt': Timestamp('2020-09-04 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-04 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",658
+659,"[{'id': 'aedbee3aef1e4029a7a48480d3964216', 'dt': Timestamp('2020-09-07 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-07 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",659
+660,[],660
+661,"[{'id': 'db8837a24b864ba9980388c5d7e063ac', 'dt': Timestamp('2020-09-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-09 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",661
+662,[],662
+663,[],663
+664,[],664
+665,[],665
+666,[],666
+667,"[{'id': '6a73bf99194248b3884e773234aeec4a', 'dt': Timestamp('2020-09-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-17 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",667
+668,[],668
+669,"[{'id': '01b300d1dd93422099a9cc7ca1c5f0dc', 'dt': Timestamp('2020-09-21 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-21 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",669
+670,"[{'id': 'd9cdeccc7a40433d813bd105aa0d0b57', 'dt': Timestamp('2020-09-22 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-22 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",670
+671,[],671
+672,"[{'id': '7b820fd1ce7c48eea9b4881eaeb4d4d4', 'dt': Timestamp('2020-09-24 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-24 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",672
+673,"[{'id': 'dd79368a5b0d465b8d3f01b1f9323427', 'dt': Timestamp('2020-09-25 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-25 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",673
+674,"[{'id': '1c151fd9a50842dcbfde4a22e07ee182', 'dt': Timestamp('2020-09-28 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-28 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",674
+675,"[{'id': 'e115c7b25c33407eb6e4be989e9a2fed', 'dt': Timestamp('2020-09-29 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-29 04:15:00+0000', tz='UTC'), 'amount': -107, 'filled': -107, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",675
+676,"[{'id': 'ce0f21ff1faa4a56aa38b1748885d63b', 'dt': Timestamp('2020-09-30 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-09-30 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",676
+677,"[{'id': '0ce41666e0ad497f91781ad5c7edc78d', 'dt': Timestamp('2020-10-01 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-01 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",677
+678,"[{'id': '31b081ace53742f59dc1d7480adccdb7', 'dt': Timestamp('2020-10-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-05 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",678
+679,[],679
+680,[],680
+681,[],681
+682,[],682
+683,"[{'id': '160a0bd1c6b646bda2c28debdddaf74f', 'dt': Timestamp('2020-10-12 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-12 04:15:00+0000', tz='UTC'), 'amount': 3, 'filled': 3, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",683
+684,"[{'id': '8064695b4a2a460d9968eed823081335', 'dt': Timestamp('2020-10-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-13 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",684
+685,"[{'id': '4e4d66f5a54642c78419acd7545b0b1a', 'dt': Timestamp('2020-10-14 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-14 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",685
+686,"[{'id': '1ba50fc1b4f04cdb96b70a2d1db58040', 'dt': Timestamp('2020-10-15 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-15 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",686
+687,"[{'id': '03637627144e47b890f3e27716cb3605', 'dt': Timestamp('2020-10-16 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-16 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",687
+688,"[{'id': '67d47e29186d4543bc573ece68f4e999', 'dt': Timestamp('2020-10-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-19 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",688
+689,"[{'id': 'e0bf492acd1f4e038898aa50ad989019', 'dt': Timestamp('2020-10-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-20 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",689
+690,"[{'id': '03a1eb0cdf5c435f8ee5b7baec8f47f2', 'dt': Timestamp('2020-10-21 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-21 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",690
+691,[],691
+692,[],692
+693,"[{'id': 'effee86be37c42a98692a1fe1cad0e1f', 'dt': Timestamp('2020-10-26 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-26 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",693
+694,"[{'id': 'ceff63f57a79450e836f206785b53057', 'dt': Timestamp('2020-10-27 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-27 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",694
+695,[],695
+696,"[{'id': '5061c01f377447de86b1b7e891668d18', 'dt': Timestamp('2020-10-29 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-10-29 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",696
+697,[],697
+698,[],698
+699,"[{'id': 'b67789207c594920b411d0a3af86b3e5', 'dt': Timestamp('2020-11-03 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-03 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",699
+700,"[{'id': '33a5b876d8484a4dae00b976d189b129', 'dt': Timestamp('2020-11-04 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-04 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",700
+701,"[{'id': 'e1d4e3cfafc341afba2d0ea33416bce4', 'dt': Timestamp('2020-11-05 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-05 04:15:00+0000', tz='UTC'), 'amount': 92, 'filled': 92, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",701
+702,[],702
+703,[],703
+704,[],704
+705,"[{'id': '22b5a1e31465436d996e8e0bd8d64388', 'dt': Timestamp('2020-11-11 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-11 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",705
+706,[],706
+707,"[{'id': 'a367ec731e77427bad5ed41f5ad4ec3b', 'dt': Timestamp('2020-11-13 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-13 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",707
+708,"[{'id': 'cb214ab022c04673b81d3e0f7825ab01', 'dt': Timestamp('2020-11-17 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-17 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",708
+709,"[{'id': 'c27847e6d40244cf9cb2b8d864a5a724', 'dt': Timestamp('2020-11-18 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-18 04:15:00+0000', tz='UTC'), 'amount': -2, 'filled': -2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",709
+710,"[{'id': 'c077fd9358bc463c81c5ac6017ea717b', 'dt': Timestamp('2020-11-19 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-19 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",710
+711,"[{'id': 'd7c1007eff8d458d83ff3a90747f5075', 'dt': Timestamp('2020-11-20 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-11-20 04:15:00+0000', tz='UTC'), 'amount': 1, 'filled': 1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",711
+712,[],712
+713,[],713
+714,[],714
+715,[],715
+716,[],716
+717,[],717
+718,"[{'id': 'b5e7e30312ef46d786025fad47072abc', 'dt': Timestamp('2020-12-02 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-02 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",718
+719,[],719
+720,"[{'id': '21c49f756c1e46078c3d2f0ee492ad59', 'dt': Timestamp('2020-12-04 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-04 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",720
+721,"[{'id': 'd7dea77c39ac46278d59e5b88b39105f', 'dt': Timestamp('2020-12-07 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-07 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",721
+722,[],722
+723,"[{'id': '26edbaf8676e4450adb45026a56856f0', 'dt': Timestamp('2020-12-09 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-09 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",723
+724,[],724
+725,[],725
+726,[],726
+727,[],727
+728,[],728
+729,[],729
+730,[],730
+731,[],731
+732,"[{'id': '3bcb7b685c884f05b33ff27afee681b8', 'dt': Timestamp('2020-12-22 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-22 04:15:00+0000', tz='UTC'), 'amount': 2, 'filled': 2, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",732
+733,[],733
+734,"[{'id': 'b35f6cc5430149ce995b80d36f81b9ad', 'dt': Timestamp('2020-12-24 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-24 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",734
+735,[],735
+736,"[{'id': '59eabf7699e74eb59dd8e93c273d2b98', 'dt': Timestamp('2020-12-29 04:16:00+0000', tz='UTC'), 'reason': None, 'created': Timestamp('2020-12-29 04:15:00+0000', tz='UTC'), 'amount': -1, 'filled': -1, 'commission': 5.0, 'stop': None, 'limit': None, 'stop_reached': False, 'limit_reached': False, 'sid': Equity(7 [SBIN]), 'status': <ORDER_STATUS.FILLED: 1>}]",736
+737,[],737
+738,[],738
+739,[],739

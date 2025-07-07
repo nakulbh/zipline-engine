@@ -1,0 +1,741 @@
+,transaction_str,txn_id
+0,[],0
+1,[],1
+2,[],2
+3,[],3
+4,[],4
+5,[],5
+6,[],6
+7,[],7
+8,"[{'amount': 49, 'dt': Timestamp('2018-01-11 04:16:00+0000', tz='UTC'), 'price': 301.15001636578114, 'order_id': '28a02e412d214c60b24acd6fa9f3af82', 'sid': Equity(7 [SBIN]), 'commission': None}]",8
+9,[],9
+10,[],10
+11,[],11
+12,[],12
+13,[],13
+14,[],14
+15,[],15
+16,[],16
+17,[],17
+18,[],18
+19,[],19
+20,[],20
+21,[],21
+22,[],22
+23,[],23
+24,[],24
+25,[],25
+26,[],26
+27,[],27
+28,[],28
+29,[],29
+30,[],30
+31,"[{'amount': 4, 'dt': Timestamp('2018-02-15 04:16:00+0000', tz='UTC'), 'price': 279.7500001808003, 'order_id': '0eedbf1e1f544c8abb8c3881c80a714d', 'sid': Equity(7 [SBIN]), 'commission': None}]",31
+32,[],32
+33,"[{'amount': 1, 'dt': Timestamp('2018-02-19 04:16:00+0000', tz='UTC'), 'price': 268.7500000002083, 'order_id': '226ef1454cd2445d96acefaa7d021cfe', 'sid': Equity(7 [SBIN]), 'commission': None}]",33
+34,[],34
+35,[],35
+36,[],36
+37,[],37
+38,[],38
+39,[],39
+40,[],40
+41,[],41
+42,"[{'amount': 2, 'dt': Timestamp('2018-03-05 04:16:00+0000', tz='UTC'), 'price': 260.10000003445475, 'order_id': '9265e17b503b4f7389f04749934a355e', 'sid': Equity(7 [SBIN]), 'commission': None}]",42
+43,[],43
+44,"[{'amount': 1, 'dt': Timestamp('2018-03-07 04:16:00+0000', tz='UTC'), 'price': 252.80000000927478, 'order_id': '450652071d13429f89318efb4a56a592', 'sid': Equity(7 [SBIN]), 'commission': None}]",44
+45,"[{'amount': 14, 'dt': Timestamp('2018-03-08 04:16:00+0000', tz='UTC'), 'price': 245.600000928245, 'order_id': '50756c1b6c414fbdad447d4fed674088', 'sid': Equity(7 [SBIN]), 'commission': None}]",45
+46,[],46
+47,[],47
+48,[],48
+49,"[{'amount': -12, 'dt': Timestamp('2018-03-14 04:16:00+0000', tz='UTC'), 'price': 251.44999798987786, 'order_id': 'c698f08697d045a2954111f33721eaf3', 'sid': Equity(7 [SBIN]), 'commission': None}]",49
+50,[],50
+51,"[{'amount': -1, 'dt': Timestamp('2018-03-16 04:16:00+0000', tz='UTC'), 'price': 254.0499999990424, 'order_id': 'aa76f4ca38cd494aad4f11697ff50c49', 'sid': Equity(7 [SBIN]), 'commission': None}]",51
+52,[],52
+53,[],53
+54,[],54
+55,[],55
+56,"[{'amount': 3, 'dt': Timestamp('2018-03-23 04:16:00+0000', tz='UTC'), 'price': 235.40000008082134, 'order_id': '6d555ea824f14d888c8a8f0a88ed38c6', 'sid': Equity(7 [SBIN]), 'commission': None}]",56
+57,[],57
+58,[],58
+59,[],59
+60,[],60
+61,[],61
+62,[],62
+63,[],63
+64,[],64
+65,[],65
+66,[],66
+67,[],67
+68,[],68
+69,[],69
+70,[],70
+71,[],71
+72,[],72
+73,[],73
+74,[],74
+75,[],75
+76,[],76
+77,"[{'amount': 11, 'dt': Timestamp('2018-04-25 04:16:00+0000', tz='UTC'), 'price': 239.1500026130115, 'order_id': '0f081f19247342d494013229137ea8d8', 'sid': Equity(7 [SBIN]), 'commission': None}]",77
+78,"[{'amount': 1, 'dt': Timestamp('2018-04-26 04:16:00+0000', tz='UTC'), 'price': 237.45000001262858, 'order_id': '69045d3391d140098876f19de859b10f', 'sid': Equity(7 [SBIN]), 'commission': None}]",78
+79,"[{'amount': -12, 'dt': Timestamp('2018-04-27 04:16:00+0000', tz='UTC'), 'price': 237.54999930139496, 'order_id': '11b9500ccf914475932bf21e56ad5def', 'sid': Equity(7 [SBIN]), 'commission': None}]",79
+80,[],80
+81,[],81
+82,[],82
+83,[],83
+84,[],84
+85,[],85
+86,[],86
+87,[],87
+88,[],88
+89,[],89
+90,[],90
+91,[],91
+92,[],92
+93,[],93
+94,[],94
+95,[],95
+96,"[{'amount': -116, 'dt': Timestamp('2018-05-23 04:16:00+0000', tz='UTC'), 'price': 264.8499917561178, 'order_id': '5f96d5fb73f745728232aa0aa9bc1351', 'sid': Equity(7 [SBIN]), 'commission': None}]",96
+97,[],97
+98,[],98
+99,[],99
+100,[],100
+101,[],101
+102,[],102
+103,[],103
+104,[],104
+105,[],105
+106,[],106
+107,[],107
+108,[],108
+109,[],109
+110,[],110
+111,[],111
+112,[],112
+113,[],113
+114,[],114
+115,[],115
+116,[],116
+117,[],117
+118,[],118
+119,[],119
+120,[],120
+121,[],121
+122,[],122
+123,[],123
+124,"[{'amount': 111, 'dt': Timestamp('2018-07-02 04:16:00+0000', tz='UTC'), 'price': 260.80013659482626, 'order_id': '5e753481315e47f294452dab2b9dea1c', 'sid': Equity(7 [SBIN]), 'commission': None}]",124
+125,"[{'amount': 12, 'dt': Timestamp('2018-07-03 04:16:00+0000', tz='UTC'), 'price': 259.90003542840043, 'order_id': '61f1c0157c4b401289e256803687403a', 'sid': Equity(7 [SBIN]), 'commission': None}]",125
+126,[],126
+127,"[{'amount': -10, 'dt': Timestamp('2018-07-05 04:16:00+0000', tz='UTC'), 'price': 258.3499982323354, 'order_id': 'bd2bf331a1d74ca9bcc66c33f254577a', 'sid': Equity(7 [SBIN]), 'commission': None}]",127
+128,[],128
+129,[],129
+130,[],130
+131,[],131
+132,[],132
+133,[],133
+134,[],134
+135,[],135
+136,[],136
+137,[],137
+138,[],138
+139,[],139
+140,[],140
+141,[],141
+142,[],142
+143,[],143
+144,"[{'amount': -109, 'dt': Timestamp('2018-07-30 04:16:00+0000', tz='UTC'), 'price': 294.69999438691946, 'order_id': 'cf6f00c52d514e7d9fb77fb26a579551', 'sid': Equity(7 [SBIN]), 'commission': None}]",144
+145,[],145
+146,[],146
+147,[],147
+148,"[{'amount': -10, 'dt': Timestamp('2018-08-03 04:16:00+0000', tz='UTC'), 'price': 295.4999927097823, 'order_id': '3e911b0749da48748e00959523ded606', 'sid': Equity(7 [SBIN]), 'commission': None}]",148
+149,"[{'amount': 2, 'dt': Timestamp('2018-08-06 04:16:00+0000', tz='UTC'), 'price': 305.9500000076374, 'order_id': 'd457cc8ad9034379b6a02e67409d8a61', 'sid': Equity(7 [SBIN]), 'commission': None}]",149
+150,[],150
+151,[],151
+152,"[{'amount': 1, 'dt': Timestamp('2018-08-09 04:16:00+0000', tz='UTC'), 'price': 313.0500000014914, 'order_id': '1504c93dee614990a0017a134804e2ba', 'sid': Equity(7 [SBIN]), 'commission': None}]",152
+153,"[{'amount': 10, 'dt': Timestamp('2018-08-10 04:16:00+0000', tz='UTC'), 'price': 311.50000097108574, 'order_id': '560f1a166aa94c7ebed93ba5787a555b', 'sid': Equity(7 [SBIN]), 'commission': None}]",153
+154,[],154
+155,[],155
+156,[],156
+157,[],157
+158,[],158
+159,[],159
+160,[],160
+161,[],161
+162,[],162
+163,[],163
+164,[],164
+165,[],165
+166,[],166
+167,[],167
+168,[],168
+169,[],169
+170,[],170
+171,[],171
+172,[],172
+173,[],173
+174,[],174
+175,[],175
+176,"[{'amount': 100, 'dt': Timestamp('2018-09-17 04:16:00+0000', tz='UTC'), 'price': 285.45003685158196, 'order_id': 'd2038c60d3fb4c0daf88182beec5da3f', 'sid': Equity(7 [SBIN]), 'commission': None}]",176
+177,"[{'amount': 1, 'dt': Timestamp('2018-09-18 04:16:00+0000', tz='UTC'), 'price': 281.90000000240036, 'order_id': 'd9bd996ddc444a66881d30307c7a7e85', 'sid': Equity(7 [SBIN]), 'commission': None}]",177
+178,"[{'amount': 13, 'dt': Timestamp('2018-09-19 04:16:00+0000', tz='UTC'), 'price': 272.6000003179362, 'order_id': '8b216ffc31b04b1a9f2b24b935078816', 'sid': Equity(7 [SBIN]), 'commission': None}]",178
+179,"[{'amount': -11, 'dt': Timestamp('2018-09-21 04:16:00+0000', tz='UTC'), 'price': 275.6999989951744, 'order_id': '20496be7789c48ca9f9385a2d8ffadcf', 'sid': Equity(7 [SBIN]), 'commission': None}]",179
+180,"[{'amount': 11, 'dt': Timestamp('2018-09-24 04:16:00+0000', tz='UTC'), 'price': 270.10000294215394, 'order_id': '1e89e7ae5ca54d97b73b412e8f775a8e', 'sid': Equity(7 [SBIN]), 'commission': None}]",180
+181,"[{'amount': 2, 'dt': Timestamp('2018-09-25 04:16:00+0000', tz='UTC'), 'price': 262.1000000259489, 'order_id': '3af7940ce14543f8b2d6b2c31597b423', 'sid': Equity(7 [SBIN]), 'commission': None}]",181
+182,"[{'amount': -12, 'dt': Timestamp('2018-09-26 04:16:00+0000', tz='UTC'), 'price': 269.749999800436, 'order_id': 'ba47ff407db24eeea82286850b0c2d32', 'sid': Equity(7 [SBIN]), 'commission': None}]",182
+183,[],183
+184,[],184
+185,[],185
+186,[],186
+187,[],187
+188,[],188
+189,[],189
+190,[],190
+191,[],191
+192,[],192
+193,[],193
+194,[],194
+195,[],195
+196,[],196
+197,[],197
+198,[],198
+199,[],199
+200,[],200
+201,[],201
+202,[],202
+203,[],203
+204,[],204
+205,[],205
+206,[],206
+207,[],207
+208,[],208
+209,[],209
+210,[],210
+211,[],211
+212,[],212
+213,[],213
+214,[],214
+215,"[{'amount': -108, 'dt': Timestamp('2018-11-16 04:16:00+0000', tz='UTC'), 'price': 286.84991578679615, 'order_id': '37703011e9344b25a63e3fd3e025e628', 'sid': Equity(7 [SBIN]), 'commission': None}]",215
+216,[],216
+217,[],217
+218,[],218
+219,[],219
+220,[],220
+221,[],221
+222,[],222
+223,[],223
+224,[],224
+225,[],225
+226,[],226
+227,[],227
+228,[],228
+229,[],229
+230,[],230
+231,[],231
+232,[],232
+233,[],233
+234,[],234
+235,[],235
+236,[],236
+237,[],237
+238,[],238
+239,[],239
+240,[],240
+241,[],241
+242,"[{'amount': 1, 'dt': Timestamp('2018-12-27 04:16:00+0000', tz='UTC'), 'price': 295.3000000037682, 'order_id': '982cd3e551fe4d6aa1eca013db2990bf', 'sid': Equity(7 [SBIN]), 'commission': None}]",242
+243,[],243
+244,[],244
+245,[],245
+246,"[{'amount': 1, 'dt': Timestamp('2019-01-02 04:16:00+0000', tz='UTC'), 'price': 300.2500000144054, 'order_id': 'e2aed5b3626b4a7ea44aba373d2a0d0d', 'sid': Equity(7 [SBIN]), 'commission': None}]",246
+247,[],247
+248,[],248
+249,[],249
+250,[],250
+251,[],251
+252,[],252
+253,[],253
+254,[],254
+255,[],255
+256,[],256
+257,[],257
+258,[],258
+259,[],259
+260,[],260
+261,[],261
+262,[],262
+263,[],263
+264,"[{'amount': 114, 'dt': Timestamp('2019-01-28 04:16:00+0000', tz='UTC'), 'price': 283.3500563524165, 'order_id': 'ea193c75d5ca475abee788f56b60d2e5', 'sid': Equity(7 [SBIN]), 'commission': None}]",264
+265,"[{'amount': -10, 'dt': Timestamp('2019-01-29 04:16:00+0000', tz='UTC'), 'price': 284.0999988464998, 'order_id': '154713b2fdd64abd9534be555680be2b', 'sid': Equity(7 [SBIN]), 'commission': None}]",265
+266,"[{'amount': 10, 'dt': Timestamp('2019-01-30 04:16:00+0000', tz='UTC'), 'price': 280.550000281157, 'order_id': 'dfcd83958d97495a9e9e4b1877c0d46d', 'sid': Equity(7 [SBIN]), 'commission': None}]",266
+267,[],267
+268,[],268
+269,"[{'amount': -9, 'dt': Timestamp('2019-02-04 04:16:00+0000', tz='UTC'), 'price': 278.19999997589014, 'order_id': 'd239b64f0bfd4f0a9e85d4d72ed9902c', 'sid': Equity(7 [SBIN]), 'commission': None}]",269
+270,[],270
+271,[],271
+272,[],272
+273,[],273
+274,[],274
+275,[],275
+276,[],276
+277,[],277
+278,[],278
+279,[],279
+280,"[{'amount': 2, 'dt': Timestamp('2019-02-19 04:16:00+0000', tz='UTC'), 'price': 262.30000000779245, 'order_id': 'ae3d2a5416c74a4695b6dfd209536efc', 'sid': Equity(7 [SBIN]), 'commission': None}]",280
+281,[],281
+282,[],282
+283,[],283
+284,[],284
+285,[],285
+286,[],286
+287,[],287
+288,[],288
+289,[],289
+290,[],290
+291,[],291
+292,"[{'amount': -110, 'dt': Timestamp('2019-03-08 04:16:00+0000', tz='UTC'), 'price': 282.8998710615881, 'order_id': '69815e20bc2c43268d5f212d7cb7708a', 'sid': Equity(7 [SBIN]), 'commission': None}]",292
+293,"[{'amount': -9, 'dt': Timestamp('2019-03-11 04:16:00+0000', tz='UTC'), 'price': 288.09999993970297, 'order_id': '8ecbede9c37f416ea6f4fe099997fb07', 'sid': Equity(7 [SBIN]), 'commission': None}]",293
+294,[],294
+295,[],295
+296,[],296
+297,"[{'amount': 1, 'dt': Timestamp('2019-03-15 04:16:00+0000', tz='UTC'), 'price': 297.0000000018834, 'order_id': 'd29be44aef804ef08df451ea16915cbb', 'sid': Equity(7 [SBIN]), 'commission': None}]",297
+298,[],298
+299,"[{'amount': 1, 'dt': Timestamp('2019-03-19 04:16:00+0000', tz='UTC'), 'price': 301.85000000514816, 'order_id': '3180144420c04047b6042ebfb586a931', 'sid': Equity(7 [SBIN]), 'commission': None}]",299
+300,[],300
+301,"[{'amount': 1, 'dt': Timestamp('2019-03-22 04:16:00+0000', tz='UTC'), 'price': 306.10000000468347, 'order_id': '39cb30b259ae4c9ba055b17855962f99', 'sid': Equity(7 [SBIN]), 'commission': None}]",301
+302,"[{'amount': 7, 'dt': Timestamp('2019-03-25 04:16:00+0000', tz='UTC'), 'price': 293.45000091749364, 'order_id': 'e34ee2098fa84bca88b0ef5dc8813806', 'sid': Equity(7 [SBIN]), 'commission': None}]",302
+303,"[{'amount': 1, 'dt': Timestamp('2019-03-26 04:16:00+0000', tz='UTC'), 'price': 297.1500000066756, 'order_id': 'a58ea5a4d3c44d9aa8d07e3795bab9d9', 'sid': Equity(7 [SBIN]), 'commission': None}]",303
+304,"[{'amount': 2, 'dt': Timestamp('2019-03-27 04:16:00+0000', tz='UTC'), 'price': 305.75000006747734, 'order_id': '3efcdd17d42a48d4b9b0a3baff9c03a0', 'sid': Equity(7 [SBIN]), 'commission': None}]",304
+305,"[{'amount': 1, 'dt': Timestamp('2019-03-28 04:16:00+0000', tz='UTC'), 'price': 310.60000000837823, 'order_id': '628452ab85a04998887a98eab5fa8e00', 'sid': Equity(7 [SBIN]), 'commission': None}]",305
+306,"[{'amount': -7, 'dt': Timestamp('2019-03-29 04:16:00+0000', tz='UTC'), 'price': 319.39999983757497, 'order_id': '8e6e978d5d954190b9fb63f96c56a6cd', 'sid': Equity(7 [SBIN]), 'commission': None}]",306
+307,[],307
+308,[],308
+309,"[{'amount': 10, 'dt': Timestamp('2019-04-03 04:16:00+0000', tz='UTC'), 'price': 330.0500005172408, 'order_id': '88e386412f274bac95bef34e5a8c7255', 'sid': Equity(7 [SBIN]), 'commission': None}]",309
+310,"[{'amount': -1, 'dt': Timestamp('2019-04-04 04:16:00+0000', tz='UTC'), 'price': 321.04999995302916, 'order_id': '87a7f6cc8c5b442096ad1ab50d40a1e2', 'sid': Equity(7 [SBIN]), 'commission': None}]",310
+311,[],311
+312,[],312
+313,[],313
+314,[],314
+315,[],315
+316,[],316
+317,[],317
+318,[],318
+319,[],319
+320,[],320
+321,[],321
+322,"[{'amount': 94, 'dt': Timestamp('2019-04-24 04:16:00+0000', tz='UTC'), 'price': 305.75008433438006, 'order_id': '8ef0c7ec9bef4f2fa67f3f663a1d1653', 'sid': Equity(7 [SBIN]), 'commission': None}]",322
+323,[],323
+324,[],324
+325,[],325
+326,[],326
+327,[],327
+328,[],328
+329,[],329
+330,[],330
+331,[],331
+332,[],332
+333,[],333
+334,[],334
+335,[],335
+336,[],336
+337,[],337
+338,[],338
+339,"[{'amount': -92, 'dt': Timestamp('2019-05-21 04:16:00+0000', tz='UTC'), 'price': 342.64995913431886, 'order_id': '9f3017d269f24ef1bfa4f839f8439667', 'sid': Equity(7 [SBIN]), 'commission': None}]",339
+340,[],340
+341,"[{'amount': 1, 'dt': Timestamp('2019-05-23 04:16:00+0000', tz='UTC'), 'price': 355.7000000005197, 'order_id': 'dd6eb1b3635b4316997ca03423eda80b', 'sid': Equity(7 [SBIN]), 'commission': None}]",341
+342,[],342
+343,[],343
+344,"[{'amount': -7, 'dt': Timestamp('2019-05-28 04:16:00+0000', tz='UTC'), 'price': 357.19999834832157, 'order_id': 'cd5ec1b82d50409e9d35c5542b66ce1f', 'sid': Equity(7 [SBIN]), 'commission': None}]",344
+345,"[{'amount': 7, 'dt': Timestamp('2019-05-29 04:16:00+0000', tz='UTC'), 'price': 352.3000003079591, 'order_id': '5a267fa8f8ae4a5fab9857975753f7bf', 'sid': Equity(7 [SBIN]), 'commission': None}]",345
+346,[],346
+347,[],347
+348,[],348
+349,[],349
+350,[],350
+351,[],351
+352,[],352
+353,[],353
+354,[],354
+355,[],355
+356,[],356
+357,[],357
+358,[],358
+359,[],359
+360,[],360
+361,[],361
+362,[],362
+363,[],363
+364,[],364
+365,"[{'amount': 1, 'dt': Timestamp('2019-06-27 04:16:00+0000', tz='UTC'), 'price': 359.00000001848366, 'order_id': 'd0e3bccd7160438ba053c776b778fd72', 'sid': Equity(7 [SBIN]), 'commission': None}]",365
+366,[],366
+367,[],367
+368,[],368
+369,[],369
+370,"[{'amount': -6, 'dt': Timestamp('2019-07-04 04:16:00+0000', tz='UTC'), 'price': 369.9999992975625, 'order_id': 'ccfa7c7854c647918631af38dbd00907', 'sid': Equity(7 [SBIN]), 'commission': None}]",370
+371,[],371
+372,"[{'amount': 6, 'dt': Timestamp('2019-07-08 04:16:00+0000', tz='UTC'), 'price': 363.8000004530875, 'order_id': 'e6c6ecce612e4d71b79d9968831d8e1f', 'sid': Equity(7 [SBIN]), 'commission': None}]",372
+373,[],373
+374,[],374
+375,[],375
+376,[],376
+377,[],377
+378,[],378
+379,[],379
+380,[],380
+381,[],381
+382,[],382
+383,[],383
+384,[],384
+385,[],385
+386,[],386
+387,[],387
+388,[],388
+389,"[{'amount': 88, 'dt': Timestamp('2019-07-31 04:16:00+0000', tz='UTC'), 'price': 329.3000565020424, 'order_id': 'c23f53d650ba4c3197393cc9619bcc71', 'sid': Equity(7 [SBIN]), 'commission': None}]",389
+390,[],390
+391,"[{'amount': 2, 'dt': Timestamp('2019-08-02 04:16:00+0000', tz='UTC'), 'price': 315.8000000408241, 'order_id': 'b89fd40e6c4547fab4662a9258cbb388', 'sid': Equity(7 [SBIN]), 'commission': None}]",391
+392,"[{'amount': 13, 'dt': Timestamp('2019-08-05 04:16:00+0000', tz='UTC'), 'price': 292.90000012592054, 'order_id': 'cac9e9f2fe6a448996ae8a646e26c844', 'sid': Equity(7 [SBIN]), 'commission': None}]",392
+393,"[{'amount': -1, 'dt': Timestamp('2019-08-06 04:16:00+0000', tz='UTC'), 'price': 302.9999999944687, 'order_id': 'ba430248600948b888a74d790bc064b2', 'sid': Equity(7 [SBIN]), 'commission': None}]",393
+394,[],394
+395,"[{'amount': 2, 'dt': Timestamp('2019-08-08 04:16:00+0000', tz='UTC'), 'price': 289.40000003401855, 'order_id': '25d9b5a115e5463fbc5ea2f983223688', 'sid': Equity(7 [SBIN]), 'commission': None}]",395
+396,[],396
+397,[],397
+398,"[{'amount': -9, 'dt': Timestamp('2019-08-14 04:16:00+0000', tz='UTC'), 'price': 286.29999782406253, 'order_id': '5710e64fff0c4ca4953cbd99dcb553b5', 'sid': Equity(7 [SBIN]), 'commission': None}]",398
+399,[],399
+400,"[{'amount': -1, 'dt': Timestamp('2019-08-19 04:16:00+0000', tz='UTC'), 'price': 288.99999999725367, 'order_id': 'a73fe7d1b0ec4d96a36ec6eb74188a38', 'sid': Equity(7 [SBIN]), 'commission': None}]",400
+401,[],401
+402,[],402
+403,"[{'amount': 12, 'dt': Timestamp('2019-08-22 04:16:00+0000', tz='UTC'), 'price': 275.20000584335475, 'order_id': 'bf01208e5bec48848809224db5754d45', 'sid': Equity(7 [SBIN]), 'commission': None}]",403
+404,"[{'amount': 3, 'dt': Timestamp('2019-08-23 04:16:00+0000', tz='UTC'), 'price': 264.00000001948797, 'order_id': '6a2522e352d54c9a91304333db23e964', 'sid': Equity(7 [SBIN]), 'commission': None}]",404
+405,[],405
+406,[],406
+407,[],407
+408,[],408
+409,[],409
+410,[],410
+411,[],411
+412,[],412
+413,[],413
+414,[],414
+415,[],415
+416,[],416
+417,[],417
+418,[],418
+419,[],419
+420,[],420
+421,[],421
+422,[],422
+423,[],423
+424,"[{'amount': -115, 'dt': Timestamp('2019-09-24 04:16:00+0000', tz='UTC'), 'price': 310.84998873562694, 'order_id': '4e4a5a39c03d4ae8b17dfb7ff6c65826', 'sid': Equity(7 [SBIN]), 'commission': None}]",424
+425,[],425
+426,[],426
+427,[],427
+428,[],428
+429,[],429
+430,[],430
+431,[],431
+432,[],432
+433,[],433
+434,[],434
+435,[],435
+436,"[{'amount': 108, 'dt': Timestamp('2019-10-14 04:16:00+0000', tz='UTC'), 'price': 257.4000776798342, 'order_id': '3f8ee8928203442f94e4453c38b3cb44', 'sid': Equity(7 [SBIN]), 'commission': None}]",436
+437,"[{'amount': 12, 'dt': Timestamp('2019-10-15 04:16:00+0000', tz='UTC'), 'price': 256.1000005179808, 'order_id': 'ce177d235fb6455a8545a89aee10132f', 'sid': Equity(7 [SBIN]), 'commission': None}]",437
+438,"[{'amount': -11, 'dt': Timestamp('2019-10-16 04:16:00+0000', tz='UTC'), 'price': 259.9999999223155, 'order_id': 'a2e3916ca9934178be4800274cb8d653', 'sid': Equity(7 [SBIN]), 'commission': None}]",438
+439,[],439
+440,[],440
+441,[],441
+442,[],442
+443,[],443
+444,[],444
+445,[],445
+446,[],446
+447,"[{'amount': -114, 'dt': Timestamp('2019-10-31 04:16:00+0000', tz='UTC'), 'price': 299.29999812052387, 'order_id': '874d4662c73148f187eb8d8ae1623e2f', 'sid': Equity(7 [SBIN]), 'commission': None}]",447
+448,"[{'amount': 1, 'dt': Timestamp('2019-11-01 04:16:00+0000', tz='UTC'), 'price': 309.450000001872, 'order_id': '30f06fbeef9f4bbdb4395cf90386ee1b', 'sid': Equity(7 [SBIN]), 'commission': None}]",448
+449,"[{'amount': -8, 'dt': Timestamp('2019-11-04 04:16:00+0000', tz='UTC'), 'price': 316.49999986392316, 'order_id': 'd5db376b08e649c1a4da7876b9148ebb', 'sid': Equity(7 [SBIN]), 'commission': None}]",449
+450,[],450
+451,[],451
+452,"[{'amount': 1, 'dt': Timestamp('2019-11-07 04:16:00+0000', tz='UTC'), 'price': 321.7500000020017, 'order_id': 'ad91907415bd4a3aa404530cb9396f55', 'sid': Equity(7 [SBIN]), 'commission': None}]",452
+453,"[{'amount': -1, 'dt': Timestamp('2019-11-08 04:16:00+0000', tz='UTC'), 'price': 316.0999999958201, 'order_id': '51ac7318e44c4fc491c11215e41a3783', 'sid': Equity(7 [SBIN]), 'commission': None}]",453
+454,"[{'amount': 9, 'dt': Timestamp('2019-11-11 04:16:00+0000', tz='UTC'), 'price': 316.0000002014835, 'order_id': '06fe41ddbe454de8b6cbb8b6effbe28a', 'sid': Equity(7 [SBIN]), 'commission': None}]",454
+455,[],455
+456,[],456
+457,"[{'amount': -9, 'dt': Timestamp('2019-11-15 04:16:00+0000', tz='UTC'), 'price': 315.84999996642165, 'order_id': 'e0c852826e8e4f09a0e1410534238440', 'sid': Equity(7 [SBIN]), 'commission': None}]",457
+458,"[{'amount': 11, 'dt': Timestamp('2019-11-18 04:16:00+0000', tz='UTC'), 'price': 328.1000000363612, 'order_id': '1005b2b0f0434a79aae501ae39be8226', 'sid': Equity(7 [SBIN]), 'commission': None}]",458
+459,[],459
+460,"[{'amount': 1, 'dt': Timestamp('2019-11-20 04:16:00+0000', tz='UTC'), 'price': 329.5000000019273, 'order_id': 'd75a1c9fe17a48d5972a6f623806b491', 'sid': Equity(7 [SBIN]), 'commission': None}]",460
+461,[],461
+462,[],462
+463,[],463
+464,[],464
+465,[],465
+466,[],466
+467,"[{'amount': 2, 'dt': Timestamp('2019-11-29 04:16:00+0000', tz='UTC'), 'price': 346.3000000671487, 'order_id': '2edf15c5205a4a74b66671c5ab83f503', 'sid': Equity(7 [SBIN]), 'commission': None}]",467
+468,[],468
+469,[],469
+470,[],470
+471,[],471
+472,[],472
+473,[],473
+474,[],474
+475,[],475
+476,[],476
+477,[],477
+478,[],478
+479,[],479
+480,[],480
+481,[],481
+482,[],482
+483,[],483
+484,[],484
+485,[],485
+486,[],486
+487,[],487
+488,[],488
+489,[],489
+490,[],490
+491,[],491
+492,[],492
+493,[],493
+494,[],494
+495,[],495
+496,[],496
+497,[],497
+498,[],498
+499,[],499
+500,[],500
+501,[],501
+502,[],502
+503,[],503
+504,"[{'amount': 96, 'dt': Timestamp('2020-01-22 04:16:00+0000', tz='UTC'), 'price': 315.35007109364676, 'order_id': 'dae47f1fefa749b98fe816cc8a66128e', 'sid': Equity(7 [SBIN]), 'commission': None}]",504
+505,[],505
+506,[],506
+507,[],507
+508,[],508
+509,[],509
+510,[],510
+511,[],511
+512,"[{'amount': 2, 'dt': Timestamp('2020-02-03 04:16:00+0000', tz='UTC'), 'price': 302.25000000209485, 'order_id': 'da1d81818e2147a4bfd9619dcf9f8037', 'sid': Equity(7 [SBIN]), 'commission': None}]",512
+513,[],513
+514,[],514
+515,[],515
+516,[],516
+517,[],517
+518,[],518
+519,[],519
+520,[],520
+521,[],521
+522,[],522
+523,[],523
+524,[],524
+525,[],525
+526,"[{'amount': -100, 'dt': Timestamp('2020-02-24 04:16:00+0000', tz='UTC'), 'price': 330.2499969990036, 'order_id': 'e5e692b6cd274f2d96fbcf95a227c969', 'sid': Equity(7 [SBIN]), 'commission': None}]",526
+527,[],527
+528,[],528
+529,[],529
+530,[],530
+531,[],531
+532,[],532
+533,[],533
+534,"[{'amount': 104, 'dt': Timestamp('2020-03-05 04:16:00+0000', tz='UTC'), 'price': 288.5500422420969, 'order_id': '6bfb40bb14434f50944890386591732a', 'sid': Equity(7 [SBIN]), 'commission': None}]",534
+535,"[{'amount': 3, 'dt': Timestamp('2020-03-06 04:16:00+0000', tz='UTC'), 'price': 271.3000000007234, 'order_id': '79b33ae53ebe41e79c03e044ebeb064a', 'sid': Equity(7 [SBIN]), 'commission': None}]",535
+536,"[{'amount': 3, 'dt': Timestamp('2020-03-09 04:16:00+0000', tz='UTC'), 'price': 255.50000000643493, 'order_id': 'aea40821ed284b5dba4fe4b42ce2a777', 'sid': Equity(7 [SBIN]), 'commission': None}]",536
+537,[],537
+538,"[{'amount': 20, 'dt': Timestamp('2020-03-12 04:16:00+0000', tz='UTC'), 'price': 227.00000008466586, 'order_id': '85abc9b893ca44ff8082c9145c4a3303', 'sid': Equity(7 [SBIN]), 'commission': None}]",538
+539,"[{'amount': 16, 'dt': Timestamp('2020-03-13 04:16:00+0000', tz='UTC'), 'price': 185.3500001485131, 'order_id': 'f18c4f3060e74db59024a4b11454ab9a', 'sid': Equity(7 [SBIN]), 'commission': None}]",539
+540,"[{'amount': -28, 'dt': Timestamp('2020-03-16 04:16:00+0000', tz='UTC'), 'price': 226.44999954687165, 'order_id': 'ed6403286735430f9bb8f0901b58ea43', 'sid': Equity(7 [SBIN]), 'commission': None}]",540
+541,[],541
+542,"[{'amount': 17, 'dt': Timestamp('2020-03-18 04:16:00+0000', tz='UTC'), 'price': 212.95000016763214, 'order_id': 'd338d8ae02394996a677dc43b4974146', 'sid': Equity(7 [SBIN]), 'commission': None}]",542
+543,"[{'amount': 4, 'dt': Timestamp('2020-03-19 04:16:00+0000', tz='UTC'), 'price': 204.0500000030743, 'order_id': 'a8bf4a77a3e342ce8cd895eafde21b91', 'sid': Equity(7 [SBIN]), 'commission': None}]",543
+544,"[{'amount': -15, 'dt': Timestamp('2020-03-20 04:16:00+0000', tz='UTC'), 'price': 205.24999989579732, 'order_id': '5ecad985bdae4778975c5a1a171ca9e3', 'sid': Equity(7 [SBIN]), 'commission': None}]",544
+545,"[{'amount': 5, 'dt': Timestamp('2020-03-23 04:16:00+0000', tz='UTC'), 'price': 188.1500000021614, 'order_id': '081ae1b87eb24e56a65a65644ff688bd', 'sid': Equity(7 [SBIN]), 'commission': None}]",545
+546,"[{'amount': 2, 'dt': Timestamp('2020-03-24 04:16:00+0000', tz='UTC'), 'price': 183.20000001582076, 'order_id': 'a687215458b14a839a580d9c6d41ea41', 'sid': Equity(7 [SBIN]), 'commission': None}]",546
+547,"[{'amount': 2, 'dt': Timestamp('2020-03-25 04:16:00+0000', tz='UTC'), 'price': 177.7000000007351, 'order_id': '0a2b06148831469b8a3fca9cccff1351', 'sid': Equity(7 [SBIN]), 'commission': None}]",547
+548,"[{'amount': -3, 'dt': Timestamp('2020-03-26 04:16:00+0000', tz='UTC'), 'price': 189.3999999973699, 'order_id': '6df3aa4f53b84619b534133e0e7688de', 'sid': Equity(7 [SBIN]), 'commission': None}]",548
+549,[],549
+550,[],550
+551,[],551
+552,[],552
+553,"[{'amount': 2, 'dt': Timestamp('2020-04-03 04:16:00+0000', tz='UTC'), 'price': 181.2000000009682, 'order_id': 'db23e2ac1cc046dd9c19150a38385862', 'sid': Equity(7 [SBIN]), 'commission': None}]",553
+554,[],554
+555,[],555
+556,[],556
+557,[],557
+558,[],558
+559,[],559
+560,[],560
+561,[],561
+562,[],562
+563,[],563
+564,[],564
+565,[],565
+566,[],566
+567,[],567
+568,[],568
+569,[],569
+570,[],570
+571,[],571
+572,[],572
+573,[],573
+574,[],574
+575,"[{'amount': 6, 'dt': Timestamp('2020-05-11 04:16:00+0000', tz='UTC'), 'price': 167.40000001750076, 'order_id': 'f5b8d2ad592644b6ae691db0f95820bc', 'sid': Equity(7 [SBIN]), 'commission': None}]",575
+576,"[{'amount': 2, 'dt': Timestamp('2020-05-12 04:16:00+0000', tz='UTC'), 'price': 162.30000000289266, 'order_id': '6bb625416f4b4eabbb7fb809d10390e4', 'sid': Equity(7 [SBIN]), 'commission': None}]",576
+577,[],577
+578,[],578
+579,[],579
+580,[],580
+581,"[{'amount': 4, 'dt': Timestamp('2020-05-19 04:16:00+0000', tz='UTC'), 'price': 155.1000000011253, 'order_id': '13ed2fa97dbc4913b9f3d3b27e5c1d62', 'sid': Equity(7 [SBIN]), 'commission': None}]",581
+582,"[{'amount': 21, 'dt': Timestamp('2020-05-20 04:16:00+0000', tz='UTC'), 'price': 151.60000024895317, 'order_id': 'ad0358f69a7441b799099e190a87462a', 'sid': Equity(7 [SBIN]), 'commission': None}]",582
+583,"[{'amount': -1, 'dt': Timestamp('2020-05-21 04:16:00+0000', tz='UTC'), 'price': 154.6499999991472, 'order_id': 'd4cd0b30b22d47eca587661ae06057cb', 'sid': Equity(7 [SBIN]), 'commission': None}]",583
+584,"[{'amount': -19, 'dt': Timestamp('2020-05-22 04:16:00+0000', tz='UTC'), 'price': 154.29999995435048, 'order_id': '2960b5a2682d4cccb6a64277d7eee2a4', 'sid': Equity(7 [SBIN]), 'commission': None}]",584
+585,[],585
+586,"[{'amount': 1, 'dt': Timestamp('2020-05-27 04:16:00+0000', tz='UTC'), 'price': 150.9000000032169, 'order_id': '74134c17070e42cd817fd6ca4e83d03c', 'sid': Equity(7 [SBIN]), 'commission': None}]",586
+587,[],587
+588,[],588
+589,[],589
+590,[],590
+591,[],591
+592,[],592
+593,[],593
+594,"[{'amount': -193, 'dt': Timestamp('2020-06-08 04:16:00+0000', tz='UTC'), 'price': 195.14999672950316, 'order_id': '982b3c71fbee4344bd11bcd4d6c0267e', 'sid': Equity(7 [SBIN]), 'commission': None}]",594
+595,"[{'amount': -6, 'dt': Timestamp('2020-06-09 04:16:00+0000', tz='UTC'), 'price': 185.6499999940281, 'order_id': '789f3ee70617487892267fa16e848c9c', 'sid': Equity(7 [SBIN]), 'commission': None}]",595
+596,[],596
+597,"[{'amount': 2, 'dt': Timestamp('2020-06-11 04:16:00+0000', tz='UTC'), 'price': 189.600000001975, 'order_id': '0855ce98a2b048ccb07d7a3d6c17030f', 'sid': Equity(7 [SBIN]), 'commission': None}]",597
+598,[],598
+599,[],599
+600,[],600
+601,[],601
+602,[],602
+603,[],603
+604,[],604
+605,[],605
+606,[],606
+607,[],607
+608,[],608
+609,[],609
+610,[],610
+611,[],611
+612,[],612
+613,[],613
+614,[],614
+615,[],615
+616,[],616
+617,[],617
+618,[],618
+619,[],619
+620,[],620
+621,[],621
+622,[],622
+623,[],623
+624,[],624
+625,[],625
+626,[],626
+627,[],627
+628,[],628
+629,[],629
+630,[],630
+631,[],631
+632,[],632
+633,[],633
+634,[],634
+635,[],635
+636,[],636
+637,[],637
+638,[],638
+639,[],639
+640,[],640
+641,[],641
+642,"[{'amount': 24, 'dt': Timestamp('2020-08-13 04:16:00+0000', tz='UTC'), 'price': 205.00000032378043, 'order_id': '48d29fb5963d4fb0ab2677cffd7038bb', 'sid': Equity(7 [SBIN]), 'commission': None}]",642
+643,"[{'amount': -1, 'dt': Timestamp('2020-08-14 04:16:00+0000', tz='UTC'), 'price': 200.9999999998287, 'order_id': 'b0f5cb6fa2694be785c3a6501b570d0d', 'sid': Equity(7 [SBIN]), 'commission': None}]",643
+644,[],644
+645,[],645
+646,[],646
+647,[],647
+648,[],648
+649,[],649
+650,[],650
+651,[],651
+652,"[{'amount': 4, 'dt': Timestamp('2020-08-27 04:16:00+0000', tz='UTC'), 'price': 212.20000000310299, 'order_id': '1c92cf6a8be540c58cbd298add33bd73', 'sid': Equity(7 [SBIN]), 'commission': None}]",652
+653,"[{'amount': 2, 'dt': Timestamp('2020-08-28 04:16:00+0000', tz='UTC'), 'price': 218.5000000060228, 'order_id': '6928772546bb4784ac956b2bf7d61653', 'sid': Equity(7 [SBIN]), 'commission': None}]",653
+654,"[{'amount': 3, 'dt': Timestamp('2020-08-31 04:16:00+0000', tz='UTC'), 'price': 227.3500000040587, 'order_id': '2c08d69b210d4e23a16da63a1800d452', 'sid': Equity(7 [SBIN]), 'commission': None}]",654
+655,[],655
+656,[],656
+657,[],657
+658,[],658
+659,[],659
+660,[],660
+661,[],661
+662,[],662
+663,[],663
+664,[],664
+665,[],665
+666,[],666
+667,"[{'amount': 145, 'dt': Timestamp('2020-09-17 04:16:00+0000', tz='UTC'), 'price': 197.1000500239055, 'order_id': 'cda3f63345544cc4bc8bd570b8ba3377', 'sid': Equity(7 [SBIN]), 'commission': None}]",667
+668,[],668
+669,"[{'amount': 2, 'dt': Timestamp('2020-09-21 04:16:00+0000', tz='UTC'), 'price': 191.25000000468938, 'order_id': '484a44b167684d278f12088cb7218d4a', 'sid': Equity(7 [SBIN]), 'commission': None}]",669
+670,"[{'amount': 20, 'dt': Timestamp('2020-09-22 04:16:00+0000', tz='UTC'), 'price': 182.75000023679573, 'order_id': '20e971a6a4d04de19cfeb082e132815b', 'sid': Equity(7 [SBIN]), 'commission': None}]",670
+671,"[{'amount': -17, 'dt': Timestamp('2020-09-23 04:16:00+0000', tz='UTC'), 'price': 185.19999969598032, 'order_id': '1550ec20d0f54517b208e7e3d9d19fe7', 'sid': Equity(7 [SBIN]), 'commission': None}]",671
+672,"[{'amount': 1, 'dt': Timestamp('2020-09-24 04:16:00+0000', tz='UTC'), 'price': 180.40000000155405, 'order_id': '2c9f35695e8d4eec96d0f5f0207211e7', 'sid': Equity(7 [SBIN]), 'commission': None}]",672
+673,"[{'amount': 1, 'dt': Timestamp('2020-09-25 04:16:00+0000', tz='UTC'), 'price': 177.70000000017768, 'order_id': 'ae5d8ef68ddb450f94a62265f4593a6b', 'sid': Equity(7 [SBIN]), 'commission': None}]",673
+674,[],674
+675,[],675
+676,[],676
+677,[],677
+678,[],678
+679,[],679
+680,[],680
+681,[],681
+682,[],682
+683,"[{'amount': -160, 'dt': Timestamp('2020-10-12 04:16:00+0000', tz='UTC'), 'price': 204.59997106973785, 'order_id': 'cace869475e34bbfb88e62ef103c2813', 'sid': Equity(7 [SBIN]), 'commission': None}]",683
+684,[],684
+685,[],685
+686,"[{'amount': -17, 'dt': Timestamp('2020-10-15 04:16:00+0000', tz='UTC'), 'price': 201.34999992137193, 'order_id': 'c093ee8ade1841d0ba8f0057661ddfbb', 'sid': Equity(7 [SBIN]), 'commission': None}]",686
+687,[],687
+688,[],688
+689,[],689
+690,"[{'amount': 17, 'dt': Timestamp('2020-10-21 04:16:00+0000', tz='UTC'), 'price': 207.00000002661645, 'order_id': 'c601a632464945368e7195affb9f1aa3', 'sid': Equity(7 [SBIN]), 'commission': None}]",690
+691,[],691
+692,[],692
+693,[],693
+694,[],694
+695,[],695
+696,[],696
+697,[],697
+698,[],698
+699,[],699
+700,[],700
+701,"[{'amount': 4, 'dt': Timestamp('2020-11-05 04:16:00+0000', tz='UTC'), 'price': 218.50000000198958, 'order_id': '789d73a8351d4a63847c9b7819e83fa1', 'sid': Equity(7 [SBIN]), 'commission': None}]",701
+702,[],702
+703,[],703
+704,"[{'amount': 3, 'dt': Timestamp('2020-11-10 04:16:00+0000', tz='UTC'), 'price': 225.50000000093357, 'order_id': '15a73885f66746629d558a7ec67d5fcb', 'sid': Equity(7 [SBIN]), 'commission': None}]",704
+705,"[{'amount': 4, 'dt': Timestamp('2020-11-11 04:16:00+0000', tz='UTC'), 'price': 236.9500000022396, 'order_id': 'a7fcd5a563d844b089cb5041cbd9c21d', 'sid': Equity(7 [SBIN]), 'commission': None}]",705
+706,"[{'amount': -2, 'dt': Timestamp('2020-11-12 04:16:00+0000', tz='UTC'), 'price': 230.7999999978613, 'order_id': '94f11eb5554b44daba493a87932842ef', 'sid': Equity(7 [SBIN]), 'commission': None}]",706
+707,[],707
+708,"[{'amount': -11, 'dt': Timestamp('2020-11-17 04:16:00+0000', tz='UTC'), 'price': 235.99999999706995, 'order_id': '1c6ec560ec01412cabf35437bfe3e098', 'sid': Equity(7 [SBIN]), 'commission': None}]",708
+709,"[{'amount': 3, 'dt': Timestamp('2020-11-18 04:16:00+0000', tz='UTC'), 'price': 246.15000000023008, 'order_id': 'bf6c09659aae417a936f301be717cf13', 'sid': Equity(7 [SBIN]), 'commission': None}]",709
+710,"[{'amount': 2, 'dt': Timestamp('2020-11-19 04:16:00+0000', tz='UTC'), 'price': 251.0000000007761, 'order_id': '6fcce30717df4b4da6988a665c874bcf', 'sid': Equity(7 [SBIN]), 'commission': None}]",710
+711,"[{'amount': 8, 'dt': Timestamp('2020-11-20 04:16:00+0000', tz='UTC'), 'price': 238.60000005342164, 'order_id': '3cbfb53e836744c39b040843b9ac8b32', 'sid': Equity(7 [SBIN]), 'commission': None}]",711
+712,"[{'amount': 1, 'dt': Timestamp('2020-11-23 04:16:00+0000', tz='UTC'), 'price': 242.35000000045335, 'order_id': '8265fba154dc4edeade12bba314d5feb', 'sid': Equity(7 [SBIN]), 'commission': None}]",712
+713,[],713
+714,"[{'amount': 2, 'dt': Timestamp('2020-11-25 04:16:00+0000', tz='UTC'), 'price': 248.1000000072634, 'order_id': 'f7822a58a0474c8592d448d49b1f5ce5', 'sid': Equity(7 [SBIN]), 'commission': None}]",714
+715,[],715
+716,[],716
+717,[],717
+718,[],718
+719,[],719
+720,"[{'amount': 2, 'dt': Timestamp('2020-12-04 04:16:00+0000', tz='UTC'), 'price': 257.40000000120114, 'order_id': '7a13cb198f6d4fcf8643eab38b5ebdd1', 'sid': Equity(7 [SBIN]), 'commission': None}]",720
+721,"[{'amount': 2, 'dt': Timestamp('2020-12-07 04:16:00+0000', tz='UTC'), 'price': 264.850000011956, 'order_id': 'aa44b1da2aba4ef3ad3705c6f403fac3', 'sid': Equity(7 [SBIN]), 'commission': None}]",721
+722,"[{'amount': 2, 'dt': Timestamp('2020-12-08 04:16:00+0000', tz='UTC'), 'price': 270.8500000021054, 'order_id': '1af7f9c6f4214f8cbaf279f85f1b18e6', 'sid': Equity(7 [SBIN]), 'commission': None}]",722
+723,[],723
+724,[],724
+725,"[{'amount': -9, 'dt': Timestamp('2020-12-11 04:16:00+0000', tz='UTC'), 'price': 274.5999996995553, 'order_id': '2bfe0e73ad2e4e199d901418a9c7a3c9', 'sid': Equity(7 [SBIN]), 'commission': None}]",725
+726,[],726
+727,"[{'amount': -1, 'dt': Timestamp('2020-12-15 04:16:00+0000', tz='UTC'), 'price': 271.19999999937295, 'order_id': '8b8aaaf879eb4dacaee8a204d98872d4', 'sid': Equity(7 [SBIN]), 'commission': None}]",727
+728,[],728
+729,"[{'amount': 9, 'dt': Timestamp('2020-12-17 04:16:00+0000', tz='UTC'), 'price': 268.6500002500462, 'order_id': 'ab29a2a315ce4ecea155859aabf73cdc', 'sid': Equity(7 [SBIN]), 'commission': None}]",729
+730,[],730
+731,[],731
+732,[],732
+733,[],733
+734,[],734
+735,[],735
+736,[],736
+737,[],737
+738,[],738
+739,[],739

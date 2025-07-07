@@ -16,7 +16,6 @@ wheels/
 .coverage.*
 
 
-.zipline/data
 
 
 # Virtual environments

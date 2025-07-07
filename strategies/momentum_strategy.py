@@ -1,362 +1,370 @@
-# momentum_strategy.py
-import sys
-import os
+"""
+Multi-Timeframe Momentum Strategy
 
-# Add the parent directory to Python path so we can import from engine
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+This strategy combines momentum indicators across multiple timeframes to identify strong trends.
+The strategy:
 
-from engine.zipline_runner import TradingEngine
-from engine.base_strategy import TradingConfig
+1. Calculates short-term momentum (5-day and 10-day returns)
+2. Calculates medium-term momentum (20-day and 50-day returns)
+3. Calculates long-term momentum (100-day and 200-day returns)
+4. Uses MACD for trend confirmation
+5. Combines signals across timeframes with weighted scoring
+6. Includes momentum persistence and acceleration factors
+
+Author: NSE Backtesting Engine
+"""
+
+from engine.enhanced_base_strategy import BaseStrategy
+from zipline.api import symbol, record
 import pandas as pd
 import numpy as np
-import pyfolio as pf
-import matplotlib.pyplot as plt
-from zipline.api import (
-    order_target_percent, symbol, record, get_datetime,
-    schedule_function, date_rules, time_rules
-)
 
-class MomentumStrategy:
+
+class MultiTimeframeMomentumStrategy(BaseStrategy):
     """
-    A momentum strategy that:
-    1. Calculates 20-day returns for a universe of stocks
-    2. Goes long the top 5 performers
-    3. Goes short the bottom 5 performers
-    4. Rebalances monthly
+    Multi-timeframe momentum strategy for NSE stocks.
+    
+    Parameters:
+    - short_periods: List of short-term momentum periods (default: [5, 10])
+    - medium_periods: List of medium-term momentum periods (default: [20, 50])
+    - long_periods: List of long-term momentum periods (default: [100, 200])
+    - macd_fast: MACD fast EMA period (default: 12)
+    - macd_slow: MACD slow EMA period (default: 26)
+    - macd_signal: MACD signal line period (default: 9)
+    - momentum_threshold: Minimum momentum score for signal (default: 0.3)
     """
     
-    def __init__(self, config):
-        self.config = config
-        self.lookback_days = 20
-        self.num_long = 5
-        self.num_short = 5
+    def __init__(self, short_periods=[5, 10], medium_periods=[20, 50], 
+                 long_periods=[100, 200], macd_fast=12, macd_slow=26, 
+                 macd_signal=9, momentum_threshold=0.3):
+        super().__init__()
+        self.short_periods = short_periods
+        self.medium_periods = medium_periods
+        self.long_periods = long_periods
+        self.macd_fast = macd_fast
+        self.macd_slow = macd_slow
+        self.macd_signal = macd_signal
+        self.momentum_threshold = momentum_threshold
         
-    def initialize(self, context):
-        """Initialize the strategy"""
-        print("Initializing Momentum Strategy...")
+        # Calculate maximum lookback period
+        self.max_period = max(long_periods + [macd_slow]) + 20
         
-        # Define our universe of stocks (using symbols we know exist in our bundle)
-        context.universe = [
-            symbol('RELIANCE.NS'), symbol('TCS.NS'), symbol('INFY.NS'), symbol('HDFCBANK.NS'),
-            symbol('ICICIBANK.NS'), symbol('KOTAKBANK.NS'), symbol('HINDUNILVR.NS'),
-            symbol('LT.NS'), symbol('BAJFINANCE.NS'), symbol('ITC.NS'),
-            symbol('BHARTIARTL.NS'), symbol('SBIN.NS'), symbol('ASIANPAINT.NS'),
-            symbol('MARUTI.NS'), symbol('ULTRACEMCO.NS'), symbol('SUNPHARMA.NS'),
-            symbol('WIPRO.NS'), symbol('TECHM.NS'), symbol('ADANIENT.NS'), symbol('TITAN.NS')
+        # Enhanced risk parameters for momentum trading
+        self.risk_params.update({
+            'max_position_size': 0.10,    # 10% per position
+            'stop_loss_pct': 0.08,        # 8% stop loss
+            'take_profit_pct': 0.20,      # 20% profit target
+            'max_leverage': 1.2,          # 120% leverage for momentum
+        })
+        
+        # Strategy-specific tracking
+        self.momentum_history = {}
+
+    def select_universe(self, context):
+        """
+        Select NSE stocks suitable for momentum trading.
+        Focus on liquid stocks with good trending characteristics.
+        """
+        # NSE stocks with good momentum characteristics
+        nse_symbols = [
+            'SBIN',      # State Bank of India
+            'RELIANCE',  # Reliance Industries
+            'TCS',       # Tata Consultancy Services
+            'INFY',      # Infosys
+            'HDFCBANK',  # HDFC Bank
+            'ICICIBANK', # ICICI Bank
+            'WIPRO',     # Wipro
+            'LT',        # Larsen & Toubro
+            'AXISBANK',  # Axis Bank
+            'MARUTI',    # Maruti Suzuki
+            'HINDUNILVR',# Hindustan Unilever
+            'ITC'        # ITC Limited
         ]
-
-        # Use NIFTY 50 Index as benchmark
-        context.benchmark = symbol('^NSEI')
-
-        # Initialize tracking variables
-        context.long_positions = []
-        context.short_positions = []
-        context.rebalance_count = 0
         
-        # Schedule rebalancing function to run on the first trading day of each month
-        schedule_function(
-            self.rebalance,
-            date_rules.month_start(),
-            time_rules.market_open()
+        # Convert to Zipline assets
+        try:
+            universe = [symbol(sym) for sym in nse_symbols]
+            return universe
+        except Exception as e:
+            # Fallback to available symbols
+            return [symbol('SBIN')]
+
+    def calculate_momentum(self, prices, periods):
+        """
+        Calculate momentum for given periods.
+        
+        Args:
+            prices: Price series
+            periods: List of periods to calculate momentum
+            
+        Returns:
+            Dictionary of {period: momentum_value}
+        """
+        momentum_values = {}
+        
+        for period in periods:
+            if len(prices) >= period + 1:
+                momentum = (prices.iloc[-1] / prices.iloc[-period-1]) - 1
+                momentum_values[period] = momentum
+            else:
+                momentum_values[period] = 0.0
+        
+        return momentum_values
+
+    def calculate_macd(self, prices, fast=12, slow=26, signal=9):
+        """
+        Calculate MACD indicator.
+        
+        Args:
+            prices: Price series
+            fast: Fast EMA period
+            slow: Slow EMA period
+            signal: Signal line EMA period
+            
+        Returns:
+            Tuple of (macd_line, signal_line, histogram)
+        """
+        if len(prices) < slow + signal:
+            return 0, 0, 0
+        
+        # Calculate EMAs
+        ema_fast = prices.ewm(span=fast).mean()
+        ema_slow = prices.ewm(span=slow).mean()
+        
+        # Calculate MACD line
+        macd_line = ema_fast - ema_slow
+        
+        # Calculate signal line
+        signal_line = macd_line.ewm(span=signal).mean()
+        
+        # Calculate histogram
+        histogram = macd_line - signal_line
+        
+        return macd_line.iloc[-1], signal_line.iloc[-1], histogram.iloc[-1]
+
+    def calculate_momentum_score(self, short_mom, medium_mom, long_mom, macd_hist):
+        """
+        Calculate combined momentum score across timeframes.
+        
+        Args:
+            short_mom: Short-term momentum values
+            medium_mom: Medium-term momentum values
+            long_mom: Long-term momentum values
+            macd_hist: MACD histogram value
+            
+        Returns:
+            Combined momentum score (-1 to 1)
+        """
+        # Weight factors for different timeframes
+        short_weight = 0.3
+        medium_weight = 0.4
+        long_weight = 0.2
+        macd_weight = 0.1
+        
+        # Calculate weighted averages for each timeframe
+        short_avg = np.mean(list(short_mom.values())) if short_mom else 0
+        medium_avg = np.mean(list(medium_mom.values())) if medium_mom else 0
+        long_avg = np.mean(list(long_mom.values())) if long_mom else 0
+        
+        # Normalize MACD histogram
+        macd_normalized = np.tanh(macd_hist * 100)  # Normalize to -1 to 1
+        
+        # Calculate combined score
+        combined_score = (
+            short_avg * short_weight +
+            medium_avg * medium_weight +
+            long_avg * long_weight +
+            macd_normalized * macd_weight
         )
         
-        print(f"Strategy initialized with {len(context.universe)} stocks")
-        print("NIFTY50 included as benchmark symbol")
+        # Apply sigmoid function to bound between -1 and 1
+        return np.tanh(combined_score * 2)
+
+    def generate_signals(self, context, data) -> dict:
+        """
+        Generate multi-timeframe momentum signals.
         
-    def before_trading_start(self, context, data):
-        """Called before trading starts each day"""
-        # Record benchmark price for benchmark calculations
-        if data.can_trade(context.benchmark):
-            benchmark_price = data.current(context.benchmark, 'close')
-            record(benchmark_price=benchmark_price)
-        pass
+        Returns:
+            Dictionary of {asset: signal_strength} where signal_strength is between -1 and 1
+        """
+        signals = {}
         
-    def rebalance(self, context, data):
-        """Monthly rebalancing function"""
-        context.rebalance_count += 1
-        current_date = get_datetime()
-        print(f"\n--- Rebalancing #{context.rebalance_count} on {current_date.date()} ---")
-        
-        # Calculate momentum scores
-        momentum_scores = self.calculate_momentum(context, data)
-        
-        if momentum_scores is None or len(momentum_scores) < (self.num_long + self.num_short):
-            print("Not enough data for rebalancing, skipping...")
-            return
-            
-        # Sort by momentum (highest first)
-        sorted_stocks = momentum_scores.sort_values(ascending=False)
-        
-        # Select long and short positions
-        new_long_positions = sorted_stocks.head(self.num_long).index.tolist()
-        new_short_positions = sorted_stocks.tail(self.num_short).index.tolist()
-        
-        print(f"Top {self.num_long} momentum stocks (LONG):")
-        for i, stock in enumerate(new_long_positions, 1):
-            momentum = sorted_stocks[stock]
-            print(f"  {i}. {stock.symbol}: {momentum:.2%}")
-            
-        print(f"Bottom {self.num_short} momentum stocks (SHORT):")
-        for i, stock in enumerate(new_short_positions, 1):
-            momentum = sorted_stocks[stock]
-            print(f"  {i}. {stock.symbol}: {momentum:.2%}")
-        
-        # Calculate position sizes
-        long_weight = 0.8 / len(new_long_positions) if new_long_positions else 0
-        short_weight = -0.2 / len(new_short_positions) if new_short_positions else 0
-        
-        # Close positions not in new portfolio
-        all_new_positions = set(new_long_positions + new_short_positions)
-        for stock in context.portfolio.positions:
-            if stock not in all_new_positions:
-                order_target_percent(stock, 0)
-                print(f"  Closing position in {stock.symbol}")
-        
-        # Open long positions
-        for stock in new_long_positions:
-            if data.can_trade(stock):
-                order_target_percent(stock, long_weight)
-        
-        # Open short positions  
-        for stock in new_short_positions:
-            if data.can_trade(stock):
-                order_target_percent(stock, short_weight)
-        
-        # Update context
-        context.long_positions = new_long_positions
-        context.short_positions = new_short_positions
-        
-        # Record metrics
-        record(
-            num_long=len(new_long_positions),
-            num_short=len(new_short_positions),
-            leverage=context.account.leverage,
-            portfolio_value=context.portfolio.portfolio_value
-        )
-        
-    def calculate_momentum(self, context, data):
-        """Calculate momentum scores for all stocks in universe"""
-        momentum_scores = {}
-        
-        for stock in context.universe:
+        for asset in context.universe:
             try:
-                # Get historical prices
-                prices = data.history(stock, 'close', self.lookback_days + 1, '1d')
+                # Get historical price data
+                price_history = data.history(asset, 'price', self.max_period, '1d')
                 
-                if len(prices) >= self.lookback_days + 1:
-                    # Calculate momentum as percentage return over lookback period
-                    momentum = (prices.iloc[-1] / prices.iloc[0]) - 1
-                    momentum_scores[stock] = momentum
+                if len(price_history) < max(self.long_periods) + 10:
+                    signals[asset] = 0.0
+                    continue
+                
+                current_price = price_history.iloc[-1]
+                
+                # Calculate momentum across different timeframes
+                short_momentum = self.calculate_momentum(price_history, self.short_periods)
+                medium_momentum = self.calculate_momentum(price_history, self.medium_periods)
+                long_momentum = self.calculate_momentum(price_history, self.long_periods)
+                
+                # Calculate MACD
+                macd_line, signal_line, macd_histogram = self.calculate_macd(
+                    price_history, self.macd_fast, self.macd_slow, self.macd_signal
+                )
+                
+                # Calculate combined momentum score
+                momentum_score = self.calculate_momentum_score(
+                    short_momentum, medium_momentum, long_momentum, macd_histogram
+                )
+                
+                # Calculate additional factors
+                volatility = price_history.tail(20).pct_change().std() * np.sqrt(252)
+                price_trend = (current_price / price_history.iloc[-50]) - 1 if len(price_history) >= 50 else 0
+                
+                # Calculate momentum persistence (how consistent momentum is)
+                momentum_values = list(short_momentum.values()) + list(medium_momentum.values())
+                momentum_consistency = 1.0 - np.std(momentum_values) if momentum_values else 0.0
+                
+                # Calculate momentum acceleration (change in momentum)
+                if len(price_history) >= max(self.medium_periods) + 10:
+                    prev_medium_mom = self.calculate_momentum(price_history[:-5], self.medium_periods)
+                    current_medium_mom = self.calculate_momentum(price_history, self.medium_periods)
+                    momentum_acceleration = np.mean(list(current_medium_mom.values())) - np.mean(list(prev_medium_mom.values()))
+                else:
+                    momentum_acceleration = 0.0
+                
+                # Generate signal based on momentum score
+                signal_strength = 0.0
+                
+                if abs(momentum_score) > self.momentum_threshold:
+                    signal_strength = momentum_score
                     
+                    # Adjust signal based on momentum consistency
+                    signal_strength *= (0.5 + momentum_consistency * 0.5)
+                    
+                    # Boost signal if momentum is accelerating in same direction
+                    if (momentum_score > 0 and momentum_acceleration > 0) or \
+                       (momentum_score < 0 and momentum_acceleration < 0):
+                        signal_strength *= 1.2
+                    
+                    # Reduce signal in high volatility environments
+                    if volatility > 0.3:  # High volatility
+                        signal_strength *= 0.8
+                    
+                    # MACD confirmation
+                    if (momentum_score > 0 and macd_line > signal_line) or \
+                       (momentum_score < 0 and macd_line < signal_line):
+                        signal_strength *= 1.1  # MACD confirms momentum
+                    else:
+                        signal_strength *= 0.9  # MACD diverges from momentum
+                
+                # Ensure signal is within bounds
+                signal_strength = max(-1.0, min(1.0, signal_strength))
+                signals[asset] = signal_strength
+                
+                # Store momentum history
+                if asset not in self.momentum_history:
+                    self.momentum_history[asset] = []
+                
+                momentum_data = {
+                    'score': momentum_score,
+                    'short': short_momentum,
+                    'medium': medium_momentum,
+                    'long': long_momentum,
+                    'macd_hist': macd_histogram,
+                    'consistency': momentum_consistency,
+                    'acceleration': momentum_acceleration
+                }
+                self.momentum_history[asset].append(momentum_data)
+                
+                # Keep only last 50 records
+                if len(self.momentum_history[asset]) > 50:
+                    self.momentum_history[asset] = self.momentum_history[asset][-50:]
+                
+                # Record factors for Alphalens analysis
+                self.record_factor('momentum_score', momentum_score, context)
+                self.record_factor('short_momentum', np.mean(list(short_momentum.values())), context)
+                self.record_factor('medium_momentum', np.mean(list(medium_momentum.values())), context)
+                self.record_factor('long_momentum', np.mean(list(long_momentum.values())), context)
+                self.record_factor('macd_histogram', macd_histogram, context)
+                self.record_factor('momentum_consistency', momentum_consistency, context)
+                self.record_factor('momentum_acceleration', momentum_acceleration, context)
+                self.record_factor('volatility', volatility, context)
+                self.record_factor('signal_strength', abs(signal_strength), context)
+                
+                # Record current data for analysis
+                record(
+                    prices=current_price,
+                    momentum_score=momentum_score,
+                    macd_line=macd_line,
+                    macd_signal=signal_line
+                )
+                
             except Exception as e:
-                print(f"Error calculating momentum for {stock.symbol}: {e}")
+                # Handle any calculation errors gracefully
+                signals[asset] = 0.0
                 continue
         
-        if momentum_scores:
-            return pd.Series(momentum_scores)
-        else:
-            return None
-            
-    def handle_data(self, context, data):
-        """Called every trading day"""
-        # Record daily metrics
-        record(
-            portfolio_value=context.portfolio.portfolio_value,
-            leverage=context.account.leverage,
-            cash=context.portfolio.cash
-        )
+        return signals
 
-def run_momentum_strategy():
-    """Run the momentum strategy backtest using engine's pyfolio integration"""
+    def _calculate_position_size(self, context, data, asset, target_weight) -> float:
+        """
+        Calculate position size with momentum-based adjustments.
+        """
+        base_size = super()._calculate_position_size(context, data, asset, target_weight)
+        
+        # Get current momentum data if available
+        if asset in self.momentum_history and len(self.momentum_history[asset]) > 0:
+            momentum_data = self.momentum_history[asset][-1]
+            
+            # Adjust position size based on momentum strength
+            momentum_score = abs(momentum_data['score'])
+            if momentum_score > 0.5:  # Strong momentum
+                base_size *= 1.2
+            elif momentum_score < 0.2:  # Weak momentum
+                base_size *= 0.7
+            
+            # Adjust based on momentum consistency
+            if momentum_data['consistency'] > 0.8:  # Very consistent
+                base_size *= 1.1
+            elif momentum_data['consistency'] < 0.4:  # Inconsistent
+                base_size *= 0.8
+        
+        return base_size
+
+
+# Example usage and backtesting
+if __name__ == "__main__":
+    from engine.enhanced_zipline_runner import EnhancedZiplineRunner
+    import os
     
-    # Create configuration
-    config = TradingConfig(
-        start_date="2020-01-01",
-        end_date="2022-12-31",  # 3 years of data
-        capital_base=100000.0,
-        commission_cost=0.001,  # 0.1% commission
-        output_dir="./backtest_results"
+    print("🎯 Multi-Timeframe Momentum Strategy Backtest")
+    print("=" * 50)
+    
+    # Create strategy instance
+    strategy = MultiTimeframeMomentumStrategy(
+        short_periods=[5, 10],
+        medium_periods=[20, 50],
+        long_periods=[100, 200],
+        momentum_threshold=0.3
     )
     
-    # Create strategy
-    strategy = MomentumStrategy(config)
+    # Create runner with NSE data
+    runner = EnhancedZiplineRunner(
+        strategy=strategy,
+        bundle='nse-local-minute-bundle',
+        start_date='2018-01-01',
+        end_date='2021-01-01',
+        capital_base=100000,
+        benchmark_symbol='SBIN'
+    )
     
-    # Create trading engine
-    engine = TradingEngine(config)
+    print("Running backtest...")
+    results = runner.run()
     
-    # Run backtest
-    print("=" * 60)
-    print("MOMENTUM STRATEGY BACKTEST WITH PYFOLIO ANALYSIS")
-    print("=" * 60)
-    print(f"Period: {config.start_date} to {config.end_date}")
-    print(f"Initial Capital: ₹{config.capital_base:,.2f}")
-    print(f"Commission: {config.commission_cost:.1%}")
-    print("=" * 60)
+    # Create results directory
+    results_dir = 'backtest_results/momentum_strategy'
+    os.makedirs(results_dir, exist_ok=True)
     
-    try:
-        # Run the backtest
-        print("Starting backtest...")
-        backtest_results = engine.run_backtest(strategy)
-        results = backtest_results['results']
-        
-        # Extract benchmark data from the recorded results
-        print("\n🔍 Extracting benchmark data (NIFTY50) from backtest results...")
-        benchmark_returns = None
-        
-        if 'benchmark_price' in results.columns:
-            benchmark_prices = results['benchmark_price'].dropna()
-            if len(benchmark_prices) > 1:
-                benchmark_returns = benchmark_prices.pct_change().dropna()
-                print(f"✅ Successfully extracted {len(benchmark_returns)} NIFTY50 benchmark returns from bundle data")
-            else:
-                print("⚠️ Warning: Insufficient benchmark data in backtest results")
-        else:
-            print("⚠️ Warning: Benchmark data not found in backtest results, proceeding without benchmark")
-        
-        # Use engine's built-in performance analysis
-        print("\n📊 Analyzing performance with engine's pyfolio integration...")
-        performance = engine.analyze_performance(benchmark_returns)
-        
-        # Print summary statistics
-        print("\n" + "=" * 60)
-        print("📈 PERFORMANCE SUMMARY")
-        print("=" * 60)
-        
-        summary = engine.get_summary_stats()
-        for metric, value in summary.items():
-            print(f"{metric:<25s}: {value}")
-        
-        # Print detailed performance metrics
-        if benchmark_returns is not None:
-            print(f"\nAlpha (vs NIFTY50)      : {performance.get('alpha', 'N/A'):.4f}")
-            print(f"Beta (vs NIFTY50)       : {performance.get('beta', 'N/A'):.4f}")
-        
-        print("\n" + "=" * 60)
-        print("📊 DETAILED PYFOLIO METRICS")
-        print("=" * 60)
-        
-        # Display key performance statistics
-        perf_stats = performance['performance_stats']
-        for metric, value in perf_stats.items():
-            if isinstance(value, (int, float)):
-                if 'ratio' in metric.lower():
-                    print(f"{metric:<30s}: {value:.3f}")
-                elif 'return' in metric.lower() or 'volatility' in metric.lower():
-                    print(f"{metric:<30s}: {value:.2%}")
-                else:
-                    print(f"{metric:<30s}: {value:.4f}")
-            else:
-                print(f"{metric:<30s}: {value}")
-        
-        # Generate comprehensive tearsheet using engine
-        print("\n📋 Generating comprehensive pyfolio tearsheet...")
-        try:
-            engine.create_tearsheet(benchmark_returns)
-            print("✅ Full tearsheet generated successfully!")
-        except Exception as e:
-            print(f"⚠️ Warning: Could not generate full tearsheet: {e}")
-            
-            # Try creating basic plots as fallback
-            try:
-                print("📈 Creating basic performance plots as fallback...")
-                
-                import matplotlib.pyplot as plt
-                import numpy as np
-                import os
-                os.makedirs('./backtest_results/figures', exist_ok=True)
-                
-                returns = engine.returns
-                
-                # Basic performance plot
-                fig, axes = plt.subplots(2, 2, figsize=(15, 10))
-                
-                # Cumulative returns
-                cum_returns = (1 + returns).cumprod()
-                axes[0,0].plot(cum_returns.index, cum_returns.values, label='Strategy')
-                if benchmark_returns is not None:
-                    cum_benchmark = (1 + benchmark_returns).cumprod()
-                    axes[0,0].plot(cum_benchmark.index, cum_benchmark.values, 
-                                  label='NIFTY50 Benchmark', alpha=0.7)
-                    axes[0,0].legend()
-                axes[0,0].set_title('Cumulative Returns')
-                axes[0,0].set_ylabel('Cumulative Returns')
-                
-                # Daily returns
-                axes[0,1].hist(returns.dropna(), bins=50, alpha=0.7, edgecolor='black')
-                axes[0,1].set_title('Daily Returns Distribution')
-                axes[0,1].set_xlabel('Daily Returns')
-                axes[0,1].set_ylabel('Frequency')
-                
-                # Rolling Sharpe (simplified)
-                rolling_returns = returns.rolling(window=60).mean() * 252
-                rolling_vol = returns.rolling(window=60).std() * np.sqrt(252)
-                rolling_sharpe = rolling_returns / rolling_vol
-                axes[1,0].plot(rolling_sharpe.index, rolling_sharpe.values)
-                axes[1,0].set_title('Rolling Sharpe Ratio (60-day)')
-                axes[1,0].set_ylabel('Sharpe Ratio')
-                
-                # Drawdown
-                peak = cum_returns.expanding(min_periods=1).max()
-                drawdown = (cum_returns / peak) - 1
-                axes[1,1].fill_between(drawdown.index, drawdown.values, 0, alpha=0.3, color='red')
-                axes[1,1].plot(drawdown.index, drawdown.values, color='red')
-                axes[1,1].set_title('Drawdown')
-                axes[1,1].set_ylabel('Drawdown')
-                
-                plt.tight_layout()
-                plt.savefig('./backtest_results/figures/momentum_strategy_basic.png', dpi=300, bbox_inches='tight')
-                print("💾 Saved basic performance plots to: ./backtest_results/figures/momentum_strategy_basic.png")
-                plt.close()
-                
-            except Exception as plot_error:
-                print(f"⚠️ Could not create fallback plots: {plot_error}")
-        
-        # Portfolio evolution summary
-        print("\n" + "=" * 60)
-        print("📈 PORTFOLIO EVOLUTION SUMMARY")
-        print("=" * 60)
-        
-        portfolio_values = results.portfolio_value
-        start_value = portfolio_values.iloc[0]
-        end_value = portfolio_values.iloc[-1]
-        total_return = (end_value / start_value) - 1
-        
-        print(f"Starting Portfolio Value: ₹{start_value:,.2f}")
-        print(f"Ending Portfolio Value  : ₹{end_value:,.2f}")
-        print(f"Total Return           : {total_return:.2%}")
-        print(f"Total P&L              : ₹{end_value - start_value:,.2f}")
-        
-        # Monthly summary
-        monthly_values = portfolio_values.resample('M').last()
-        if len(monthly_values) > 1:
-            monthly_returns = monthly_values.pct_change().dropna()
-            
-            print(f"\nMonthly Statistics:")
-            print(f"Average Monthly Return : {monthly_returns.mean():.2%}")
-            print(f"Monthly Volatility     : {monthly_returns.std():.2%}")
-            print(f"Best Month             : {monthly_returns.max():.2%}")
-            print(f"Worst Month            : {monthly_returns.min():.2%}")
-            print(f"Positive Months        : {(monthly_returns > 0).sum()}/{len(monthly_returns)}")
-        
-        print("\n" + "=" * 60)
-        print("✅ Strategy completed successfully with engine's pyfolio analysis!")
-        print("📁 Check ./backtest_results/ for detailed results and figures")
-        print("=" * 60)
-        
-        return engine, backtest_results, performance
-        
-    except Exception as e:
-        print(f"\n❌ Backtest failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return None, None, None
-
-if __name__ == "__main__":
-    engine, backtest_results, performance = run_momentum_strategy()
+    # Analyze results
+    runner.analyze(results_dir)
     
-    if engine is not None:
-        print(f"\nTest PASSED")
-        print("🎉 Momentum strategy backtest completed successfully!")
-    else:
-        print(f"\nTest FAILED")
-        print("❌ Momentum strategy backtest failed!")
+    print("Backtest and analysis complete.")
