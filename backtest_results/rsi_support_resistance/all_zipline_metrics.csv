@@ -1,0 +1,88 @@
+,Value
+Initial Capital,200000.0
+Ending Capital,192173.32503310332
+Net Profit,-7826.67496689668
+Net Profit %,-3.9133374834483425
+Total Return %,-3.9133374834483425
+Total Trading Days,740
+Peak Portfolio Value,207531.7420358593
+Lowest Portfolio Value,192083.92503310333
+Best Day Return %,3.41880448286386
+Worst Day Return %,-2.6076993186799
+Average Daily Return %,-0.004801205392684001
+Median Daily Return %,-0.009090414269474767
+Daily Return Std Dev %,0.3449012290053622
+Positive Return Days,348
+Negative Return Days,379
+Zero Return Days,13
+Win Rate %,47.02702702702703
+Annualized Return %,-1.2026425499229054
+Annualized Volatility %,5.475137272972354
+Sharpe Ratio,-0.22098144733812916
+Max Drawdown %,-7.443592412040154
+Current Drawdown %,-7.400514664451764
+Average Drawdown %,-2.0384960066564783
+Drawdown Duration (days),710
+Benchmark Total Return %,2.2821122502384612e+18
+Excess Return %,-1413.4513193025462
+Tracking Error %,141.20148330431022
+Information Ratio,-10.010173308564672
+Beta,-6.657829775263978e-05
+Pyfolio Annual return,-0.0135022803162895
+Pyfolio Cumulative returns,-0.0391333748344845
+Pyfolio Annual volatility,0.0547513727297239
+Pyfolio Sharpe ratio,-0.2209814473381424
+Pyfolio Calmar ratio,-0.1813946757005282
+Pyfolio Stability,0.0777581540767274
+Pyfolio Max drawdown,-0.0744359241204024
+Pyfolio Omega ratio,0.9560544094221956
+Pyfolio Sortino ratio,-0.3195327085385507
+Pyfolio Skew,0.6498908291586938
+Pyfolio Kurtosis,19.490189627698275
+Pyfolio Tail ratio,0.975325040345498
+Pyfolio Daily value at risk,-0.0069460366340341
+Total Trade Records,740
+Actual Trades,212
+Trading Frequency %,28.64864864864865
+Average Trades per Day,0.2864864864864865
+Buy Transactions,0
+Sell Transactions,0
+Total Transaction Volume,0
+Total Transaction Costs,0
+Average Transaction Cost,0.0
+Transaction Cost %,0
+Total Order Records,740
+Actual Orders,212
+Order Frequency %,28.64864864864865
+Filled Orders,0
+Cancelled Orders,0
+Order Fill Rate %,0.0
+Order Cancel Rate %,0.0
+Benchmark Alpha (Daily),-4.428091783705299e-05
+Benchmark Alpha (Annualized),-0.011158791294937354
+Benchmark Beta,-6.65782977526718e-05
+Benchmark Benchmark Returns (Mean Daily),0.05604132601363455
+Benchmark Benchmark Returns (Annualized),14.122414155435905
+Benchmark Excess Return (Mean Daily),-0.05608933806756138
+Benchmark Excess Return (Annualized),-14.134513193025468
+Benchmark Benchmark Volatility (Daily),0.08887577121682638
+Benchmark Benchmark Volatility (Annualized),1.4108591293127701
+Benchmark Strategy Returns (Mean Daily),-4.8012053926843304e-05
+Benchmark Strategy Returns (Annualized),-0.012099037589564512
+Benchmark Strategy Volatility (Daily),0.003449012290053651
+Benchmark Strategy Volatility (Annualized),0.054751372729723996
+Benchmark Correlation,-0.0017133024904537584
+Benchmark Information Ratio,-0.6305816465504467
+Benchmark Tracking Error (Daily),0.08894857370872468
+Benchmark Tracking Error (Annualized),1.4120148330431022
+Benchmark Strategy Sharpe Ratio,-0.013920522714662886
+Benchmark Benchmark Sharpe Ratio,0.6305579714961116
+Benchmark Strategy Max Drawdown,-0.07443592412040245
+Benchmark Benchmark Max Drawdown,-0.9998654649433872
+Benchmark Strategy Win Rate,0.4702702702702703
+Benchmark Benchmark Win Rate,0.8040540540540541
+Benchmark Excess Return Win Rate,0.1891891891891892
+Benchmark Downside Deviation Strategy,0.002564290658286205
+Benchmark Downside Deviation Benchmark,0.06564770823050169
+Benchmark Observations,740
+Benchmark Benchmark Symbol,NIFTY50
