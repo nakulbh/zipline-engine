@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional
 import numpy as np
+import pandas as pd
 from zipline.api import (
     order_target_percent, record, symbol, get_datetime,
     schedule_function, date_rules, time_rules, get_open_orders,
@@ -115,9 +116,12 @@ class BaseStrategy(ABC):
     
     def rebalance(self, context, data):
         """Orchestrates the entire trade workflow"""
+        # Store data context for use in other methods
+        self._current_data = data
+
         if not self._pre_trade_checks(context):
             return
-            
+
         self.signals = self.generate_signals(context, data)
         self._execute_trades(context, data)
         self._record_metrics(context)
@@ -193,18 +197,26 @@ class BaseStrategy(ABC):
 
     def _calculate_position_size(self, context, data, asset, target) -> float:
         """Van Tharp-style position sizing with volatility scaling"""
+        # Store data context for ATR calculation
+        self._current_data = data
+
         price = data.current(asset, 'price')
-        atr = self._get_atr(asset, window=20)  # Implement your ATR calculation
-        
+        atr = self._get_atr(asset, window=20)
+
         # Dynamic stop based on 2x ATR
-        stop_distance = 2 * atr / price  
+        stop_distance = 2 * atr if atr > 0 else 0.02  # Fallback to 2% if ATR fails
         risk_per_trade = context.portfolio.portfolio_value * 0.01  # 1% risk
-        
+
         # Size = Risk / Stop Distance
-        max_size = min(
-            abs(risk_per_trade / stop_distance),
-            self.risk_params['max_position_size']
-        )
+        if stop_distance > 0:
+            position_size = risk_per_trade / (stop_distance * price)
+            max_size = min(
+                abs(position_size),
+                self.risk_params['max_position_size']
+            )
+        else:
+            max_size = self.risk_params['max_position_size'] * 0.5  # Conservative fallback
+
         return np.sign(target) * max_size
     
     def _update_stop_losses(self, asset, size, price):
@@ -265,9 +277,44 @@ class BaseStrategy(ABC):
         return False
 
     def _get_atr(self, asset, window=14) -> float:
-        """Placeholder for Average True Range calculation."""
-        # In a real scenario, you would use historical data to compute ATR
-        # For this example, we'll return a mock value.
-        # Replace with your actual ATR implementation.
-        # Example: data.history(asset, 'high', window, '1d'), etc.
-        return 0.01 # Mock value, replace with real calculation
+        """Calculate Average True Range for volatility-based position sizing."""
+        try:
+            # Get historical OHLC data
+            if hasattr(self, '_current_data') and self._current_data is not None:
+                data = self._current_data
+
+                # Try to get OHLC data
+                try:
+                    highs = data.history(asset, 'high', window + 1, '1d')
+                    lows = data.history(asset, 'low', window + 1, '1d')
+                    closes = data.history(asset, 'close', window + 1, '1d')
+                except:
+                    # Fallback to price data if OHLC not available
+                    prices = data.history(asset, 'price', window + 1, '1d')
+                    highs = lows = closes = prices
+
+                if len(closes) < 2:
+                    return 0.02  # 2% fallback for new assets
+
+                # Calculate True Range
+                prev_close = closes.shift(1)
+                tr1 = highs - lows
+                tr2 = abs(highs - prev_close)
+                tr3 = abs(lows - prev_close)
+
+                true_range = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+
+                # Calculate ATR as simple moving average of True Range
+                atr = true_range.rolling(window=window).mean().iloc[-1]
+
+                # Return ATR as percentage of current price
+                current_price = closes.iloc[-1]
+                return atr / current_price if current_price > 0 else 0.02
+
+            else:
+                # Fallback when no data context available
+                return 0.02  # 2% fallback
+
+        except Exception as e:
+            strategy_logger.warning(f"ATR calculation error for {asset.symbol}: {e}")
+            return 0.02  # 2% fallback

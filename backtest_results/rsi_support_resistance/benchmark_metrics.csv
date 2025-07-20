@@ -1,0 +1,29 @@
+Metric,Value
+Alpha (Daily),-4.428091783705299e-05
+Alpha (Annualized),-0.011158791294937354
+Beta,-6.65782977526718e-05
+Benchmark Returns (Mean Daily),0.05604132601363455
+Benchmark Returns (Annualized),14.122414155435905
+Excess Return (Mean Daily),-0.05608933806756138
+Excess Return (Annualized),-14.134513193025468
+Benchmark Volatility (Daily),0.08887577121682638
+Benchmark Volatility (Annualized),1.4108591293127701
+Strategy Returns (Mean Daily),-4.8012053926843304e-05
+Strategy Returns (Annualized),-0.012099037589564512
+Strategy Volatility (Daily),0.003449012290053651
+Strategy Volatility (Annualized),0.054751372729723996
+Correlation,-0.0017133024904537584
+Information Ratio,-0.6305816465504467
+Tracking Error (Daily),0.08894857370872468
+Tracking Error (Annualized),1.4120148330431022
+Strategy Sharpe Ratio,-0.013920522714662886
+Benchmark Sharpe Ratio,0.6305579714961116
+Strategy Max Drawdown,-0.07443592412040245
+Benchmark Max Drawdown,-0.9998654649433872
+Strategy Win Rate,0.4702702702702703
+Benchmark Win Rate,0.8040540540540541
+Excess Return Win Rate,0.1891891891891892
+Downside Deviation Strategy,0.002564290658286205
+Downside Deviation Benchmark,0.06564770823050169
+Observations,740
+Benchmark Symbol,NIFTY50

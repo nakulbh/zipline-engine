@@ -5,6 +5,8 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from engine.enhanced_base_strategy import BaseStrategy
+from engine.enhanced_zipline_runner import EnhancedZiplineRunner
+
 from zipline.api import symbol, record
 import numpy as np
 
@@ -106,9 +108,6 @@ if __name__ == '__main__':
     execute the backtest, and perform the analysis.
     """
     # Import the backtest runner
-    from engine.enhanced_zipline_runner import EnhancedZiplineRunner
-    import pandas as pd
-
     # 1. Define Strategy Parameters
     # You can easily tweak the strategy's behavior by changing these variables.
     assets_to_trade = ['SBIN']
@@ -131,7 +130,7 @@ if __name__ == '__main__':
     runner = EnhancedZiplineRunner(
         strategy=sma_strategy,
         bundle=nse_bundle,  # <-- CHANGE THIS if you use a different bundle
-        start_date='2018-01-01',
+        start_date='2018-02-01',
         end_date='2021-01-01',
         capital_base=100000,
         benchmark_symbol='NIFTY50'  
