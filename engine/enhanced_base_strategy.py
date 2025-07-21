@@ -20,13 +20,13 @@ class BaseStrategy(ABC):
     """Complete strategy template with risk management and execution logic"""
     
     def __init__(self):
-        # Risk Parameters (override in child classes)
+        # Risk Parameters for Indian Markets (override in child classes)
         self.risk_params = {
-            'max_leverage': 1.0,          # 1x portfolio value
-            'stop_loss_pct': 0.08,       # 8% trailing stop
-            'take_profit_pct': 0.20,      # 20% profit target
-            'max_position_size': 0.1,     # 10% per position
-            'daily_loss_limit': -0.05,    # -5% daily drawdown
+            'max_leverage': 1.0,          # 1x portfolio value (SEBI regulations)
+            'stop_loss_pct': 0.05,       # 5% trailing stop (Indian market volatility)
+            'take_profit_pct': 0.15,      # 15% profit target
+            'max_position_size': 0.08,    # 8% per position (more conservative)
+            'daily_loss_limit': -0.03,    # -3% daily drawdown (circuit breakers)
             'trade_blacklist': set()      # Assets to avoid
         }
 
@@ -99,20 +99,21 @@ class BaseStrategy(ABC):
     
     # ------------ Built-In Execution Logic ------------ #
     def _setup_trading_costs(self):
-        """Default commission/slippage model"""
-        set_commission(commission.PerTrade(cost=5.00))  # $5 per trade
+        """Default commission/slippage model for Indian markets"""
+        # For Indian markets - use direct model assignment (not us_equities parameter)
+        set_commission(commission.PerTrade(cost=20.00))  # ₹20 per trade (typical Indian brokerage)
         set_slippage(slippage.VolumeShareSlippage(
-            volume_limit=0.1, 
-            price_impact=0.1
+            volume_limit=0.025,  # More conservative for Indian markets
+            price_impact=0.05    # Lower impact than default
         ))
     
     def _setup_schedules(self):
         """Default daily rebalance (override timings as needed)"""
         schedule_function(
-            self.rebalance,
-            date_rules.every_day(),
-            time_rules.market_open(minutes=30)
-          )  # Wait for liquidity
+            func=self.rebalance,
+            date_rule=date_rules.every_day(),
+            time_rule=time_rules.market_open(minutes=30)
+        )  # Wait for liquidity
     
     def rebalance(self, context, data):
         """Orchestrates the entire trade workflow"""
@@ -196,7 +197,7 @@ class BaseStrategy(ABC):
         strategy_logger.debug(f"📊 Recorded factor '{factor_name}': {factor_value:.4f}")
 
     def _calculate_position_size(self, context, data, asset, target) -> float:
-        """Van Tharp-style position sizing with volatility scaling"""
+        """Van Tharp-style position sizing with volatility scaling for Indian markets"""
         # Store data context for ATR calculation
         self._current_data = data
 

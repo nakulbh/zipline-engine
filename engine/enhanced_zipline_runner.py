@@ -30,7 +30,7 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings('ignore', category=UserWarning)
 
 class EnhancedZiplineRunner:
-    def __init__(self, strategy, bundle='quantopian-quandl', start_date='2015-1-1', end_date='2018-1-1', capital_base=100000, benchmark_symbol='NIFTY50'):
+    def __init__(self, strategy, bundle='quantopian-quandl', start_date='2015-1-1', end_date='2018-1-1', capital_base=100000, benchmark_symbol='NIFTY50', data_frequency='minute'):
         """
         Initialize the Enhanced Zipline Runner with comprehensive logging.
 
@@ -50,6 +50,7 @@ class EnhancedZiplineRunner:
         self.capital_base = capital_base
         self.results = None
         self.benchmark_symbol = benchmark_symbol
+        self.data_frequency = data_frequency
         self.start_time = None
         self.end_time = None
 
@@ -108,7 +109,7 @@ class EnhancedZiplineRunner:
                 initialize=initialize_wrapper,
                 before_trading_start=self.strategy.before_trading_start,
                 capital_base=self.capital_base,
-                data_frequency='minute',  # Specify minute data frequency
+                data_frequency=self.data_frequency,  # Use configurable data frequency
                 bundle=self.bundle,
                 trading_calendar=get_calendar('XBOM'), # Use a calendar that matches your data (e.g., XBOM for NSE/BSE)
                 benchmark_returns=None # Zipline will use the benchmark set in initialize

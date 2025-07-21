@@ -10,6 +10,9 @@ from engine.enhanced_zipline_runner import EnhancedZiplineRunner
 from zipline.api import symbol, record
 import numpy as np
 
+# Import bundle to register it
+import bundles.duckdb_polars_bundle
+
 class SmaCrossoverStrategy(BaseStrategy):
     """
     A simple moving average (SMA) crossover strategy.
@@ -31,7 +34,7 @@ class SmaCrossoverStrategy(BaseStrategy):
         super().__init__()
         self.short_window = short_window
         self.long_window = long_window
-        self.assets = assets if assets else ['SBIN', 'RELIANCE', 'HDFCBANK'] # Default NSE assets
+        self.assets = assets if assets else ['APOLLO_TYRES', 'AMBUJA_CEMENTS', 'ASHOK_LEYLAND'] # Available assets in bundle
 
     def initialize(self, context):
         """
@@ -110,10 +113,10 @@ if __name__ == '__main__':
     # Import the backtest runner
     # 1. Define Strategy Parameters
     # You can easily tweak the strategy's behavior by changing these variables.
-    assets_to_trade = ['SBIN']
-    short_window_sma = 20
-    long_window_sma = 50
-    nse_bundle = 'nse-local-minute-bundle'
+    assets_to_trade = ['APOLLO_TYRES', 'AMBUJA_CEMENTS', 'ASHOK_LEYLAND']
+    short_window_sma = 5
+    long_window_sma = 20
+    nse_bundle = 'nse-duckdb-parquet-bundle'
 
     # 2. Instantiate the Strategy
     # Create an instance of your strategy with the parameters you defined.
@@ -130,10 +133,11 @@ if __name__ == '__main__':
     runner = EnhancedZiplineRunner(
         strategy=sma_strategy,
         bundle=nse_bundle,  # <-- CHANGE THIS if you use a different bundle
-        start_date='2018-02-01',
-        end_date='2021-01-01',
+        start_date='2021-11-26',  # Updated to allow for 65+ day warm-up period
+        end_date='2024-12-01',    # Updated to match bundle data range
         capital_base=100000,
-        benchmark_symbol='NIFTY50'  
+        benchmark_symbol=None,
+        data_frequency='minute'    # Use daily frequency to avoid minute-level issues
     )
 
     # 4. Run the Backtest
