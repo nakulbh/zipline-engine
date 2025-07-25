@@ -1,92 +1,49 @@
 version: '3.8'
 
 services:
-  nse-backtesting-engine:
+  api:
     build:
-      context: .
+      context: ./apps/api
       dockerfile: Dockerfile
-    container_name: nse-backtest-engine
-    image: nse-backtesting-engine:latest
-    
-    # Environment variables
-    environment:
-      - PYTHONUNBUFFERED=1
-      - ZIPLINE_ROOT=/app/.zipline
-      - PYTHONPATH=/app
-    
-    # Volume mounts for persistent data
-    volumes:
-      # Results and outputs
-      - ./results:/app/results
-      - ./backtest_results:/app/backtest_results
-      - ./logs:/app/logs
-      
-      # Optional: Mount local data for development
-      # - ./strategies:/app/strategies
-      # - ./examples:/app/examples
-      
-      # Optional: Mount custom data bundles
-      # - ./custom_data:/app/custom_data
-    
-    # Port mapping for Jupyter notebooks
     ports:
-      - "8888:8888"
-    
-    # Keep container running
-    stdin_open: true
-    tty: true
-    
-    # Restart policy
-    restart: unless-stopped
-    
-    # Resource limits (adjust as needed)
-    deploy:
-      resources:
-        limits:
-          memory: 4G
-          cpus: '2.0'
-        reservations:
-          memory: 2G
-          cpus: '1.0'
+      - "8000:8000"
+    volumes:
+      - ./apps/api:/app
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://user:password@postgres/db
+      - REDIS_URL=redis://redis:6379
 
-  # Optional: Jupyter notebook service
-  jupyter:
+  ui:
     build:
-      context: .
+      context: ./apps/ui
       dockerfile: Dockerfile
-    container_name: nse-jupyter
-    image: nse-backtesting-engine:latest
-    
-    environment:
-      - PYTHONUNBUFFERED=1
-      - ZIPLINE_ROOT=/app/.zipline
-      - PYTHONPATH=/app
-    
-    volumes:
-      - ./results:/app/results
-      - ./backtest_results:/app/backtest_results
-      - ./examples:/app/examples
-      - ./strategies:/app/strategies
-    
     ports:
-      - "8889:8888"
-    
-    command: >
-      bash -c "
-        jupyter notebook 
-        --ip=0.0.0.0 
-        --port=8888 
-        --no-browser 
-        --allow-root 
-        --NotebookApp.token='' 
-        --NotebookApp.password=''
-      "
-    
-    restart: unless-stopped
-    profiles:
-      - jupyter
+      - "5173:5173"
+    volumes:
+      - ./apps/ui:/app
 
-# Optional: Networks for multi-container setups
-networks:
-  default:
-    name: nse-backtesting-network
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:6.2
+    ports:
+      - "6379:6379"
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    command: server /data
