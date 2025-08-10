@@ -1,0 +1,6 @@
+BACKTEST SUMMARY (No Trades)
+==============================
+total_days: 215
+final_value: 100000.0
+total_return: 0.0
+trades_count: 0

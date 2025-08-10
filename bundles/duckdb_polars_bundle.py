@@ -42,7 +42,7 @@ IST = pytz.timezone('Asia/Kolkata')
 UTC = pytz.UTC
 
 # DuckDB database path - Update this to your actual database path
-DUCKDB_PATH = "/media/nakulbh/PickleRick/nifty500_5year_data.duckdb"
+DUCKDB_PATH = "/Volumes/PickleRick/nifty500_5year_data.duckdb"
 
 # Configuration for full 5-year dataset ingestion
 LIMIT_STOCKS = False  # Set to False to ingest all stocks
@@ -51,8 +51,8 @@ LAST_N_MONTHS = 12  # Last N months of data (not used when LIMIT_STOCKS=False)
 
 # Custom date range configuration (Full 5-year range based on database)
 USE_CUSTOM_DATE_RANGE = True  # Set to True to use the full database range
-CUSTOM_START_DATE = "2020-07-20"  # Start date from database
-CUSTOM_END_DATE = "2025-07-18"    # End date from database
+CUSTOM_START_DATE = "2020-09-01"  # Start date from database
+CUSTOM_END_DATE = "2025-06-01"    # End date from database
 
 # Parquet cache configuration
 CACHE_DIR = Path(".augment/cache/parquet_data")  # Cache directory for Parquet files

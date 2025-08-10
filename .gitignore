@@ -17,7 +17,7 @@ wheels/
 
 # Virtual environments
 .venv
-
+.zipline
 .augment
 
 ui

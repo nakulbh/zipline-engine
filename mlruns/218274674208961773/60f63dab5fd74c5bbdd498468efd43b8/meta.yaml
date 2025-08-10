@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/nakulbhardwaj/Developer/Projects/zipline-backtesting-engine/mlruns/218274674208961773/60f63dab5fd74c5bbdd498468efd43b8/artifacts
+end_time: 1754719572477
+entry_point_name: ''
+experiment_id: '218274674208961773'
+lifecycle_stage: active
+run_id: 60f63dab5fd74c5bbdd498468efd43b8
+run_name: sw8_lw50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754719366760
+status: 3
+tags: []
+user_id: nakulbhardwaj
